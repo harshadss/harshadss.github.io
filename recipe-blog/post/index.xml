@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Harshad&#39;s Cooking Experiments </title>
+    <link>http://harshadss.github.io/recipe-blog/post/</link>
+    <language>en-us</language>
+    <author></author>
+    <rights>(C) 2016</rights>
+    <updated>2016-11-29 10:03:21 &#43;0530 IST</updated>
+
+    
+      
+        <item>
+          <title>Hello, world!</title>
+          <link>http://harshadss.github.io/recipe-blog/post/hello/</link>
+          <pubDate>Tue, 29 Nov 2016 10:03:21 IST</pubDate>
+          <author></author>
+          <guid>http://harshadss.github.io/recipe-blog/post/hello/</guid>
+          <description>&lt;p&gt;Setting up this blog to track my cooking experiments. So hello, world!&lt;/p&gt;
+</description>
+        </item>
+      
+    
+
+  </channel>
+</rss>
