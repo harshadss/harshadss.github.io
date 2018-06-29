@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lisp on Harshad Saykhedkar</title>
-    <link>http://harshadss.github.io/tags/lisp/</link>
+    <link>https://harshadss.github.io/tags/lisp/</link>
     <description>Recent content in Lisp on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 13 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://harshadss.github.io/tags/lisp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://harshadss.github.io/tags/lisp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Practical Common Lisp / Clojure: 5</title>
-      <link>http://harshadss.github.io/post/practical_common_lisp_5/</link>
+      <link>https://harshadss.github.io/post/practical_common_lisp_5/</link>
       <pubDate>Tue, 13 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://harshadss.github.io/post/practical_common_lisp_5/</guid>
+      <guid>https://harshadss.github.io/post/practical_common_lisp_5/</guid>
       <description>In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
 In part 4 of this post, we saw the code from chapter 9 of the book about creating a test framework.
 In this post, we continue the code of chapter 9 and iron out few kinks in our unit test framework.</description>
@@ -24,10 +24,10 @@ In this post, we continue the code of chapter 9 and iron out few kinks in our un
     
     <item>
       <title>Practical Common Lisp / Clojure: 4</title>
-      <link>http://harshadss.github.io/post/practical_common_lisp_4/</link>
+      <link>https://harshadss.github.io/post/practical_common_lisp_4/</link>
       <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://harshadss.github.io/post/practical_common_lisp_4/</guid>
+      <guid>https://harshadss.github.io/post/practical_common_lisp_4/</guid>
       <description>In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
 In part 3 of this post, we saw the code from chapter 3 of the book in which we implemented an in-memory documentish database with select, where and update.
 Now I am tackling the code from chapter 9, building a test framework.</description>
@@ -35,20 +35,20 @@ Now I am tackling the code from chapter 9, building a test framework.</descripti
     
     <item>
       <title>Practical Common Lisp / Clojure: 3</title>
-      <link>http://harshadss.github.io/post/practical_common_lisp_3/</link>
+      <link>https://harshadss.github.io/post/practical_common_lisp_3/</link>
       <pubDate>Thu, 08 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://harshadss.github.io/post/practical_common_lisp_3/</guid>
+      <guid>https://harshadss.github.io/post/practical_common_lisp_3/</guid>
       <description>In these posts I&amp;rsquo;m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
 In part 2 of this post, we implemented select, where and update function for our documentish db. But the implementation had fair bit of code duplication. We remove code duplication and make the code more generic in this section.</description>
     </item>
     
     <item>
       <title>Practical Common Lisp / Clojure: 2</title>
-      <link>http://harshadss.github.io/post/practical_common_lisp_2/</link>
+      <link>https://harshadss.github.io/post/practical_common_lisp_2/</link>
       <pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://harshadss.github.io/post/practical_common_lisp_2/</guid>
+      <guid>https://harshadss.github.io/post/practical_common_lisp_2/</guid>
       <description>In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
 In part 1 of this post, we went through creating a single database using list and maps.
 Chapter 3 continued Looking at database contents In this section, Peter teaches string formatting for CL. Using string formatting, a nicer way to look at db contents is tried.</description>
@@ -56,10 +56,10 @@ Chapter 3 continued Looking at database contents In this section, Peter teaches 
     
     <item>
       <title>Practical Common Lisp / Clojure: 1</title>
-      <link>http://harshadss.github.io/post/practical_common_lisp_1/</link>
+      <link>https://harshadss.github.io/post/practical_common_lisp_1/</link>
       <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://harshadss.github.io/post/practical_common_lisp_1/</guid>
+      <guid>https://harshadss.github.io/post/practical_common_lisp_1/</guid>
       <description>In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
 Chapter 3 of the book We try to implement a simple database for storing information about CDs that we own.
 CD &amp;amp; Records First decision is how do you store the details for a single CD. Peter says that we (for now) want to store 4 properties about a CD.</description>

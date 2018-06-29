@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Science on Harshad Saykhedkar</title>
-    <link>http://harshadss.github.io/tags/data-science/</link>
+    <link>https://harshadss.github.io/tags/data-science/</link>
     <description>Recent content in Data Science on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Dec 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://harshadss.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://harshadss.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Learnings from Teaching Machine Learning</title>
-      <link>http://harshadss.github.io/post/learnings_from_teching_ml/</link>
+      <link>https://harshadss.github.io/post/learnings_from_teching_ml/</link>
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://harshadss.github.io/post/learnings_from_teching_ml/</guid>
+      <guid>https://harshadss.github.io/post/learnings_from_teching_ml/</guid>
       <description>I have been teaching machine learning to programmers since some time. I started this activity in 2013 and till date I have conducted 10+ hands on workshops.
 All these workshops were typically 3-3.5 hours long and covered some theory, coding examples through Python (ocassionally R) and interactive discussions. They were attended by 10-50 programmers.
 Here are some learnings from this teaching activity, in no particular order. Many of them were in fact goof-ups that I did at one point of time, so these are indeed lessons from trenches.</description>
@@ -24,20 +24,20 @@ Here are some learnings from this teaching activity, in no particular order. Man
     
     <item>
       <title>Obstacles in Taking Machine Learning to Production</title>
-      <link>http://harshadss.github.io/post/problems_in_deploying_ml/</link>
+      <link>https://harshadss.github.io/post/problems_in_deploying_ml/</link>
       <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://harshadss.github.io/post/problems_in_deploying_ml/</guid>
+      <guid>https://harshadss.github.io/post/problems_in_deploying_ml/</guid>
       <description>Well the title is intentionally exaggerating. May not the biggest but certainly one of the most important area of friction in taking machine learning to production.
 Scenario Imagine that you/your data scientist has written a functional machine learning pipeline in Python today. And by pipeline I mean data transformation as well as prediction code. For example, you could have a data which is mix of text and numeric features. You might do some text processing to generate n-gram features with some custom filters on the text.</description>
     </item>
     
     <item>
       <title>IPython is powerful!</title>
-      <link>http://harshadss.github.io/post/ipython_is_powerful/</link>
+      <link>https://harshadss.github.io/post/ipython_is_powerful/</link>
       <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://harshadss.github.io/post/ipython_is_powerful/</guid>
+      <guid>https://harshadss.github.io/post/ipython_is_powerful/</guid>
       <description>When you are working with a task where you are interactively building a solution, you need a lot of focus. Most of the work that I do fits into this category. Interactively building solutions to larger problems by solving smaller problems is pioneered by data first tools like Clojure and R.
 The first step to achieving the focus required in such interactive work is to remove distractions and complexities from your environments as much as possible.</description>
     </item>
