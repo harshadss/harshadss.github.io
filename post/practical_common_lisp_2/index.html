@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Practical Common Lisp / Clojure: 2</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: black;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="http://harshadss.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.1" />
+        
+
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Practical Common Lisp / Clojure: 2</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Harshad Saykhedkar</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/talks/">Talks</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/harshadss/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/harshad_geek/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/harshadss/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/users/2372308/hssay"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/practical_common_lisp_2/">Practical Common Lisp / Clojure: 2</a></h4>
+    <h5>June 5, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/clojure"><kbd class="item-tag">clojure</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/lisp"><kbd class="item-tag">lisp</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/pcl"><kbd class="item-tag">pcl</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<p>In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book <a href="http://www.gigamonkeys.com/book/">can be accessed online here</a>.</p>
+
+<p>In <a href="/post/practical_common_lisp_1/">part 1</a> of this post, we went through creating a single database using list and maps.</p>
+
+<h2 id="chapter-3-continued">Chapter 3 continued</h2>
+
+<h3 id="looking-at-database-contents">Looking at database contents</h3>
+
+<p>In this section, Peter teaches string formatting for CL. Using string formatting, a nicer way to look at db contents is tried. Not very interesting to me for now. So we simply cheat as follows using clojure’s pprint. Remember that our db is modelled using clojure’s atom holding a list.</p>
+
+<pre><code>(defn dump-db
+  []
+  (pprint (deref db)))
+</code></pre>
+
+<h3 id="improving-user-interaction">Improving user interaction</h3>
+
+<p>Giving this section a pass too since I want to move to the juicer part faster.</p>
+
+<h3 id="saving-and-loading">Saving and loading</h3>
+
+<p>Clojure’s pr function helps us here. It writes the objects in such a way that they can be read back later.</p>
+
+<pre><code>(doc pr)
+
+(defn save-db [filename]
+  (let [current-db (deref db)]
+    (with-open [w (clojure.java.io/writer filename)]
+      (binding [*out* w]
+        (pr current-db)))))
+</code></pre>
+
+<h3 id="querying-the-database">Querying the database</h3>
+
+<p>Now we come to the juicy part :-). Peter introduces multiple concepts here. One by one we learn,</p>
+
+<ol>
+<li>introduction to higher order functions through remove-if-not</li>
+<li>annonymous function through lambda</li>
+<li>keyword parameters to functions and optional arguments<br /></li>
+</ol>
+
+<p>The result of using all the above concepts is where higher order function which can be used in combination with select to show matching records from the db. I’m implementing them in clojure as follows (there could be better ways). We use filter in clj instead of remove-if-not.</p>
+
+<pre><code>;; generate the right filter condition
+;; note that for parameter not passed, we always return true so if works out.
+;; where function returns a predicate, where is used with select
+
+(defn where
+  [&amp; {:keys [artist rating title] 
+      :or [artist false rating false title false]}]
+  (fn [cd]
+    (and
+     (if artist (= artist (get cd :artist)) true)
+     (if rating (= rating (get cd :rating)) true)
+     (if title (= title (get cd :title)) true))))
+
+;; magic being in where, select function is straightforward
+
+(defn select [wherefunc]
+  (filter wherefunc (deref db)))
+
+;; test working on couple of examples
+(select (where :rating 8))
+(select (where :title &quot;Fly&quot;))
+</code></pre>
+
+<p>QED.</p>
+
+<h3 id="updating-the-database">Updating the database</h3>
+
+<p>In this section, update is implemented as</p>
+
+<ol>
+<li>map over the current value of db, updating each record if the predicate where clause matches</li>
+<li>reset the value of db by the list returned by 1.</li>
+</ol>
+
+<p>For clojure implementation, we do some simplifications. The keys to be updated are taken in as a map (update-map in the code below) rather than keyword arguments. This allows a one-step update of the document. Contrast this where pcl books implementation writes one clause each for each key. The code with apply - assoc - update-seq looks little mysterious and deserves explanation.</p>
+
+<p>I wanted to avoid writing one clause for each key to be updated passed in. One, concise is better. Two, clojure’s maps are immutable :-P, each update of the map would return another updated map. So although the setf on the row works out in the book, clojure code would have needed something ugly. On the other hand, clojure’s assoc function (used for updating maps) can accept multiple keys and values. There’s our clue to simpler implementation. In let binding of update-seq, we convert the map into a list of key-value pairs. In the apply assoc part, we update all the passed in keys at once. Bonus, we don’t have to check for which keys are passed in. Neat!</p>
+
+<pre><code>(def tmp (flatten (seq {:rating 11 :artist &quot;Guns N Roses&quot;})))
+(apply assoc {:rating 10 :artist &quot;Guns N Poses&quot;} tmp)
+
+;; for updating, you move over the list, update it and then reset the value of db
+
+(defn updatedb
+  [select-fn update-map]
+  (let [update-seq (flatten (seq update-map))]
+    (reset! db
+      (map
+       #(if (select-fn %)
+          (apply assoc % update-seq)
+          %) (deref db)))))
+
+;; update ratings for the artist we love in one go
+(updatedb (where :artist &quot;Dixie Chicks&quot;) {:rating 12})
+</code></pre>
+
+<h3 id="learnings-so-far">Learnings so far</h3>
+
+<ol>
+<li>We have a rudimentary document database with select where and update where running in about 38 lines of code.</li>
+<li>Common lisp and Clojure are fundamentally different languages. I’ll have to work around Clojure’s immutable by default symantics while studying rest of the book.</li>
+<li>I prefer clojures map and filter, functions over sequence abstraction. CL documentation has tons of things like mapc, mapcar, maplist and I’ll need some time to figure out which is which.</li>
+<li>Immutability is a strength of clojure. For example, in the CL code given in the book, the plist is mutable (setf/getf possible) whereas mapcar rightly returns another list. It is better to get rid of the mental overhead of bookeeping what is mutable and what is not.</li>
+<li>Lisps get things like keyword arguments right, probably since ancient times. I can’t imagine working without them.</li>
+</ol>
+
+<p>In next part, Peter moves on to getting rid of code duplication and making the code more generic (get rid of the use case specific code like assuming artist, rating are the only keys in our document). This part will involve macros and promises to be exciting ride.</p>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/practical_common_lisp_5/">Practical Common Lisp / Clojure: 5</a></h4>
+    <h5>June 13, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/clojure"><kbd class="item-tag">clojure</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/lisp"><kbd class="item-tag">lisp</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/pcl"><kbd class="item-tag">pcl</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/practical_common_lisp_4/">Practical Common Lisp / Clojure: 4</a></h4>
+    <h5>June 9, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/clojure"><kbd class="item-tag">clojure</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/lisp"><kbd class="item-tag">lisp</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/pcl"><kbd class="item-tag">pcl</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/practical_common_lisp_3/">Practical Common Lisp / Clojure: 3</a></h4>
+    <h5>June 8, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/clojure"><kbd class="item-tag">clojure</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/lisp"><kbd class="item-tag">lisp</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/pcl"><kbd class="item-tag">pcl</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Learnings from Teaching Machine Learning</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: black;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="http://harshadss.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.1" />
+        
+
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Learnings from Teaching Machine Learning</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Harshad Saykhedkar</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/talks/">Talks</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/harshadss/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/harshad_geek/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/harshadss/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/users/2372308/hssay"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/learnings_from_teching_ml/">Learnings from Teaching Machine Learning</a></h4>
+    <h5>December 19, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/machine-learning"><kbd class="item-tag">machine-learning</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/data-science"><kbd class="item-tag">data-science</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/python"><kbd class="item-tag">python</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<p>I have been teaching machine learning to programmers since some time. I started this activity in 2013 and till date I have conducted 10+ hands on workshops.</p>
+
+<p>All these workshops were typically 3-3.5 hours long and covered some theory, coding examples through Python (ocassionally R) and interactive discussions. They were attended by 10-50 programmers.</p>
+
+<p>Here are some learnings from this teaching activity, in no particular order. Many of them were in fact goof-ups that I did at one point of time, so these are indeed lessons from trenches.</p>
+
+<h3 id="on-preparation">On Preparation</h3>
+
+<ol>
+<li>Never underestimate value of solid preparation. Doing machine learning (or any other domain really) for a long time is no excuse for not preparing. My thumb-rule is typically 5x-8x preparation i.e. for a 3 hours workshop, you need 20 hours of explicit preparation.</li>
+<li>Before you begin preparation, write down profile of your likely audience. For example, ask yourself how much your audience would know about a particular concept (say linear regression).</li>
+<li>Always plan for 2-3 different levels (or categories) of audience on the basis of familiarity with the topic and motivation.</li>
+</ol>
+
+<h3 id="on-presentation">On Presentation</h3>
+
+<ol>
+<li>Work out all your content on pen and paper first. Visualize the flow of your presentation. Start putting together slides at very end.</li>
+<li>If your presentation uses code, prefer creating slides in a tool which can let you integrate between content and code easily (example: ipython notebook in presentation mode). Context switch between code and content is not required.</li>
+<li>Pay attention to minor details like font size, line width. Try out how the presentation looks on projected screens, especially for slides with code.</li>
+<li>People have different preferred ways of learning: listening, discussing, coding it up, seeing in pictures and so on. Have a balanced mix of these teaching aids in your presentation.</li>
+</ol>
+
+<h3 id="content">Content</h3>
+
+<ol>
+<li>Write down all the content that you want to cover. Take a deep breath in. Delete half of the planned content. Seriously. Due to familarity with the content, you would always underestimate the time required to cover it by a large margin. Err on the side of covering fewer concepts. In the worst case you will have more time for question-answers, rather than running through slides and apologizing profusely.</li>
+<li>Assume that your audience is allergic to jargon. So number of new words, concepts that you throw at them should be minimized.</li>
+<li>Create enough time checks around big concepts/themes of your workshop. For example, for a 3 hour workshop I have time checks in mind for every hour about which concepts I should have covered by that time.</li>
+<li>If you are going to give analogies from other domains, review your analogies from perspective of audience. If most of your audience is engineers from computer science, analogies from communications engineering will not help. Same is the case with analogies involving places, people, currencies and festivals. Localization of your analogies and examples is important in order to avoid distractions.</li>
+</ol>
+
+<h3 id="tools-and-environment-and-testing">Tools and Environment and Testing</h3>
+
+<ol>
+<li>Do not assume that your favourite editor, operating systems, programming language, notebook and any other tool is an industry standard.</li>
+<li>Focus on generic tools as much as possible to handle diversity of tools and OSses. (pip instead of apt-get, simple text editors, no IDE support). If you want to make assumptions, make lowest possible assumptions. For example, never assume that everyone in the audience knows about Docker or Conda.</li>
+<li>Create a well defined document on requirements and installation. Make sure that your audience has access to this document well in advance.</li>
+<li>A sizeable number of people might be using a non-unix operating system, plan for that.</li>
+<li>If you have code to be covered as a part of workshop, ensure that it is well tested. In fact having your audience run tests with you is also a good idea.</li>
+<li>Test your code examples from typical goof-ups (someone in the audience running a different version of a library, Python 2 Vs 3).</li>
+<li>Your presentation or workshop is not the right place to pitch your favourite programming language, editor, operating system (or <em>anything</em> really) to the audience.</li>
+<li>It is good idea to put your code on github (or similar) in advance and share a link.</li>
+<li>Never assume that Wi-Fi at the workshop or conference venue will work flawlessly :-)<br /></li>
+</ol>
+
+<p>Bottomline is that your audience invest significant time in coming for your workshop/presentations. It is your responsibility to ensure that they get maximum return on their time and money investments, without too many distractions.</p>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/problems_in_deploying_ml/">Obstacles in Taking Machine Learning to Production</a></h4>
+    <h5>July 25, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/machine-learning"><kbd class="item-tag">machine-learning</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/data-science"><kbd class="item-tag">data-science</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/python"><kbd class="item-tag">python</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/ipython_is_powerful/">IPython is powerful!</a></h4>
+    <h5>May 11, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/python"><kbd class="item-tag">python</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/ipython"><kbd class="item-tag">ipython</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/shell"><kbd class="item-tag">shell</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/data-science"><kbd class="item-tag">data-science</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

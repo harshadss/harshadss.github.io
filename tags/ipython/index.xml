@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ipython on Harshad Saykhedkar</title>
+    <link>http://harshadss.github.io/tags/ipython/</link>
+    <description>Recent content in Ipython on Harshad Saykhedkar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 11 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://harshadss.github.io/tags/ipython/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IPython is powerful!</title>
+      <link>http://harshadss.github.io/post/ipython_is_powerful/</link>
+      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://harshadss.github.io/post/ipython_is_powerful/</guid>
+      <description>When you are working with a task where you are interactively building a solution, you need a lot of focus. Most of the work that I do fits into this category. Interactively building solutions to larger problems by solving smaller problems is pioneered by data first tools like Clojure and R.
+The first step to achieving the focus required in such interactive work is to remove distractions and complexities from your environments as much as possible.</description>
+    </item>
+    
+  </channel>
+</rss>

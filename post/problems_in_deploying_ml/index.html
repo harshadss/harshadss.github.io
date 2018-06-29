@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Obstacles in Taking Machine Learning to Production</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: black;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="http://harshadss.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.1" />
+        
+
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Obstacles in Taking Machine Learning to Production</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Harshad Saykhedkar</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/talks/">Talks</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/harshadss/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/harshad_geek/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/harshadss/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/users/2372308/hssay"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/problems_in_deploying_ml/">Obstacles in Taking Machine Learning to Production</a></h4>
+    <h5>July 25, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/machine-learning"><kbd class="item-tag">machine-learning</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/data-science"><kbd class="item-tag">data-science</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/python"><kbd class="item-tag">python</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<p>Well the title is intentionally exaggerating. May not the biggest but certainly one of the most important area of friction in taking machine learning to production.</p>
+
+<h2 id="scenario">Scenario</h2>
+
+<p>Imagine that you/your data scientist has written a functional machine learning pipeline in Python today. And by pipeline I mean data transformation as well as prediction code. For example, you could have a data which is mix of text and numeric features. You might do some text processing to generate n-gram features with some custom filters on the text. The text features are let us say concatenated with numeric features to form your independent variables/X matrix. Then let us say you are applying a non GLM machine learning model like trees or random forest. The story is good so far.</p>
+
+<h2 id="problem-statement">Problem Statement</h2>
+
+<ul>
+<li>Problem 1: How do you use this pipeline for making a predictions later?</li>
+<li>Problem 2: 1 + production forces you to use non-Python stack on application/server side.</li>
+<li>Problem 3: 1, 2 combined alongwith the fact that production (software) engineer has never heard about feature engineering, random forest evaluation, training vs. prediction and so on.</li>
+<li>Problem 4: how do you solve 1, 2, 3 and plus handle things like unit tests, regression testing, builds, logging, authentication seamlessly?</li>
+<li>Probelm 5: data and business changes. How do you continuously train your models, version control them and still solve 1-4?</li>
+</ul>
+
+<p>If you ask me, this scenario is certainly the biggest pain-point which prevents machine learning from actually delivering value to business. My experience of (trying to) solve this for over five years has taught some invaluable lessons.</p>
+
+<h2 id="solutions">Solutions</h2>
+
+<p>Before dissecting the problem further, let us look at some naive solutions that one might look at (in increasing order of horror/tech investment).</p>
+
+<ol>
+<li>Use python mostly everywhere. Save pickled files to version controlled network file system and load on server side.</li>
+<li>Use an API/microservice/RPC layer to abstract Python implementation details (catch: writing that svc layer is only a first step, maintaining?).</li>
+<li>Use apache spark, engineers might feel more at home with JVM. (catch: too many to list down!)</li>
+<li>Use platform agnostic serialization like PMML (catch: coverage, library support, PMML didn’t really catch on?)</li>
+<li>Let engineers develop home grown solution to bridge the gap (catch: engineers need to learn lot of core ML).</li>
+</ol>
+
+<h2 id="dissecting-the-problem-further">Dissecting the problem further</h2>
+
+<p>The problem looks simple to solve. But there are tons of problems that lurking beneath a naive solution here.</p>
+
+<h3 id="problem-of-terminology-common-language">Problem of Terminology / Common Language</h3>
+
+<p>In beautifully designed world of scikit-learn/Python certain basic operations are part of lingua franca. Vectorized text feature generation from a list of text or vectorized random forest prediction/evaluation is a basic operation. Having worked with Python for so long, data/ML oriented programming is ingrained in my brain so much. But other ecosystems that you use in production may not be mature on data/ML side to have these basic operations available as routine features. The result is that ‘vectorized text to n-gram features’ or ‘one-hot encoding’ is a greek for SDE building the production code.</p>
+
+<p>For anything beyond a linear model, re-creating the prediction code in other language/eco-system is also tough.</p>
+
+<h3 id="problem-of-re-inventing-the-wheel">Problem of Re-inventing the wheel</h3>
+
+<p>You might try to isolate machine learning model prediction and feature generation in Python behind a service (or RPC). But then what about tons of other stuff like auth-handling, database communication, logging infrastructure, build pipelines which may or may not have been built in keeping multiple language support in mind? I’ve faced this problem where we loose productive time in re-inventing ‘XforPy’ before taking a model to production.</p>
+
+<h3 id="problem-of-premature-big-data-stack">Problem of (premature) Big Data Stack</h3>
+
+<p>Apache spark is a seducting alterative. It has Python, Scala, and Java API. So data scientist can train in Python, save the model. API layer can continue to use Scala or Java. Problem solved!</p>
+
+<p>Not so fast. Though Apache Spark has its merits, we must understand that it was built with big data in mind. Hot data of a mid scale enterprise may still be too small for Spark/Hadoop. Secondly, Apache Spark is not a magick wand. You have to write the code to carefully exploit the parallelization primitives. Third, MLlib, although a great library, is still not as rich as Pydata/ML ecosystem.</p>
+
+<h2 id="solutions-and-bottom-line">Solutions and Bottom Line</h2>
+
+<p>In my opinion, this is not a tool problem but a culture/education problem. (Data) engineers and data scientists have to understand each others trade to a good amount of depth and then choose their poison together (python everywhere or spark or something else). Companies like Google solve this problem since their cream engineers and cream machine learning researchers are the same (check Jeff Dean leading Google Brain, for example).</p>
+
+<p>In my org, I designed a careful bootcamp for every new data science joinee where they learn about atleast basic software engineering practice like unit testing, build automation, version control and even good amount of practice on how Linux works. Sadly, teaching SDEs about ML basics has not happened.</p>
+
+<p>Alternatively, libraries like dask offer a good trade-off where you can still stay in the Python eco-system and handle awkwardly sized non-big data well.</p>
+
+<p>But as an industry, we are way off from ‘one way of doing things’ when it comes to actually deploying the prediction side of machine learning to production.</p>
+
+<p>Though I hate to say it, the solution is ‘it depends’!</p>
+
+<h2 id="related-links">Related Links</h2>
+
+<p><a href="http://tinyclouds.org/residency/">In this article</a> creator of node.js Rian Dahl puts it beautifully: “From a software maintenance perspective there is little consensus on how to organize ML projects. It feels like websites before Rails came out: a bunch of random PHP scripts with an unholy mixture of business logic and markup sprinkled throughout”, although in the context of training models and not scoring.</p>
+
+<p><a href="https://www.youtube.com/watch?v=vKU8MWORHP8">Machine learning infrastructure at Stripe</a> Stripe built lot of prediction infrastructure with ‘train in Py use in Scala’ way. It is a good talk.</p>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/learnings_from_teching_ml/">Learnings from Teaching Machine Learning</a></h4>
+    <h5>December 19, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/machine-learning"><kbd class="item-tag">machine-learning</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/data-science"><kbd class="item-tag">data-science</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/python"><kbd class="item-tag">python</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/ipython_is_powerful/">IPython is powerful!</a></h4>
+    <h5>May 11, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/python"><kbd class="item-tag">python</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/ipython"><kbd class="item-tag">ipython</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/shell"><kbd class="item-tag">shell</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/data-science"><kbd class="item-tag">data-science</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

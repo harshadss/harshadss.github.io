@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Harshad Saykhedkar</title>
+    <link>http://harshadss.github.io/</link>
+    <description>Recent content on Harshad Saykhedkar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://harshadss.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Learnings from Teaching Machine Learning</title>
+      <link>http://harshadss.github.io/post/learnings_from_teching_ml/</link>
+      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://harshadss.github.io/post/learnings_from_teching_ml/</guid>
+      <description>I have been teaching machine learning to programmers since some time. I started this activity in 2013 and till date I have conducted 10+ hands on workshops.
+All these workshops were typically 3-3.5 hours long and covered some theory, coding examples through Python (ocassionally R) and interactive discussions. They were attended by 10-50 programmers.
+Here are some learnings from this teaching activity, in no particular order. Many of them were in fact goof-ups that I did at one point of time, so these are indeed lessons from trenches.</description>
+    </item>
+    
+    <item>
+      <title>Obstacles in Taking Machine Learning to Production</title>
+      <link>http://harshadss.github.io/post/problems_in_deploying_ml/</link>
+      <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://harshadss.github.io/post/problems_in_deploying_ml/</guid>
+      <description>Well the title is intentionally exaggerating. May not the biggest but certainly one of the most important area of friction in taking machine learning to production.
+Scenario Imagine that you/your data scientist has written a functional machine learning pipeline in Python today. And by pipeline I mean data transformation as well as prediction code. For example, you could have a data which is mix of text and numeric features. You might do some text processing to generate n-gram features with some custom filters on the text.</description>
+    </item>
+    
+    <item>
+      <title>Practical Common Lisp / Clojure: 5</title>
+      <link>http://harshadss.github.io/post/practical_common_lisp_5/</link>
+      <pubDate>Tue, 13 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://harshadss.github.io/post/practical_common_lisp_5/</guid>
+      <description>In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+In part 4 of this post, we saw the code from chapter 9 of the book about creating a test framework.
+In this post, we continue the code of chapter 9 and iron out few kinks in our unit test framework.</description>
+    </item>
+    
+    <item>
+      <title>Practical Common Lisp / Clojure: 4</title>
+      <link>http://harshadss.github.io/post/practical_common_lisp_4/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://harshadss.github.io/post/practical_common_lisp_4/</guid>
+      <description>In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+In part 3 of this post, we saw the code from chapter 3 of the book in which we implemented an in-memory documentish database with select, where and update.
+Now I am tackling the code from chapter 9, building a test framework.</description>
+    </item>
+    
+    <item>
+      <title>Practical Common Lisp / Clojure: 3</title>
+      <link>http://harshadss.github.io/post/practical_common_lisp_3/</link>
+      <pubDate>Thu, 08 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://harshadss.github.io/post/practical_common_lisp_3/</guid>
+      <description>In these posts I&amp;rsquo;m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+In part 2 of this post, we implemented select, where and update function for our documentish db. But the implementation had fair bit of code duplication. We remove code duplication and make the code more generic in this section.</description>
+    </item>
+    
+    <item>
+      <title>Practical Common Lisp / Clojure: 2</title>
+      <link>http://harshadss.github.io/post/practical_common_lisp_2/</link>
+      <pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://harshadss.github.io/post/practical_common_lisp_2/</guid>
+      <description>In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+In part 1 of this post, we went through creating a single database using list and maps.
+Chapter 3 continued Looking at database contents In this section, Peter teaches string formatting for CL. Using string formatting, a nicer way to look at db contents is tried.</description>
+    </item>
+    
+    <item>
+      <title>Practical Common Lisp / Clojure: 1</title>
+      <link>http://harshadss.github.io/post/practical_common_lisp_1/</link>
+      <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://harshadss.github.io/post/practical_common_lisp_1/</guid>
+      <description>In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+Chapter 3 of the book We try to implement a simple database for storing information about CDs that we own.
+CD &amp;amp; Records First decision is how do you store the details for a single CD. Peter says that we (for now) want to store 4 properties about a CD.</description>
+    </item>
+    
+    <item>
+      <title>IPython is powerful!</title>
+      <link>http://harshadss.github.io/post/ipython_is_powerful/</link>
+      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://harshadss.github.io/post/ipython_is_powerful/</guid>
+      <description>When you are working with a task where you are interactively building a solution, you need a lot of focus. Most of the work that I do fits into this category. Interactively building solutions to larger problems by solving smaller problems is pioneered by data first tools like Clojure and R.
+The first step to achieving the focus required in such interactive work is to remove distractions and complexities from your environments as much as possible.</description>
+    </item>
+    
+    <item>
+      <title>Cheklist Manifesto &amp; Thinking Fast and Slow</title>
+      <link>http://harshadss.github.io/post/cheklist_manifesto_ruminations/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://harshadss.github.io/post/cheklist_manifesto_ruminations/</guid>
+      <description>I read ‘the checklist manifesto’ by Atul Gawande. I am a firm believer in books and advice in general from anyone in practice oriented profession: doctors, investors (not speculators), pilots and so on. The professinals in these fields have generally a large skin in the game (money, reputation, their own life), making their advice worthy as compared to academic advise. The checklist book was then just the right fit for a lazy afternoon reading at once.</description>
+    </item>
+    
+    <item>
+      <title>Testing Literate Emacs Config</title>
+      <link>http://harshadss.github.io/post/testing_literate_emacs_config/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://harshadss.github.io/post/testing_literate_emacs_config/</guid>
+      <description>Some time back, I wrote my Emacs configuration in an org mode file. The whole setup is documented here. The objective was twofold: one to make it readable to my dumb brain when I open it six months later, second was to make it reproducible on another machine quickly. Say, if something unforseen was to happen to my good ol Dell Vostro machine, what with the configuration safe on Github and all that, I can have my new machine with the Emacs setup very fast and without splitting hair.</description>
+    </item>
+    
+    <item>
+      <title>Hello, world!</title>
+      <link>http://harshadss.github.io/post/hello_world/</link>
+      <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://harshadss.github.io/post/hello_world/</guid>
+      <description>This is just a first post on this blog. Hello, world!</description>
+    </item>
+    
+    <item>
+      <title>Learning awk is useful!</title>
+      <link>http://harshadss.github.io/post/learning_awk/</link>
+      <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://harshadss.github.io/post/learning_awk/</guid>
+      <description>I have been working with Unix (Linux to be precise) command line since a long time. But I had always avoided learning about Unix power tools like awk, sed. Quick exploratory analysis of data in a tabular/csv form is daily routine for me. My tool of choice for this work is either R or Python. I used to wonder about the utility of tool like awk. But recently I found myself using awk for some specific use cases.</description>
+    </item>
+    
+  </channel>
+</rss>

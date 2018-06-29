@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Learning awk is useful!</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: black;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="http://harshadss.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.1" />
+        
+
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Learning awk is useful!</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Harshad Saykhedkar</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/talks/">Talks</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/harshadss/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/harshad_geek/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/harshadss/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/users/2372308/hssay"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/learning_awk/">Learning awk is useful!</a></h4>
+    <h5>November 30, 2016</h5>
+    
+    <a href="http://harshadss.github.io/tags/awk"><kbd class="item-tag">awk</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/unix"><kbd class="item-tag">unix</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<p>I have been working with Unix (Linux to be precise) command line since a long time. But I had always avoided learning about Unix power tools like awk, sed. Quick exploratory analysis of data in a tabular/csv form is daily routine for me. My tool of choice for this work is either R or Python. I used to wonder about the utility of tool like awk. But recently I found myself using awk for some specific use cases. I was pleasantly surprised by productivity boost it can offer and its not so steep learning curve.</p>
+
+<h2 id="where-is-it-useful">Where is it useful?</h2>
+
+<p>My exploratory data analysis work has some common steps:</p>
+
+<ol>
+<li>Fetch data from the source (database, URLs)</li>
+<li>Do some quick analysis to make sure you have usable data.</li>
+<li>Iterate/change your data fetch queries based on inference from step 2.</li>
+<li>Optional step of download/scp the data to right server/local machine.</li>
+<li>Proceed with the real data analysis using R or Python.</li>
+</ol>
+
+<p>I found awk to be a very useful tool for step 2 above. Many at times my source data is on a server in my organization which doesn’t have R installed. Let us say I have a huge file on the server which I plan to analyze and build a few models on. Before downloading the file locally, I need to check few things (example: if I am analyzing marketing funnel data, do I have particular funnel step present in the data?). In such use case awk is a handy tool to use.</p>
+
+<h2 id="how-to-learn">How to learn?</h2>
+
+<p>Learning awk through man pages or by looking at examples online is not useful. The best source is ‘The AWK programming language’ book by Kernighan et. al. Though the book 220 pages long, going through first 19 pages of tutorial is enough to make you productive in awk.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>For real, interactive exploratory data analysis work R and Python Scipy stack are far more powerful. But for specific use cases/jobs awk is useful. In true unix tradition, it is a tool that does these jobs well!</p>
+
+<h2 id="happy-learning">Happy learning!</h2>
+</div>
+
+    
+    
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

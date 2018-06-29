@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Practical Common Lisp / Clojure: 1</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: black;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="http://harshadss.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.1" />
+        
+
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Practical Common Lisp / Clojure: 1</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Harshad Saykhedkar</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/talks/">Talks</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/harshadss/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/harshad_geek/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/harshadss/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/users/2372308/hssay"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/practical_common_lisp_1/">Practical Common Lisp / Clojure: 1</a></h4>
+    <h5>May 31, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/clojure"><kbd class="item-tag">clojure</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/lisp"><kbd class="item-tag">lisp</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/pcl"><kbd class="item-tag">pcl</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<p>In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book <a href="http://www.gigamonkeys.com/book/">can be accessed online here</a>.</p>
+
+<h2 id="chapter-3-of-the-book">Chapter 3 of the book</h2>
+
+<p>We try to implement a simple database for storing information about CDs that we own.</p>
+
+<h3 id="cd-records">CD &amp; Records</h3>
+
+<p>First decision is how do you store the details for a single CD. Peter says that we (for now) want to store 4 properties about a CD. He introduces a simple list, but highlights that a property to value mapping will be more convinient than positional. Looks like common lisp has something called a plist for storing a symbol with a mapping to another value. plist also has getf function to fetch value given a symbol. Finally, he shows a constructor function for building data about a single cd by populating a plist.</p>
+
+<p>In Clojure, there’s no plist to the best of my knowledge. But we have real hash table and I see no need for a poor man’s hash table as Peter calls it. Also, we use keywords for what’s called symbols in that section. Finally, in cl implementation using plist, probably the ordering of keys/properties is probably preserved. We use hash-map in clojure which won’t preseve key insertion ordering. We can probably use sorted-map in clojure, but I don’t think it makes any difference. So, the clojure implmentation of the examples is as follows,</p>
+
+<pre><code>(hash-map :a 1 :b 2 :c 3)
+
+;; getf in cl example is same as get in clojure
+
+(get (hash-map :a 1 :b 2 :c 3) :a)
+
+;; so make-cd constructor can just return a map
+(defn make-cd
+  [title artist rating ripped]
+  (hash-map :title title :artist artist :rating rating :ripped ripped))
+
+;; check on a single example
+(make-cd &quot;Roses&quot; &quot;Kathy Mattea&quot; 7 true)
+</code></pre>
+
+<h3 id="filling-cds">Filling CDs</h3>
+
+<p>The above section highlighted data rep for a single CD record. For storing data for multiple CDs, Peter advises using a simple list for now. The current value of the list is bound to a var and in each time we want to add a new cd, we push the new record into the list. In the book, Peter uses defvar macro to define <em>db</em> as nil and then uses push macro to push new values. I don’t have enough knowledge of common lisp to know if this is same as declaring an empty list and then doing maybe a cons on it.</p>
+
+<p>In the following code, I make two changes. Since we have a state (current state of database) which we want to repeatedly update, I am storing it in a Clojure atom. If I’m not wrong this is the usecase for which atoms are built. We don’t yet bother about transactions for our db where we may add multiple CDs at once. Secondly, in the absence of equivalent push macro, I am simply using a conj on the current value of the database/list. So the code looks like,</p>
+
+<pre><code>;; database current value is a list, state is an atom
+
+(def db (atom '()))
+
+;; adding a new record -&gt; add to the current state (list)
+(defn add-record
+  [cd]
+  (swap! db conj cd))
+
+;; test on few examples
+(add-record (make-cd &quot;Roses&quot; &quot;Kathy Mattea&quot; 7 true))
+(add-record (make-cd &quot;Fly&quot; &quot;Dixie Chicks&quot; 8 true))
+(add-record (make-cd &quot;Home&quot; &quot;Dixie Chicks&quot; 9 true))
+</code></pre>
+
+<h3 id="learnings-so-far">Learnings So Far</h3>
+
+<p>Mostly standard clojure stuff. Probably first time I’m using atom even in a toy code. Peter has (between the lines) highlighted couple of good coding principles too which I originally read in the famous SICP book.</p>
+
+<ol>
+<li>Use data constructors and data accessors for data modelling (ch 2 of SICP book). Here we saw that action in make-cd function.</li>
+<li>Hide implementation details of data from user as far as possible. So by using add-record function, we have abstracted out how the database is implemented. If we swap out (pun intented!) the implementation from an atom holding list to something fancier, user wouldn’t have to bother, the add-record function should take care of migration to new implementation.</li>
+</ol>
+
+<p>All in all, good start so far. In next sections, the real meat starts with Peter eventually implementing almost generic query parser on the database using macros. Looking forward to reading!</p>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/practical_common_lisp_5/">Practical Common Lisp / Clojure: 5</a></h4>
+    <h5>June 13, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/clojure"><kbd class="item-tag">clojure</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/lisp"><kbd class="item-tag">lisp</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/pcl"><kbd class="item-tag">pcl</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/practical_common_lisp_4/">Practical Common Lisp / Clojure: 4</a></h4>
+    <h5>June 9, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/clojure"><kbd class="item-tag">clojure</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/lisp"><kbd class="item-tag">lisp</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/pcl"><kbd class="item-tag">pcl</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/practical_common_lisp_3/">Practical Common Lisp / Clojure: 3</a></h4>
+    <h5>June 8, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/clojure"><kbd class="item-tag">clojure</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/lisp"><kbd class="item-tag">lisp</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/pcl"><kbd class="item-tag">pcl</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

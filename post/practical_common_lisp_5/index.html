@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Practical Common Lisp / Clojure: 5</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: black;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="http://harshadss.github.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/clojure.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.42.1" />
+        
+
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Practical Common Lisp / Clojure: 5</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Harshad Saykhedkar</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/talks/">Talks</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="https://github.com/harshadss/"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://twitter.com/harshad_geek/"><i class="fa fa-twitter"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/harshadss/"><i class="fa fa-linkedin"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.stackoverflow.com/users/2372308/hssay"><i class="fa fa-stack-overflow"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/practical_common_lisp_5/">Practical Common Lisp / Clojure: 5</a></h4>
+    <h5>June 13, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/clojure"><kbd class="item-tag">clojure</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/lisp"><kbd class="item-tag">lisp</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/pcl"><kbd class="item-tag">pcl</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify">
+
+<p>In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book <a href="http://www.gigamonkeys.com/book/">can be accessed online here</a>.</p>
+
+<p>In <a href="/post/practical_common_lisp_4/">part 4</a> of this post, we saw the code from chapter 9 of the book about creating a test framework.</p>
+
+<p>In this post, we continue the code of chapter 9 and iron out few kinks in our unit test framework.</p>
+
+<h2 id="chapter-9-continued">Chapter 9 Continued</h2>
+
+<h3 id="note-on-combine-result">Note on combine-result</h3>
+
+<p>The code given in the book which uses combine-result is little different from the code I have written in previous post and this one. I’m skipping replicating the same functionality since my aim is to accelerate learning.</p>
+
+<h3 id="better-result-reporting">Better Result Reporting</h3>
+
+<p>Whenever a test fails, we want to report which test failed with its name. The code is as follows (I’m modiying the report function). Note that I’m simply doing an AND over result of multiple test function rather than writing combine-results.</p>
+
+<p>Note the trick with declaring a (dynamic) var test-name while defining report-result-return and how it is re-bound while defining the test function. I don’t yet understand why this trick is needed completely. My initial guess: probably difference between compile-time and run-time for the macro plays some role here.</p>
+
+<pre><code>(def ^:dynamic *test-name* nil)
+
+(defn report-result-return
+  [result form]
+  (do 
+    (clojure.pprint/cl-format true &quot;~:[FAIL~;pass~] ... ~a: ~a~%&quot; result *test-name* form)
+    result))
+
+(defmacro multicheck-withres
+  [&amp; forms]
+  `(every? identity (list ~@(for [form forms]
+                                        `(report-result-return ~form '~form)))))
+
+(defn test-*
+  []
+  (binding [*test-name* 'test-*]
+  (multicheck-withres
+    (= (* 1 2) 2)
+    (= (* 1 2 3) 6))))
+
+(test-*)
+
+(defn test-+
+  []
+  (binding [*test-name* 'test-+]
+  (multicheck-withres
+    (= (+ 1 2) 3)
+    (= (+ 1 2 3) 6))))
+
+(test-+)
+
+(defn test-arithmatic
+  []
+  (and
+   (test-+)
+   (test-*)))
+
+(test-arithmatic)
+</code></pre>
+
+<h3 id="an-abstraction-emerges">An Abstraction Emerges</h3>
+
+<p>We are still defining the test as a function, a detail leaked to end user. For each test function definition, we have the following fairly duplicated code,</p>
+
+<ol>
+<li>Define a function with the provided name</li>
+<li>rebind the test-name dynamic var to the name of the function</li>
+<li>Make a call to the check macro with the passed in forms.</li>
+</ol>
+
+<p>We can remove all the code duplication and let the user define a test in a very concise way. The code is as follows,</p>
+
+<pre><code>(defmacro defmytest
+  [name &amp; body]
+  `(defn ~name []
+    (binding [*test-name* '~name]
+     (multicheck-withres ~@body))))
+
+(println (macroexpand-1 '(defmytest test-+ (= (+ 1 2) 3) (= (+ 1 2 3) 6))))
+
+(defmytest test-+ (= (+ 1 2) 3) (= (+ 1 2 3) 6))
+
+(test-+)
+</code></pre>
+
+<h3 id="learning-so-far">Learning So Far</h3>
+
+<p>Good going so far. Multiple usage of macro function to simplify the code so much. The overall unit test framework code (with simplified names) is as follows (skipped the combine-result part). Short and sweet! I’d love to now checkout the source code of Clojure’s test frameworks like midje or core.test work.</p>
+
+<pre><code>(def ^:dynamic *test-name* nil)
+
+(defn report-result
+  [result form]
+  (do 
+    (clojure.pprint/cl-format true &quot;~:[FAIL~;pass~] ... ~a: ~a~%&quot; result *test-name* form)
+    result))
+
+(defmacro check
+  [&amp; forms]
+  `(every? identity (list ~@(for [form forms]
+                                        `(report-result ~form '~form)))))
+
+(defmacro deftest
+  [name &amp; body]
+  `(defn ~name []
+    (binding [*test-name* '~name]
+     (check ~@body))))
+
+(deftest test-+ (= (+ 1 2) 3) (= (+ 1 2 3) 6))
+
+(test-+)
+</code></pre>
+
+<p>Onwards!</p>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/practical_common_lisp_4/">Practical Common Lisp / Clojure: 4</a></h4>
+    <h5>June 9, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/clojure"><kbd class="item-tag">clojure</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/lisp"><kbd class="item-tag">lisp</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/pcl"><kbd class="item-tag">pcl</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/practical_common_lisp_3/">Practical Common Lisp / Clojure: 3</a></h4>
+    <h5>June 8, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/clojure"><kbd class="item-tag">clojure</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/lisp"><kbd class="item-tag">lisp</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/pcl"><kbd class="item-tag">pcl</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+    
+
+    <h4><a href="/post/practical_common_lisp_2/">Practical Common Lisp / Clojure: 2</a></h4>
+    <h5>June 5, 2017</h5>
+    
+    <a href="http://harshadss.github.io/tags/clojure"><kbd class="item-tag">clojure</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/lisp"><kbd class="item-tag">lisp</kbd></a>
+    
+    <a href="http://harshadss.github.io/tags/pcl"><kbd class="item-tag">pcl</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+
