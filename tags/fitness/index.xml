@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Reading on Harshad Saykhedkar</title>
-    <link>https://harshadss.github.io/tags/reading/</link>
-    <description>Recent content in Reading on Harshad Saykhedkar</description>
+    <title>Fitness on Harshad Saykhedkar</title>
+    <link>https://harshadss.github.io/tags/fitness/</link>
+    <description>Recent content in Fitness on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 20 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://harshadss.github.io/tags/reading/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://harshadss.github.io/tags/fitness/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>https://harshadss.github.io/post/studying_body_biology/</guid>
       <description>Throughout my school life I tried to stay away from biology studies. I specifically chose studying physics and maths instead of biology in higher secondary school. Even during secondary school, science 1 generally had physics and chemistry whereas science 2 contained protozoans and all other wiggling beasts. Guess who barely got over line in science 2.
 The logic for a high school students in India was simple. You chose biology if you wanted to be a doctor (or do a research in microbiology) which meant spending many years studying and daddy needs to have lot of money to get you into medical school.</description>
-    </item>
-    
-    <item>
-      <title>Cheklist Manifesto &amp; Thinking Fast and Slow</title>
-      <link>https://harshadss.github.io/post/cheklist_manifesto_ruminations/</link>
-      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/post/cheklist_manifesto_ruminations/</guid>
-      <description>I read ‘the checklist manifesto’ by Atul Gawande. I am a firm believer in books and advice in general from anyone in practice oriented profession: doctors, investors (not speculators), pilots and so on. The professinals in these fields have generally a large skin in the game (money, reputation, their own life), making their advice worthy as compared to academic advise. The checklist book was then just the right fit for a lazy afternoon reading at once.</description>
     </item>
     
   </channel>

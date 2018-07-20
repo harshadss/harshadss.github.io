@@ -6,10 +6,20 @@
     <description>Recent content on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Readings in Human Body, Evolution and Biology</title>
+      <link>https://harshadss.github.io/post/studying_body_biology/</link>
+      <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/post/studying_body_biology/</guid>
+      <description>Throughout my school life I tried to stay away from biology studies. I specifically chose studying physics and maths instead of biology in higher secondary school. Even during secondary school, science 1 generally had physics and chemistry whereas science 2 contained protozoans and all other wiggling beasts. Guess who barely got over line in science 2.
+The logic for a high school students in India was simple. You chose biology if you wanted to be a doctor (or do a research in microbiology) which meant spending many years studying and daddy needs to have lot of money to get you into medical school.</description>
+    </item>
     
     <item>
       <title>Learnings from Teaching Machine Learning</title>
