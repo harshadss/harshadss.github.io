@@ -75,6 +75,15 @@
     </item>
     
     <item>
+      <title>Engineering</title>
+      <link>https://harshadss.github.io/tags/engineering/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/tags/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Fitness</title>
       <link>https://harshadss.github.io/tags/fitness/</link>
       <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
@@ -84,11 +93,29 @@
     </item>
     
     <item>
+      <title>Fourier Transform</title>
+      <link>https://harshadss.github.io/tags/fourier-transform/</link>
+      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/tags/fourier-transform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ipython</title>
       <link>https://harshadss.github.io/tags/ipython/</link>
       <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://harshadss.github.io/tags/ipython/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning</title>
+      <link>https://harshadss.github.io/tags/learning/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/tags/learning/</guid>
       <description></description>
     </item>
     
@@ -107,6 +134,24 @@
       <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>https://harshadss.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maths</title>
+      <link>https://harshadss.github.io/tags/maths/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/tags/maths/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maths Epiphany</title>
+      <link>https://harshadss.github.io/tags/maths-epiphany/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/tags/maths-epiphany/</guid>
       <description></description>
     </item>
     
@@ -152,6 +197,24 @@
       <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://harshadss.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Signals and Systems</title>
+      <link>https://harshadss.github.io/tags/signals-and-systems/</link>
+      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/tags/signals-and-systems/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://harshadss.github.io/tags/teaching/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/tags/teaching/</guid>
       <description></description>
     </item>
     

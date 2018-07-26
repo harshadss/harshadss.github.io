@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fourier Transform on Harshad Saykhedkar</title>
+    <link>https://harshadss.github.io/tags/fourier-transform/</link>
+    <description>Recent content in Fourier Transform on Harshad Saykhedkar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://harshadss.github.io/tags/fourier-transform/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mathematical Epiphanies 1: Linear Systems &amp; Fourier Transform</title>
+      <link>https://harshadss.github.io/post/mathematical_epiphanies_linear_systems_fourier/</link>
+      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/post/mathematical_epiphanies_linear_systems_fourier/</guid>
+      <description>Click here for introduction to this series and motivation.
+Linear Algebra Basics  There are two ways to look at matrices. One view is about a matrix representing some data (to be covered in later part of this series) Another view is: matrix encodes the operation of a linear system on its inputs. In this (3) view, a matrix represents a linear map. Matrix-vector multiplication is taking a vector represented in one coordinate system and transforming it to vector in another co-ordinate systems.</description>
+    </item>
+    
+  </channel>
+</rss>

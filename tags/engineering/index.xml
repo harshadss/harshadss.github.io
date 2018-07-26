@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engineering on Harshad Saykhedkar</title>
+    <link>https://harshadss.github.io/tags/engineering/</link>
+    <description>Recent content in Engineering on Harshad Saykhedkar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://harshadss.github.io/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mathematical Epiphanies 2: Differential Equations</title>
+      <link>https://harshadss.github.io/post/mathematical_epiphanies_differential_equations/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/post/mathematical_epiphanies_differential_equations/</guid>
+      <description>Click here for introduction to this series and motivation.
+Differential Equations  An equation is about balancing two sides of a (weight) balance scale. The equations that we study in school (x + 4 = 9) are about finding the number which will balance the scale. But there could be equations for which solution which balances things is a function and not a number! Specifically, you could have equations which relate a change in certain quantity with respect to that quantity.</description>
+    </item>
+    
+    <item>
+      <title>Mathematical Epiphanies 1: Linear Systems &amp; Fourier Transform</title>
+      <link>https://harshadss.github.io/post/mathematical_epiphanies_linear_systems_fourier/</link>
+      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/post/mathematical_epiphanies_linear_systems_fourier/</guid>
+      <description>Click here for introduction to this series and motivation.
+Linear Algebra Basics  There are two ways to look at matrices. One view is about a matrix representing some data (to be covered in later part of this series) Another view is: matrix encodes the operation of a linear system on its inputs. In this (3) view, a matrix represents a linear map. Matrix-vector multiplication is taking a vector represented in one coordinate system and transforming it to vector in another co-ordinate systems.</description>
+    </item>
+    
+    <item>
+      <title>Mathematical Epiphanies 0: Introduction</title>
+      <link>https://harshadss.github.io/post/mathematical_epiphanies_introduction/</link>
+      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/post/mathematical_epiphanies_introduction/</guid>
+      <description>I had to study a lot of maths in higher secondary and engineering. There were 2 maths subjects for 2 years after secondary school and 3 maths subjects in the first two years of engineering. Despite studying so much maths, graduate school was a rude shock for me. I just couldn&amp;rsquo;t wrap my head around of a lot of lectures.
+The problem was the way maths was taught. Most of the teachers taught maths as an end in itself, mostly devoid of the most important question: &amp;ldquo;why&amp;rdquo;?</description>
+    </item>
+    
+  </channel>
+</rss>
