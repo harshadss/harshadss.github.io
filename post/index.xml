@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 30 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Curse of ML and DL on Stack Exchange</title>
+      <link>https://harshadss.github.io/post/curse_of_ml_on_stackoverflow/</link>
+      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/post/curse_of_ml_on_stackoverflow/</guid>
+      <description>I have come across two distinct flavours of beginner behaviours on stack-exchange site related to data science. I believe they are symptoms representing what is the larger problem ailing field of data science. Let us go through the symptoms first. My tone in this article is extremely acerbic because I feel strongly for my field.
+Deep Learning Voodo Problem Someone will post a problem like, &amp;ldquo;I am trying to fit (some complex deep learning architecture) model on (a bad problem for starting with DL).</description>
+    </item>
     
     <item>
       <title>Mathematical Epiphanies 2: Differential Equations</title>
