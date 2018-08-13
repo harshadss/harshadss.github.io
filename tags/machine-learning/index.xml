@@ -6,10 +6,21 @@
     <description>Recent content in Machine Learning on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Sane Choices for Small Machine Learning Teams: Part 1</title>
+      <link>https://harshadss.github.io/post/sane_ml_stack_1/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/post/sane_ml_stack_1/</guid>
+      <description>Data scientists and machine learning engineers in small and medium businesses often end up over-engineering their machine learning workflow and stack. In a series of posts below, I will share a few tricks learnt over the years related to choosing right components of the ML pipeline.
+In this first post, let us go through mistakes small teams can make. Later posts will explain possible solutions.
+Preferring Generalized Solutions Many big companies will perfect a very general solution to machine learning problems by investing obscene amount of resources.</description>
+    </item>
     
     <item>
       <title>Curse of ML and DL on Stack Exchange</title>
