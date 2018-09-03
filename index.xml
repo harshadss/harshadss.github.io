@@ -6,10 +6,21 @@
     <description>Recent content on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Where AI will Change World</title>
+      <link>https://harshadss.github.io/post/where_ai_will_change_world/</link>
+      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/post/where_ai_will_change_world/</guid>
+      <description>Andrew Ng wrote insightful article in HBR a while ago about what an AI can and cannot do. He highlights that if there&amp;rsquo;s a mental task that a human being can do in few seconds, you can probably automate it.
+In my opinion, these types of problems have a following structure,
+ Single person decisions: these decisions are often replacing decision making of single human being. Scale factor: You need AI to help you in tons of such decisions in order to make meanigful impact.</description>
+    </item>
     
     <item>
       <title>Sane Choices for Small Machine Learning Teams: Part 1</title>
