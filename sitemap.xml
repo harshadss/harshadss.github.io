@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://harshadss.github.io/post/when_to_use_deep_learning/</loc>
+    <lastmod>2018-09-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://harshadss.github.io/post/where_ai_will_change_world/</loc>
     <lastmod>2018-09-03T00:00:00+00:00</lastmod>
   </url>
@@ -146,7 +151,7 @@
   
   <url>
     <loc>https://harshadss.github.io/tags/deep-learning/</loc>
-    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -176,7 +181,7 @@
   
   <url>
     <loc>https://harshadss.github.io/</loc>
-    <lastmod>2018-09-03T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -200,7 +205,7 @@
   
   <url>
     <loc>https://harshadss.github.io/tags/machine-learning/</loc>
-    <lastmod>2018-09-03T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -230,7 +235,7 @@
   
   <url>
     <loc>https://harshadss.github.io/post/</loc>
-    <lastmod>2018-09-03T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

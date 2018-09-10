@@ -4,7 +4,7 @@
          
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Posts</title>
+        <title>When (not) to use deep learning</title>
         
         <style>
 
@@ -61,9 +61,6 @@
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
  <meta name="generator" content="Hugo 0.42.1" />
         
-        <link href="https://harshadss.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="Harshad Saykhedkar" />
-        <link href="https://harshadss.github.io/post/index.xml" rel="feed" type="application/rss+xml" title="Harshad Saykhedkar" />
-        
 
         
     </head>
@@ -83,7 +80,7 @@
 
                 <div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">Posts</a>
+                    <a class="navbar-brand visible-xs" href="#">When (not) to use deep learning</a>
 
                     <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
                         <span class="icon-bar"></span>
@@ -130,9 +127,7 @@
 
 <main>
 
-    <h2>Posts</h2>
-
-     <div class="item">
+    <div class="item">
 
     
     
@@ -150,7 +145,74 @@
     
 
 </div>
-  <div class="item">
+
+
+    <br> <div class="text-justify">
+
+<p>I&rsquo;ve documented my disdain for using &lsquo;deep learning as a hammer looking for nails in every corner&rsquo;
+in few other entries on this blog. Taking a less cynical and acerbic view, I want to focus on
+when deep learning can be a good starting point and when it is not useful as starting point.</p>
+
+<p>First to clarify bit of terminology. Deep learning is a catch-all term used in popular data science
+these days. But we must separate out what this term encompases. It covers the following broad ideas,</p>
+
+<ol>
+<li>Novel neural network architectures tailored for specific applications (example: LSTMs in language)</li>
+<li>Innovations at algorithmic (example: adam optimizer) and component (example: GELU non-linearity) level
+ for improving performance of optimization algorithms which find weights for neural network.</li>
+<li>Engineering discipline which tries to solve for problems in 1-2 at hardware (GPUs and TPUs) and
+ coding abstractions (example: auto-grad, libraries) level.</li>
+</ol>
+
+<p>This post is focussed on (1).</p>
+
+<h3 id="when-deep-learning-is-a-bad-choice">When Deep Learning is a Bad Choice</h3>
+
+<ol>
+<li>If the base representation of your data as seen by a computer and by a human is almost the same.</li>
+<li>When the data consists of mostly heterogeneous pieces of information.</li>
+</ol>
+
+<p>For example, consider problem of predicting whether a customer will default on a loan or not. The data
+will be a mix of demographics, details about the product offering (interest rates, amount), customer&rsquo;s
+repayment history with same bank and so on. Most of the columns in such a dataset are measured on different
+scale and they represent completely different things. For such problems, human beings cannot spot
+decision rules or features just by looking at data. I&rsquo;ve found that random-forest and gradient boosting methods
+often give respectable and easy to use start on such problem. Note that I&rsquo;m not arguing that random forest will
+always outperform carefully tuned neural network applied to such problems. Rather, I&rsquo;m saying that random-forest
+kind of algorithms are safe choice which will give you good accuracy without much effort. Only after you&rsquo;ve
+established a good baseline with RFs and you are convinced that the baseline is absolute disaster should you
+consider other ideas like deep learning. Deep learning may come into picture when your feature engineering can&rsquo;t
+keep up with evolution of problem complexity. <a href="https://eng.lyft.com/fingerprinting-fraudulent-behavior-6663d0264fad">Check out this post on fraud detection at Lyft for one example</a></p>
+
+<h3 id="when-deep-learning-is-a-good-choice">When Deep Learning is a Good Choice</h3>
+
+<ol>
+<li>If base representation of your data as seen by a computer and by a human is radically different.</li>
+<li>Data consists mostly of homogeneous pieces of information.</li>
+</ol>
+
+<p>Consider images, a five year old child can routinely distinguish between a cat and a dog image. On the other
+hand, a computer only sees bunch of pixels. The gap between representation and features is too large. Also,
+the data is homogeneous: everything is an integer value representing intensity at pixel. Similarly, language
+applications. To the computer, the base representation is just a sequence of unicodes. But we human beings
+can quickly see patterns, meanings. Again the data is homogeneous (sequence of integers representing unicode
+points) and gap between representation of information and meaning of information is too large. In such applications,
+you effectively want the computer to learn to represent knowledge (for a limited domain) first, the classification
+model is secondary. Deep learning seems to be excelling at such applications. There are few people who infact refer
+to deep learning as representation learning.</p>
+
+<p>Hopefully, this post gives a good thumb rule on applying deep learning.</p>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
 
     
     
@@ -208,47 +270,13 @@
     
 
 </div>
-  <div class="item">
-
-    
-    
-    
-
-    
-    
-
-    <h4><a href="/post/mathematical_epiphanies_differential_equations/">Mathematical Epiphanies 2: Differential Equations</a></h4>
-    <h5>July 26, 2018</h5>
-    
-    <a href="https://harshadss.github.io/tags/maths"><kbd class="item-tag">maths</kbd></a>
-    
-    <a href="https://harshadss.github.io/tags/learning"><kbd class="item-tag">learning</kbd></a>
-    
-    <a href="https://harshadss.github.io/tags/engineering"><kbd class="item-tag">engineering</kbd></a>
-    
-    <a href="https://harshadss.github.io/tags/teaching"><kbd class="item-tag">teaching</kbd></a>
-    
-    <a href="https://harshadss.github.io/tags/maths-epiphany"><kbd class="item-tag">maths-epiphany</kbd></a>
-    
-
-</div>
  
 
-</main>
-
-
-
-<div class="pages">
-
-     
-    <a class="icon pages-icon" href="/post/page/2/" rel="next">
-        <i class="fa fa-arrow-right"></i>
-    </a>
     
 
-</div>
+    
 
-
+</main>
 
         <footer>
 

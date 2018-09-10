@@ -6,10 +6,20 @@
     <description>Recent content in Machine Learning on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>When (not) to use deep learning</title>
+      <link>https://harshadss.github.io/post/when_to_use_deep_learning/</link>
+      <pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/post/when_to_use_deep_learning/</guid>
+      <description>I&amp;rsquo;ve documented my disdain for using &amp;lsquo;deep learning as a hammer looking for nails in every corner&amp;rsquo; in few other entries on this blog. Taking a less cynical and acerbic view, I want to focus on when deep learning can be a good starting point and when it is not useful as starting point.
+First to clarify bit of terminology. Deep learning is a catch-all term used in popular data science these days.</description>
+    </item>
     
     <item>
       <title>Where AI will Change World</title>
