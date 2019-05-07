@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Books on Harshad Saykhedkar</title>
+    <title>books on Harshad Saykhedkar</title>
     <link>https://harshadss.github.io/tags/books/</link>
-    <description>Recent content in Books on Harshad Saykhedkar</description>
+    <description>Recent content in books on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Copyright @ Harshad Saykhedkar</copyright>
     <lastBuildDate>Tue, 11 Apr 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/tags/books/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>Cheklist Manifesto &amp; Thinking Fast and Slow</title>
-      <link>https://harshadss.github.io/post/cheklist_manifesto_ruminations/</link>
+      <link>https://harshadss.github.io/posts/cheklist_manifesto_ruminations/</link>
       <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://harshadss.github.io/post/cheklist_manifesto_ruminations/</guid>
+      <guid>https://harshadss.github.io/posts/cheklist_manifesto_ruminations/</guid>
       <description>I read ‘the checklist manifesto’ by Atul Gawande. I am a firm believer in books and advice in general from anyone in practice oriented profession: doctors, investors (not speculators), pilots and so on. The professinals in these fields have generally a large skin in the game (money, reputation, their own life), making their advice worthy as compared to academic advise. The checklist book was then just the right fit for a lazy afternoon reading at once.</description>
     </item>
     

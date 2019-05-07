@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+
+<meta itemprop="name" content="Practical Common Lisp / Clojure: 1">
+<meta itemprop="description" content="In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+Chapter 3 of the book We try to implement a simple database for storing information about CDs that we own.
+CD &amp; Records First decision is how do you store the details for a single CD. Peter says that we (for now) want to store 4 properties about a CD.">
+
+
+<meta itemprop="datePublished" content="2017-05-31T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-05-31T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="705">
+
+
+
+<meta itemprop="keywords" content="clojure,lisp,pcl," />
+<meta property="og:title" content="Practical Common Lisp / Clojure: 1" />
+<meta property="og:description" content="In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+Chapter 3 of the book We try to implement a simple database for storing information about CDs that we own.
+CD &amp; Records First decision is how do you store the details for a single CD. Peter says that we (for now) want to store 4 properties about a CD." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harshadss.github.io/posts/practical_common_lisp_1/" />
+<meta property="article:published_time" content="2017-05-31T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-05-31T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Practical Common Lisp / Clojure: 1"/>
+<meta name="twitter:description" content="In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+Chapter 3 of the book We try to implement a simple database for storing information about CDs that we own.
+CD &amp; Records First decision is how do you store the details for a single CD. Peter says that we (for now) want to store 4 properties about a CD."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Practical Common Lisp / Clojure: 1</title>
+	<link rel="stylesheet" href="https://harshadss.github.io/css/style.min.31706917653d2b9e8410abd431f30ec4359a88a94fc87a63654779d87329edec.css" integrity="sha256-MXBpF2U9K56EEKvUMfMOxDWaiKlPyHpjZUd52HMp7ew=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://harshadss.github.io/">Harshad Saykhedkar</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://harshadss.github.io/posts/">Posts</a>
+					<a href="https://harshadss.github.io/about-harshad-saykhedkar/">About</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://twitter.com/harshad_geek" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/harshadss" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://harshadss.github.io/posts/">Posts</a></li>
+			<li><a href="https://harshadss.github.io/about-harshad-saykhedkar/">About</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>May 31, 2017</span></div>
+				<h1>Practical Common Lisp / Clojure: 1</h1>
+			</header>
+			<div class="content">
+				
+
+<p>In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book <a href="http://www.gigamonkeys.com/book/">can be accessed online here</a>.</p>
+
+<h2 id="chapter-3-of-the-book">Chapter 3 of the book<a href="#chapter-3-of-the-book" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+
+<p>We try to implement a simple database for storing information about CDs that we own.</p>
+
+<h3 id="cd-records">CD &amp; Records<a href="#cd-records" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>First decision is how do you store the details for a single CD. Peter says that we (for now) want to store 4 properties about a CD. He introduces a simple list, but highlights that a property to value mapping will be more convinient than positional. Looks like common lisp has something called a plist for storing a symbol with a mapping to another value. plist also has getf function to fetch value given a symbol. Finally, he shows a constructor function for building data about a single cd by populating a plist.</p>
+
+<p>In Clojure, there’s no plist to the best of my knowledge. But we have real hash table and I see no need for a poor man’s hash table as Peter calls it. Also, we use keywords for what’s called symbols in that section. Finally, in cl implementation using plist, probably the ordering of keys/properties is probably preserved. We use hash-map in clojure which won’t preseve key insertion ordering. We can probably use sorted-map in clojure, but I don’t think it makes any difference. So, the clojure implmentation of the examples is as follows,</p>
+
+<pre><code>(hash-map :a 1 :b 2 :c 3)
+
+;; getf in cl example is same as get in clojure
+
+(get (hash-map :a 1 :b 2 :c 3) :a)
+
+;; so make-cd constructor can just return a map
+(defn make-cd
+  [title artist rating ripped]
+  (hash-map :title title :artist artist :rating rating :ripped ripped))
+
+;; check on a single example
+(make-cd &quot;Roses&quot; &quot;Kathy Mattea&quot; 7 true)
+</code></pre>
+
+<h3 id="filling-cds">Filling CDs<a href="#filling-cds" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>The above section highlighted data rep for a single CD record. For storing data for multiple CDs, Peter advises using a simple list for now. The current value of the list is bound to a var and in each time we want to add a new cd, we push the new record into the list. In the book, Peter uses defvar macro to define <em>db</em> as nil and then uses push macro to push new values. I don’t have enough knowledge of common lisp to know if this is same as declaring an empty list and then doing maybe a cons on it.</p>
+
+<p>In the following code, I make two changes. Since we have a state (current state of database) which we want to repeatedly update, I am storing it in a Clojure atom. If I’m not wrong this is the usecase for which atoms are built. We don’t yet bother about transactions for our db where we may add multiple CDs at once. Secondly, in the absence of equivalent push macro, I am simply using a conj on the current value of the database/list. So the code looks like,</p>
+
+<pre><code>;; database current value is a list, state is an atom
+
+(def db (atom '()))
+
+;; adding a new record -&gt; add to the current state (list)
+(defn add-record
+  [cd]
+  (swap! db conj cd))
+
+;; test on few examples
+(add-record (make-cd &quot;Roses&quot; &quot;Kathy Mattea&quot; 7 true))
+(add-record (make-cd &quot;Fly&quot; &quot;Dixie Chicks&quot; 8 true))
+(add-record (make-cd &quot;Home&quot; &quot;Dixie Chicks&quot; 9 true))
+</code></pre>
+
+<h3 id="learnings-so-far">Learnings So Far<a href="#learnings-so-far" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Mostly standard clojure stuff. Probably first time I’m using atom even in a toy code. Peter has (between the lines) highlighted couple of good coding principles too which I originally read in the famous SICP book.</p>
+
+<ol>
+<li>Use data constructors and data accessors for data modelling (ch 2 of SICP book). Here we saw that action in make-cd function.</li>
+<li>Hide implementation details of data from user as far as possible. So by using add-record function, we have abstracted out how the database is implemented. If we swap out (pun intented!) the implementation from an atom holding list to something fancier, user wouldn’t have to bother, the add-record function should take care of migration to new implementation.</li>
+</ol>
+
+<p>All in all, good start so far. In next sections, the real meat starts with Peter eventually implementing almost generic query parser on the database using macros. Looking forward to reading!</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://harshadss.github.io/tags/clojure">clojure</a></span><span class="tag"><a href="https://harshadss.github.io/tags/lisp">lisp</a></span><span class="tag"><a href="https://harshadss.github.io/tags/pcl">pcl</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>705 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2017-05-31 05:30 &#43;0530</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://harshadss.github.io/posts/practical_common_lisp_2/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Practical Common Lisp / Clojure: 2</span>
+			</a>
+			<a class="prev-post" href="https://harshadss.github.io/posts/ipython_is_powerful/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>IPython is powerful!</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="https://harshadss.github.io/">Harshad Saykhedkar</a> Copyright Harshad Saykhedkar</p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://harshadss.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://harshadss.github.io/js/main.min.784417f5847151f848c339cf0acb13a06cbb648b1483435a28ed4556c4ead69b.js" integrity="sha256-eEQX9YRxUfhIwznPCssToGy7ZIsUg0NaKO1FVsTq1ps="></script>
+
+</body>
+
+</html>

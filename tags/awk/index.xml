@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Awk on Harshad Saykhedkar</title>
+    <title>awk on Harshad Saykhedkar</title>
     <link>https://harshadss.github.io/tags/awk/</link>
-    <description>Recent content in Awk on Harshad Saykhedkar</description>
+    <description>Recent content in awk on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Copyright @ Harshad Saykhedkar</copyright>
     <lastBuildDate>Wed, 30 Nov 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/tags/awk/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>Learning awk is useful!</title>
-      <link>https://harshadss.github.io/post/learning_awk/</link>
+      <link>https://harshadss.github.io/posts/learning_awk/</link>
       <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://harshadss.github.io/post/learning_awk/</guid>
+      <guid>https://harshadss.github.io/posts/learning_awk/</guid>
       <description>I have been working with Unix (Linux to be precise) command line since a long time. But I had always avoided learning about Unix power tools like awk, sed. Quick exploratory analysis of data in a tabular/csv form is daily routine for me. My tool of choice for this work is either R or Python. I used to wonder about the utility of tool like awk. But recently I found myself using awk for some specific use cases.</description>
     </item>
     

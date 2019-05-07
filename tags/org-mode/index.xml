@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Org Mode on Harshad Saykhedkar</title>
+    <title>org-mode on Harshad Saykhedkar</title>
     <link>https://harshadss.github.io/tags/org-mode/</link>
-    <description>Recent content in Org Mode on Harshad Saykhedkar</description>
+    <description>Recent content in org-mode on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Copyright @ Harshad Saykhedkar</copyright>
     <lastBuildDate>Mon, 12 Dec 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/tags/org-mode/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>Testing Literate Emacs Config</title>
-      <link>https://harshadss.github.io/post/testing_literate_emacs_config/</link>
+      <link>https://harshadss.github.io/posts/testing_literate_emacs_config/</link>
       <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://harshadss.github.io/post/testing_literate_emacs_config/</guid>
+      <guid>https://harshadss.github.io/posts/testing_literate_emacs_config/</guid>
       <description>Some time back, I wrote my Emacs configuration in an org mode file. The whole setup is documented here. The objective was twofold: one to make it readable to my dumb brain when I open it six months later, second was to make it reproducible on another machine quickly. Say, if something unforseen was to happen to my good ol Dell Vostro machine, what with the configuration safe on Github and all that, I can have my new machine with the Emacs setup very fast and without splitting hair.</description>
     </item>
     

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>physics on Harshad Saykhedkar</title>
+    <link>https://harshadss.github.io/tags/physics/</link>
+    <description>Recent content in physics on Harshad Saykhedkar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright @ Harshad Saykhedkar</copyright>
+    <lastBuildDate>Tue, 07 May 2019 14:39:08 +0530</lastBuildDate>
+    
+	<atom:link href="https://harshadss.github.io/tags/physics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Found interesting link: Introduction</title>
+      <link>https://harshadss.github.io/posts/found_interesting_link_introduction/</link>
+      <pubDate>Tue, 07 May 2019 14:39:08 +0530</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/found_interesting_link_introduction/</guid>
+      <description>I sometimes long for those days of internet when you&amp;rsquo;d land on someone&amp;rsquo;s personal page where they&amp;rsquo;d document hard to find links about some (technical) subject matter and some commentary on them. Discovery of such links often meant that that your understanding or interest in certain subject would completely change. I also loved the painstaking effort someone would make to find and then document information for an unknown (web) traveller. There is a kind of romantic hope in doing this, similar to human beings putting out Voyagers spacecrafts with those golden record.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,76 +6,41 @@
     <description>Recent content in Tags on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <copyright>Copyright @ Harshad Saykhedkar</copyright>
+    <lastBuildDate>Tue, 07 May 2019 14:39:08 +0530</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Ai</title>
-      <link>https://harshadss.github.io/tags/ai/</link>
-      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
+      <title>interesting-links</title>
+      <link>https://harshadss.github.io/tags/interesting-links/</link>
+      <pubDate>Tue, 07 May 2019 14:39:08 +0530</pubDate>
       
-      <guid>https://harshadss.github.io/tags/ai/</guid>
+      <guid>https://harshadss.github.io/tags/interesting-links/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Awk</title>
-      <link>https://harshadss.github.io/tags/awk/</link>
-      <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
+      <title>maths</title>
+      <link>https://harshadss.github.io/tags/maths/</link>
+      <pubDate>Tue, 07 May 2019 14:39:08 +0530</pubDate>
       
-      <guid>https://harshadss.github.io/tags/awk/</guid>
+      <guid>https://harshadss.github.io/tags/maths/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Biology</title>
-      <link>https://harshadss.github.io/tags/biology/</link>
-      <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
+      <title>physics</title>
+      <link>https://harshadss.github.io/tags/physics/</link>
+      <pubDate>Tue, 07 May 2019 14:39:08 +0530</pubDate>
       
-      <guid>https://harshadss.github.io/tags/biology/</guid>
+      <guid>https://harshadss.github.io/tags/physics/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Body</title>
-      <link>https://harshadss.github.io/tags/body/</link>
-      <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/body/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Books</title>
-      <link>https://harshadss.github.io/tags/books/</link>
-      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/books/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Clojure</title>
-      <link>https://harshadss.github.io/tags/clojure/</link>
-      <pubDate>Tue, 13 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/clojure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Science</title>
-      <link>https://harshadss.github.io/tags/data-science/</link>
-      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deep Learning</title>
+      <title>deep learning</title>
       <link>https://harshadss.github.io/tags/deep-learning/</link>
       <pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
       
@@ -84,70 +49,7 @@
     </item>
     
     <item>
-      <title>Emacs</title>
-      <link>https://harshadss.github.io/tags/emacs/</link>
-      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/emacs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Engineering</title>
-      <link>https://harshadss.github.io/tags/engineering/</link>
-      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fitness</title>
-      <link>https://harshadss.github.io/tags/fitness/</link>
-      <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/fitness/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fourier Transform</title>
-      <link>https://harshadss.github.io/tags/fourier-transform/</link>
-      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/fourier-transform/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ipython</title>
-      <link>https://harshadss.github.io/tags/ipython/</link>
-      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/ipython/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Learning</title>
-      <link>https://harshadss.github.io/tags/learning/</link>
-      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lisp</title>
-      <link>https://harshadss.github.io/tags/lisp/</link>
-      <pubDate>Tue, 13 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/lisp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
+      <title>machine learning</title>
       <link>https://harshadss.github.io/tags/machine-learning/</link>
       <pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
       
@@ -156,43 +58,16 @@
     </item>
     
     <item>
-      <title>Maths</title>
-      <link>https://harshadss.github.io/tags/maths/</link>
-      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      <title>ai</title>
+      <link>https://harshadss.github.io/tags/ai/</link>
+      <pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://harshadss.github.io/tags/maths/</guid>
+      <guid>https://harshadss.github.io/tags/ai/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Maths Epiphany</title>
-      <link>https://harshadss.github.io/tags/maths-epiphany/</link>
-      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/maths-epiphany/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Org Mode</title>
-      <link>https://harshadss.github.io/tags/org-mode/</link>
-      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/org-mode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Pcl</title>
-      <link>https://harshadss.github.io/tags/pcl/</link>
-      <pubDate>Tue, 13 Jun 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/pcl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
+      <title>python</title>
       <link>https://harshadss.github.io/tags/python/</link>
       <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
       
@@ -201,47 +76,29 @@
     </item>
     
     <item>
-      <title>Reading</title>
-      <link>https://harshadss.github.io/tags/reading/</link>
-      <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
+      <title>data-science</title>
+      <link>https://harshadss.github.io/tags/data-science/</link>
+      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://harshadss.github.io/tags/reading/</guid>
+      <guid>https://harshadss.github.io/tags/data-science/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Shell</title>
-      <link>https://harshadss.github.io/tags/shell/</link>
-      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/shell/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Signals and Systems</title>
-      <link>https://harshadss.github.io/tags/signals-and-systems/</link>
-      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/signals-and-systems/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Teaching</title>
-      <link>https://harshadss.github.io/tags/teaching/</link>
+      <title>engineering</title>
+      <link>https://harshadss.github.io/tags/engineering/</link>
       <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://harshadss.github.io/tags/teaching/</guid>
+      <guid>https://harshadss.github.io/tags/engineering/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Unix</title>
-      <link>https://harshadss.github.io/tags/unix/</link>
-      <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
+      <title>learning</title>
+      <link>https://harshadss.github.io/tags/learning/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://harshadss.github.io/tags/unix/</guid>
+      <guid>https://harshadss.github.io/tags/learning/</guid>
       <description></description>
     </item>
     

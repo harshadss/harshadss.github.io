@@ -1,0 +1,1378 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on Harshad Saykhedkar</title>
+		<link>https://harshadss.github.io/posts/</link>
+		<description>Recent content in Posts on Harshad Saykhedkar</description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>en-us</language>
+		<copyright>Copyright @ Harshad Saykhedkar</copyright>
+		<lastBuildDate>Tue, 07 May 2019 14:39:08 +0530</lastBuildDate>
+		<atom:link href="https://harshadss.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>Found interesting link: Introduction</title>
+			<link>https://harshadss.github.io/posts/found_interesting_link_introduction/</link>
+			<pubDate>Tue, 07 May 2019 14:39:08 +0530</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/found_interesting_link_introduction/</guid>
+			<description>I sometimes long for those days of internet when you&amp;rsquo;d land on someone&amp;rsquo;s personal page where they&amp;rsquo;d document hard to find links about some (technical) subject matter and some commentary on them. Discovery of such links often meant that that your understanding or interest in certain subject would completely change. I also loved the painstaking effort someone would make to find and then document information for an unknown (web) traveller. There is a kind of romantic hope in doing this, similar to human beings putting out Voyagers spacecrafts with those golden record.</description>
+			<content type="html"><![CDATA[<p>I sometimes long for those days of internet when you&rsquo;d land on someone&rsquo;s personal page where they&rsquo;d document hard to find links about some (technical) subject matter and some commentary on them. Discovery of such links often meant that that your understanding or interest in certain subject would completely change. I also loved the painstaking effort someone would make to find and then document information for an unknown (web) traveller. There is a kind of romantic hope in doing this, similar to human beings putting out Voyagers spacecrafts with those golden record.</p>
+
+<p>In the days of ubiquitous search engines days of such discovery are already over. Centralized internet of the present
+day also means that content follows brutal power law. Interesting links become popular soon enough that you are
+unlikely to experience Eureka moment with some of these. More likely, you stumble upon something that half of the
+world is already raving about on one of the social networks. Such content often ends up being something banal,
+cooked up together to gather click.</p>
+
+<p>I am starting this new series in which I document an interesting article/blog/paper in non-fiction that I stumbled upon.
+I can&rsquo;t probably compare what I post to the glorious days I allude to above. Some of these links already qualify
+for the viral-on-social-nets camp. My hope is that they atleast are interesting and I don&rsquo;t end up putting out
+something banal clickbaity that all proles are reading about.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>When (not) to use deep learning</title>
+			<link>https://harshadss.github.io/posts/when_to_use_deep_learning/</link>
+			<pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/when_to_use_deep_learning/</guid>
+			<description>I&amp;rsquo;ve documented my disdain for using &amp;lsquo;deep learning as a hammer looking for nails in every corner&amp;rsquo; in few other entries on this blog. Taking a less cynical and acerbic view, I want to focus on when deep learning can be a good starting point and when it is not useful as starting point.
+First to clarify bit of terminology. Deep learning is a catch-all term used in popular data science these days.</description>
+			<content type="html"><![CDATA[
+
+<p>I&rsquo;ve documented my disdain for using &lsquo;deep learning as a hammer looking for nails in every corner&rsquo;
+in few other entries on this blog. Taking a less cynical and acerbic view, I want to focus on
+when deep learning can be a good starting point and when it is not useful as starting point.</p>
+
+<p>First to clarify bit of terminology. Deep learning is a catch-all term used in popular data science
+these days. But we must separate out what this term encompases. It covers the following broad ideas,</p>
+
+<ol>
+<li>Novel neural network architectures tailored for specific applications (example: LSTMs in language)</li>
+<li>Innovations at algorithmic (example: adam optimizer) and component (example: GELU non-linearity) level
+ for improving performance of optimization algorithms which find weights for neural network.</li>
+<li>Engineering discipline which tries to solve for problems in 1-2 at hardware (GPUs and TPUs) and
+ coding abstractions (example: auto-grad, libraries) level.</li>
+</ol>
+
+<p>This post is focussed on (1).</p>
+
+<h3 id="when-deep-learning-is-a-bad-choice">When Deep Learning is a Bad Choice</h3>
+
+<ol>
+<li>If the base representation of your data as seen by a computer and by a human is almost the same.</li>
+<li>When the data consists of mostly heterogeneous pieces of information.</li>
+</ol>
+
+<p>For example, consider problem of predicting whether a customer will default on a loan or not. The data
+will be a mix of demographics, details about the product offering (interest rates, amount), customer&rsquo;s
+repayment history with same bank and so on. Most of the columns in such a dataset are measured on different
+scale and they represent completely different things. For such problems, human beings cannot spot
+decision rules or features just by looking at data. I&rsquo;ve found that random-forest and gradient boosting methods
+often give respectable and easy to use start on such problem. Note that I&rsquo;m not arguing that random forest will
+always outperform carefully tuned neural network applied to such problems. Rather, I&rsquo;m saying that random-forest
+kind of algorithms are safe choice which will give you good accuracy without much effort. Only after you&rsquo;ve
+established a good baseline with RFs and you are convinced that the baseline is absolute disaster should you
+consider other ideas like deep learning. Deep learning may come into picture when your feature engineering can&rsquo;t
+keep up with evolution of problem complexity. <a href="https://eng.lyft.com/fingerprinting-fraudulent-behavior-6663d0264fad">Check out this post on fraud detection at Lyft for one example</a></p>
+
+<h3 id="when-deep-learning-is-a-good-choice">When Deep Learning is a Good Choice</h3>
+
+<ol>
+<li>If base representation of your data as seen by a computer and by a human is radically different.</li>
+<li>Data consists mostly of homogeneous pieces of information.</li>
+</ol>
+
+<p>Consider images, a five year old child can routinely distinguish between a cat and a dog image. On the other
+hand, a computer only sees bunch of pixels. The gap between representation and features is too large. Also,
+the data is homogeneous: everything is an integer value representing intensity at pixel. Similarly, language
+applications. To the computer, the base representation is just a sequence of unicodes. But we human beings
+can quickly see patterns, meanings. Again the data is homogeneous (sequence of integers representing unicode
+points) and gap between representation of information and meaning of information is too large. In such applications,
+you effectively want the computer to learn to represent knowledge (for a limited domain) first, the classification
+model is secondary. Deep learning seems to be excelling at such applications. There are few people who infact refer
+to deep learning as representation learning.</p>
+
+<p>Hopefully, this post gives a good thumb rule on applying deep learning.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Where AI will Change World</title>
+			<link>https://harshadss.github.io/posts/where_ai_will_change_world/</link>
+			<pubDate>Mon, 03 Sep 2018 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/where_ai_will_change_world/</guid>
+			<description>Andrew Ng wrote insightful article in HBR a while ago about what an AI can and cannot do. He highlights that if there&amp;rsquo;s a mental task that a human being can do in few seconds, you can probably automate it.
+In my opinion, these types of problems have a following structure,
+ Single person decisions: these decisions are often replacing decision making of single human being. Scale factor: You need AI to help you in tons of such decisions in order to make meanigful impact.</description>
+			<content type="html"><![CDATA[<p>Andrew Ng <a href="https://hbr.org/2016/11/what-artificial-intelligence-can-and-cant-do-right-now">wrote insightful article in HBR a while ago</a> about
+what an AI can and cannot do. He highlights that if there&rsquo;s a mental task that a human being can do in few seconds, you can probably automate
+it.</p>
+
+<p>In my opinion, these types of problems have a following structure,</p>
+
+<ol>
+<li>Single person decisions: these decisions are often replacing decision making of single human being.</li>
+<li>Scale factor: You need AI to help you in tons of such decisions in order to make meanigful impact.</li>
+<li>Correlation enough: you do not need to prove causation, insights based on correlation is enough.</li>
+</ol>
+
+<p>However, real work often gets done with decisions of the following structures,</p>
+
+<ol>
+<li>Collaborative: imagine a CEO, finance team and sales team deciding whether to offer discount to close a sale.</li>
+<li>Scale factor: Few dozens of such decisions made correctly and you are home. Company doesn&rsquo;t need to make million
+ such decisions correctly to succeed.</li>
+<li>Causation important: if I offer discount, will the sale close and will the client stick around longer?</li>
+</ol>
+
+<p>In current Avatar, most AI (to be honest, machine learning algorithms) are shining at the first bucket. Real impact of AI will come when
+it can start assisting human beings with second set of problems.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Sane Choices for Small Machine Learning Teams: Part 1</title>
+			<link>https://harshadss.github.io/posts/sane_ml_stack_1/</link>
+			<pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/sane_ml_stack_1/</guid>
+			<description>Data scientists and machine learning engineers in small and medium businesses often end up over-engineering their machine learning workflow and stack. In a series of posts below, I will share a few tricks learnt over the years related to choosing right components of the ML pipeline.
+In this first post, let us go through mistakes small teams can make. Later posts will explain possible solutions.
+Preferring Generalized Solutions Many big companies will perfect a very general solution to machine learning problems by investing obscene amount of resources.</description>
+			<content type="html"><![CDATA[
+
+<p>Data scientists and machine learning engineers in small and medium businesses often end up
+over-engineering their machine learning workflow and stack. In a series of posts below,
+I will share a few tricks learnt over the years related to choosing right components of the
+ML pipeline.</p>
+
+<p>In this first post, let us go through mistakes small teams can make. Later posts will explain possible solutions.</p>
+
+<h3 id="preferring-generalized-solutions">Preferring Generalized Solutions</h3>
+
+<p>Many big companies will perfect a very general solution to machine learning problems by investing
+obscene amount of resources. For example, Google and Facebook can employ top notch PhDs in the
+field of machine learning and let them work on some complex problem for months. These companies can
+also invest in expensive technology (costly GPU time). Big companies like solving a class of problems
+by employing very generic solutions: Google can say that everything is a neural network problem if you squint
+hard enough. So they will build things like tensorflow and use neural nets everywhere. Once problems are
+solved in a general manner, they can be optimized better. Specialized teams can optimize last drop of efficiencies
+from models, architectures or hardware. But the benefits from specialization are enjoyed by all teams.</p>
+
+<p>But as a small startup / ML team, generalizing solutions will be your enemy number 1. You are far better off
+in solving specific problem at hand as quickly and cheaply as possible.</p>
+
+<h3 id="optimizing-for-wrong-metric">Optimizing for Wrong Metric</h3>
+
+<p>Big companies can actually afford to run machine learning/AI practice in two stages. One is a reasearch stage where
+employees spend a lot of time on a complex problem and solve it very well. Second is the engineering/product integration
+stage. This is possible because their return on investment metric is very different from a small startup.</p>
+
+<p>Let us take example of Google&rsquo;s smart replies. If you read their research paper, few things stand out. Almost 8-9 people
+are mentioned as authors with 4 as equal contributors. So that means atleast 4 people worked on the core of this problem
+for a long time. Secondly, their final solution is not one single deep learning algorithm but a complex solution consisting of 4 stages atleast
+one of which had human intervention. Third is data: their model had access to 230 million labelled messages for training
+a model. But Google can justify such a gigantic effort. If smart replies result in even 10% more mails sent on mobile, it is
+a massive return for Google (more engagement with app, more ads). Same is the case with other companies like OpenAI. If you read their
+paper on unsupervised language modelling, you can see tons of hardwork and experiments around right architecture and integrating
+very recent innovations like GeLU non-linearities. Big companies optimize for technological breakthroughs on broad class of problems.</p>
+
+<p>The ROI metric for smaller companies/machine learning teams are very different. You might have 2-3 (albeit smart) people wearing
+many hats: ML researcher, production ML engineer and ML ops engineer are problably the same person in your team. A 5% increase in accuracy
+of a classifier might mean billions dollars for Google but nothing for your team. So small teams should spend more time carefully
+picking specific problems worth solving and optimizing for time to market.</p>
+
+<h3 id="thinking-in-solution-space">Thinking in Solution Space</h3>
+
+<p>Imagine a small/medium company grappling with losses due to poor visibility about product demand and you are solving their problem
+using machine learning. Thinking in solution space first means thinking &ldquo;I want to build most accurate forecasting algorithm for this data&rdquo;.
+Instead, prefer to think in terms of problem space: &ldquo;I want to minimize losses by better estimating demand for this product&rdquo;. Thinking
+in solution space makes you optimize for a narrow and probably less relevant metric for the business.</p>
+
+<h3 id="feeling-ashamed-of-feature-engineering">Feeling Ashamed of Feature Engineering</h3>
+
+<p>On specific set of problems like computer vision and language, deep learning far outperforms handmade features. But again, these benefits
+are not universal (yet). For example: rather than throwing huge LSTMs at a time series problem, you are better off with carefully feature
+engineered (generalized) linear regression. Research driven by big companies creates this false narrative: human curated features are
+bad, make everything a giant neural network black box.</p>
+
+<p>As a small startup, the knowledge your team has about a specific domain is your advantage. Your models can learn something faster (days)
+compared to a team of PhDs at Google can take months to learn.</p>
+
+<h3 id="uninformed-or-subjective-choice-of-tools">Uninformed or Subjective Choice of Tools</h3>
+
+<p>At small-to-medium data and business scales, the tools that you choose are going to matter a lot. Choosing a wrong machine learning
+library (scikit-learn Vs. tensorflow), tech architecture (monolith Vs. microservices) can result in delays in releasing your solution.
+I&rsquo;m not advocating for shunning libraries from big companies. But the trade-offs for tools need to be evaluated more objectively. If
+you need to run image classification inference on low powered devices, tensorflow and its ecosystem is probably best bet at the moment.
+However, for another class of problems and business domain, you might do a lot better using scikit-learn on a beefy server. Avoid at all
+costs the only criteria for selection of tool as &ldquo;it is released by a big company so it must be good&rdquo;.</p>
+
+<h3 id="bottomline-think-like-a-guerrilla">Bottomline: Think Like a Guerrilla</h3>
+
+<p>The overreaching theme of above explanation is this: small machine learning teams and companies need to think like a guerrilla than
+officer of a sophisticated army. Here are few techniques a small machine learning can utilize for maximizing chance of success. I
+will expand on each choice in separate posts.</p>
+
+<ol>
+<li>Survive first: your feature, product first needs to go in the market and start making money. Your ML workflow and stack can
+ evolve into better shape much later.</li>
+<li>Choose boring technology: regression models, random forests have been around for a long time. So is scipy and scikit-learn.
+ You are far less likely to run into lack of documentation, bad APIs and bugs with these algorithms and libraries.</li>
+<li>Pirate spirit: take whatever you can! Once in a while, big companies will release a solution that is objectively better at
+ some tasks (think word2vec or pre-trained NNs for images). In such case, make maximum use of it.</li>
+<li>Play at your strength: knowledge of specific business domain, expertise with older libraries might be strength of your team.
+ Play with your strengths.</li>
+<li>Avoid distributed solutions when you can: one beefy server with 64GBs RAM beats debugging 1000 line Java stack-traces in Apache
+ Spark.</li>
+</ol>
+
+<p>Big companies prefer creating monopolies because they can profit from it. They earlier settled for one social network and one search
+engine. The next step is one algorithm, one library, one cloud management solution. These companies are <em>not</em> working for
+commoditizing machine learning. Commoditization means perfect competition in a market: large number of players offering undifferentiated
+solutions. Google, FB and MS are actually battling for the other end: one probably misfit and costly solution for everyone.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Curse of ML and DL on Stack Exchange</title>
+			<link>https://harshadss.github.io/posts/curse_of_ml_stackoverflow/</link>
+			<pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/curse_of_ml_stackoverflow/</guid>
+			<description>I have come across two distinct flavours of beginner behaviours on stack-exchange site related to data science. I believe they are symptoms representing what is the larger problem ailing field of data science. Let us go through the symptoms first. My tone in this article is extremely acerbic because I feel strongly for my field.
+Deep Learning Voodo Problem Someone will post a problem like, &amp;ldquo;I am trying to fit (some complex deep learning architecture) model on (a bad problem for starting with DL).</description>
+			<content type="html"><![CDATA[
+
+<p>I have come across two distinct flavours of beginner behaviours on stack-exchange site related to data science. I believe they are symptoms representing what is the larger
+problem ailing field of data science. Let us go through the symptoms first. My tone in
+this article is extremely acerbic because I feel strongly for my field.</p>
+
+<h3 id="deep-learning-voodo-problem">Deep Learning Voodo Problem</h3>
+
+<p>Someone will post a problem like, &ldquo;I am trying to fit (some complex deep learning architecture) model
+on (a bad problem for starting with DL). But nothing happens&rdquo;. The model is expected to magically
+solve the problem but something utterly trivial happens. The model doesn&rsquo;t learn anything
+or horribly overfits. Most often, people are doing something too ghastly for words like trying to
+predict the price of a particular stock using DL hoping for a miracle.</p>
+
+<p>The disease here is thinking that deep learning is simple and since Google/FB have demonstrated its
+success in solving hard problems, one can replicate the results in a few minutes piggybacking on some
+library. <a href="https://www.youtube.com/watch?v=Qi1Yry33TQE">Ali Rahimi was correct when he said that the field is turning into a practice of alchemy and
+not science</a>.</p>
+
+<p>Beginners are making following mistakes/assumptions,</p>
+
+<ol>
+<li>Since DL can solve hard problems, solving hard problems with DL would be easy.</li>
+<li>DL solves hard problems, so we should through linear models or any other classic ML model
+ and jump to using DL on everything. Building baselines using simpler models is for sissies.</li>
+<li>Picking an utterly complex real-world problem with heterogeneous data with multiple co-variates (stock prices)
+ and throwing a DL model which works on a simpler problem with homogeneous data (images) at it. In fact, in
+ my opinion throwing any model at stock price prediction is a lunacy but I digress.</li>
+</ol>
+
+<p>This is a sad state of things and it might cause the downfall of deep learning (which is a great fine field by the
+way).</p>
+
+<h3 id="build-my-product-for-free-problem">Build My Product for Free Problem</h3>
+
+<p>Someone will post a problem like &ldquo;I have a bunch of documents here and I want to achieve X. How to do it?&rdquo;. It
+will be clear from the question that the person posting the question has no idea about even most fundamental
+ideas in machine learning like vector space model. They are thinking that it is just a matter of plumbing things
+correctly.</p>
+
+<p>It is not lack of machine learning skills (perfectly legit) but lack of appreciation about hard work
+required to solve a business problem. It is perfectly alright to be a beginner in a field. We all were at some point in time. The problem here is company executives and founders who recruit a kid who has done a two-week deep learning Bootcamp and throw some complex business problem which will need careful modelling, engineering and inference at him/her. They think that
+machine (deep) learning will magically make their team or startup successful. No a**holes, you can&rsquo;t expect to build a good cancer hospital with only first-year medical students (or plumbers) to make it successful. Like <a href="http://www.kitco.com/ind/Turk/turk_sep092008.html">fat tony would say</a> building a CRUD app using JAVA and solving a business problem using machine learning is
+not the same ting! Technical managers or startup founders are looking to make quick bucks using ML on some hard
+problem. The result is many beginner data scientists on ds.stackexchange looking for the entire solution to the problem as
+a free answer.</p>
+
+<h3 id="the-abyss">The Abyss</h3>
+
+<p>The bar for any technical field is supposed to be higher. I am not suggesting that newcomers are not welcome, they
+are. I go out of my way to teach and mentor dozens of newcomers in machine learning field. The more people that acquire modelling and statistical skills, less stupid the world becomes. But big corporations who are lying about machine learning application
+being a commodity and media/journalists who half understand it before joining the bandwagon are ruining the field.
+You become a data scientist or scientist of any kind by learning basic principles, carefully applying them to increasingly complex problems over years. There are no shortcuts to the hard work, no matter how many GPU boxes with tensorflow you throw at it.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Mathematical Epiphanies 2: Differential Equations</title>
+			<link>https://harshadss.github.io/posts/mathematical_epiphanies_differential_equations/</link>
+			<pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/mathematical_epiphanies_differential_equations/</guid>
+			<description>Click here for introduction to this series and motivation.
+Differential Equations  An equation is about balancing two sides of a (weight) balance scale. The equations that we study in school (x + 4 = 9) are about finding the number which will balance the scale. But there could be equations for which solution which balances things is a function and not a number! Specifically, you could have equations which relate a change in certain quantity with respect to that quantity.</description>
+			<content type="html"><![CDATA[
+
+<p><a href="/post/mathematical_epiphanies_introduction/">Click here for introduction to this series and motivation</a>.</p>
+
+<h3 id="differential-equations">Differential Equations</h3>
+
+<ol>
+<li>An equation is about balancing two sides of a (weight) balance scale.</li>
+<li>The equations that we study in school (x + 4 = 9) are about finding the number which will balance the scale.</li>
+<li>But there could be equations for which solution which balances things is a function and not a number!</li>
+<li>Specifically, you could have equations which relate a change in certain quantity with respect to that quantity.</li>
+<li>Solving such equations (4), you have to find the function which will balance. In other words, finding functions
+ will obey the rule defined by the equation.</li>
+<li>Since the solution is a function, it characterizes the evolution of a system. For example, if the equation was about
+ the position of an object and its velocity, the solution will be a function describing the position of the object over time.</li>
+<li>The actual evolution of the system will depend on where the system started, hence initial conditions are important.</li>
+<li>Engineering is basically about forecasting (and hence controlling/influencing) systems around us. Things change.
+ So differential equations are at the core of human endeavour: predicting and controlling the world.</li>
+<li>Since we are studying change, differential equations will show up in every possible field be it social sciences,
+biology or economics. Unfortunately, most school syllabus on DE will be stuck in Newtonian systems.</li>
+<li>The exponential function doesn&rsquo;t show up from thin air. Books get the causality wrong. We don&rsquo;t have a particular
+ single order differential which is solved by this magical function. Instead, if we hypothesize/model some system in which rate of change of a parameter is proportional to the value of a parameter, then the function which can balance that equation (or evolution of system which obeys this model) has a peculiar shape. We call them exponential functions!</li>
+</ol>
+
+<h3 id="references-links">References (Links)</h3>
+
+<ol>
+<li><a href="https://www.goodreads.com/book/show/33642702-calculus">This wonderful book on Calculus</a></li>
+<li><a href="http://www.wellesleycambridge.com/Article_Exponential.pdf">This Gilbert Strang&rsquo;s beautiful but hard to Google introduction to exponential function</a></li>
+</ol>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Mathematical Epiphanies 1: Linear Systems &amp; Fourier Transform</title>
+			<link>https://harshadss.github.io/posts/mathematical_epiphanies_linear_systems_fourier/</link>
+			<pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/mathematical_epiphanies_linear_systems_fourier/</guid>
+			<description>Click here for introduction to this series and motivation.
+Linear Algebra Basics  There are two ways to look at matrices. One view is about a matrix representing some data (to be covered in later part of this series) Another view is: matrix encodes the operation of a linear system on its inputs. In this (3) view, a matrix represents a linear map. Matrix-vector multiplication is taking a vector represented in one coordinate system and transforming it to vector in another co-ordinate systems.</description>
+			<content type="html"><![CDATA[
+
+<p><a href="/post/mathematical_epiphanies_introduction/">Click here for introduction to this series and motivation</a>.</p>
+
+<h3 id="linear-algebra-basics">Linear Algebra Basics</h3>
+
+<ol>
+<li>There are two ways to look at matrices.</li>
+<li>One view is about a matrix representing some data (to be covered in later part of this series)</li>
+<li>Another view is: matrix encodes the operation of a linear system on its inputs.</li>
+<li>In this (3) view, a matrix represents a linear map. Matrix-vector multiplication is taking a vector
+ represented in one coordinate system and transforming it to vector in another co-ordinate systems.</li>
+<li>A diagonal matrix represents the operation of a map which only stretches (or shrinks, inverts) axis of
+ original coordinate system. So linear map which results in diagonal matrices is simple.</li>
+<li>If I know what a linear map does to an axis of the input coordinate system, I can find out what it does to
+ any vector in that input coordinate system (applying linear combinations).</li>
+</ol>
+
+<h3 id="linear-dynamical-systems-fourier-transform">Linear Dynamical Systems, Fourier Transform</h3>
+
+<ol>
+<li>Lot of (wo)man-made systems are signal processors. They take a signal, do something to it, and output a result.</li>
+<li>No system (except theoretical or simulated) will be purely linear in nature. However, for within practical
+ working range of inputs, the system can be thought of as doing a linear operation to its inputs.</li>
+<li>A musical amplifier cannot infinitely keep bumping up the volume. It is limited by its power supply and frequency
+ range of input signal. But then within reasonable limits, its action is linear.</li>
+<li>If I model such systems with an additional constraint: parameters of the system don&rsquo;t change with time, I get the
+ classic linear time-invariant systems.</li>
+<li>A system such as in 4 can be thought of a linear map. It takes signal represented in some coordinate system,
+ applies a linear map operation to it to transform it into another coordinate system.</li>
+<li>If I&rsquo;m designing/synthesizing or analyzing an LTI system, I would be great for its map to be a diagonal matrix
+ since it makes it simple to analyze.</li>
+<li>Another view: if I could do a transformation of my input space (A) to another coordinate space (B) such that operation
+ of my system is stretching or shrinking of axes of B, it is great. Because then I can predict/quantify the behaviour of my system for any arbitrary input -&gt; I know what happens to axes of space B. So for any arbitrary input signal represented in space B, I know what my system does.</li>
+<li>If only there was such co-ordinate space that exists and I could represent my signals in that space.</li>
+<li>It turns out that for sinusoidal signal inputs, any LTI system will act as a diagonal matrix. (Obscured by
+  technical jargon which says sinusoids are eigenvectors for linear maps of LTI systems).</li>
+<li>But I&rsquo;m not interested in sinusoidal inputs. I&rsquo;m interested in arbitrary signal inputs like my voice going
+  into an audio recorder with a background noise of my neighbour&rsquo;s annoying dog barking.</li>
+<li>Can I represent any arbitrary signal in coordinate space represented by sinusoids of different frequencies
+  as axis? Is that representation accurate?</li>
+<li>The answers for both the above questions is no in general but yes under some practical conditions.</li>
+<li>If I can assume that all signals of interest to me (potential inputs to my system) follow some conditions,
+  I can find a way to represent them in space of sinusoidal axis. The representation will be reasonably accurate
+  (probably as accurate as you can get in the least square sense, read next section).</li>
+<li>That &lsquo;way of representation&rsquo; mentioned in 13 means I have to find coefficients for each sinusoidal axis for
+  a given signal. The formula for finding those coefficients is given by Fourier series! Aha! That was long but worth it.</li>
+<li>To repeat the whole point: represent input signals in a coordinate space so that operation of the system
+  on the axes of space is just stretching and shrinking. Once you know what happens to the vectors representing
+  the axes, you know what happens to every signal in that space.</li>
+<li>Once you do this, designing certain type of systems becomes easy. For example: what parameters can I select
+  for this electronic circuit so that these annoying noise signal that I don&rsquo;t want get de-amplified? You
+  can analyze the circuits behaviour in so-called frequency domain to design filters. You have to tune the
+  parameters such that the axis representing those type of signal (frequencies) get shrunked.</li>
+</ol>
+
+<h3 id="things-still-hazy">Things Still Hazy</h3>
+
+<p>I am not sure about the following, but probably that is how things are.</p>
+
+<ol>
+<li>Probably: the representation/approximation of signal found by Fourier transform is close to the original signal in
+ least square sense. In other words, if you cared about minimizing the average of squared error between the approximated signal and original signal, coefficients found by Fourier transform gets the job done. Minimizing
+ the squared error makes some empirical sense: since power is proportional to the square of amplitude for many signals
+ of practical interests (voltage), least square implies the power of approximated signal will be close to original
+ signal.</li>
+<li>I can make things more complicated: rather than assuming a vector/axis of sinusoids where each data-point is
+ a real number, I can think of each vector being made up of two-dimensional numbers (confusingly called complex numbers by mathematicians) which obey certain laws. I&rsquo;m not sure why would anyone want to do this. But probably this allows us to approximate a broader class of signals using Fourier transforms. That is where complex sinusoids and Euler&rsquo;s formula shows up and mind explodes.</li>
+<li>How do we go from here to fast Fourier transform (which makes the computation in (16) of previous section efficient)?</li>
+<li>How do these things relate to other transforms like Laplace (which often shows up in control systems) and
+ z-transform (which shows up in discrete dynamical systems)?</li>
+<li>If Fourier&rsquo;s transform takes (complex) sinusoids as basis, what about wavelets? What kind of signals form
+ the basis in wavelet tranforms? Wavelets were going to change the world. What happened to that?</li>
+</ol>
+
+<h3 id="references">References</h3>
+
+<p>To be added. Demystifying Mr Fourier&rsquo;s business for myself has been my quest for the last 10 years. There are too
+many references to list down, some I can&rsquo;t remember. I&rsquo;ll add a few soon.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Mathematical Epiphanies 0: Introduction</title>
+			<link>https://harshadss.github.io/posts/mathematical_epiphanies_introduction/</link>
+			<pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/mathematical_epiphanies_introduction/</guid>
+			<description>I had to study a lot of maths in higher secondary and engineering. There were 2 maths subjects for 2 years after secondary school and 3 maths subjects in the first two years of engineering. Despite studying so much maths, graduate school was a rude shock for me. I just couldn&amp;rsquo;t wrap my head around of a lot of lectures.
+The problem was the way maths was taught. Most of the teachers taught maths as an end in itself, mostly devoid of the most important question: &amp;ldquo;why&amp;rdquo;?</description>
+			<content type="html"><![CDATA[<p>I had to study a lot of maths in higher secondary and engineering. There were 2 maths subjects for 2 years after secondary
+school and 3 maths subjects in the first two years of engineering. Despite studying so much maths, graduate school was
+a rude shock for me. I just couldn&rsquo;t wrap my head around of a lot of lectures.</p>
+
+<p>The problem was the way maths was taught. Most of the teachers taught maths as an end in itself, mostly devoid of the
+most important question: &ldquo;why&rdquo;? I believe the teachers had given up on the why or they just didn&rsquo;t care. I have horror
+stories of sitting in a classroom with teacher babbling about negative frequencies or how the solution of some differential
+equation is so easy while I sat there screaming in my head.</p>
+
+<p>In most of the cases, there was a 2-3 line plain English that would make the little bulb in the head go up. Something that
+would clear the air and calm down your blood pressure and the world would start making a lot of sense. Alas, such epiphanies
+were very rare. I started having them during my own studies.</p>
+
+<p>I probably have an OCD about this. If I had to spend a lot of time rot learning something where I don&rsquo;t see the &lsquo;why&rsquo; part,
+I keep feeling extremely uncomfortable. This feeling would take me on a lot of afternoons desperately going through books and
+blogs and anything else on the topic that I can devour. I&rsquo;m generally not interested in solving maths puzzles or going too
+deep into the topic. But that one big insight which clears crux of the matter is what I&rsquo;m after.</p>
+
+<p>I am going to write down some of these epiphanies as notes to self in a series of posts.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Readings in Human Body, Evolution and Biology</title>
+			<link>https://harshadss.github.io/posts/studying_body_biology/</link>
+			<pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/studying_body_biology/</guid>
+			<description>Throughout my school life I tried to stay away from biology studies. I specifically chose studying physics and maths instead of biology in higher secondary school. Even during secondary school, science 1 generally had physics and chemistry whereas science 2 contained protozoans and all other wiggling beasts. Guess who barely got over line in science 2.
+The logic for a high school students in India was simple. You chose biology if you wanted to be a doctor (or do a research in microbiology) which meant spending many years studying and daddy needs to have lot of money to get you into medical school.</description>
+			<content type="html"><![CDATA[<p>Throughout my school life I tried to stay away from biology studies. I
+specifically chose studying physics and maths instead of biology in higher
+secondary school. Even during secondary school, science 1 generally had
+physics and chemistry whereas science 2 contained protozoans and all other
+wiggling beasts. Guess who barely got over line in science 2.</p>
+
+<p>The logic for a high school students in India was simple. You chose biology if you
+wanted to be a doctor (or do a research in microbiology) which meant spending
+many years studying and daddy needs to have lot of money to get you into medical
+school. Studying physics and maths meant joining engineering, the shortest
+path to start earning money doing a white-caller job.</p>
+
+<p>While in engineering, I convinced myself that the choice was correct. I loved
+studying machines, be it a micro-controller or an oscilloscope. First brush
+with computers and operating systems (hardware-software interface) was fascinating.
+Operating systems and hardware is a vast topic, so there&rsquo;s always enough nothing
+that you can keep studying about.</p>
+
+<p>Past couple of years have changed me profoundly though. A series of personal
+circumstances (some good, some tragic) forced me to get upclose with human
+biology and physiology. Little by little, I realized that if I love studying
+machines, then human body is probably the greatest, most mysterious, quirky and
+useful machine ever built (or evolved depending upon how strong your faith is).
+In contrast, computers are predictable and too put it mildly, boring.
+I am gettinng sucked deeper into the hole day-by-day and my interest keeps going up.</p>
+
+<p>The overall theme of my study is evolutionary biology of human body applied
+to diseases and human behaviour. The books I read or that are on my radar
+are <a href="https://www.goodreads.com/review/list/30646850-harshad?shelf=health-fitness-body">covered in this goodreads list</a>. At this point I don&rsquo;t know if this is a passing interest because computers
+are probably not challenging enough as compared to body. But I&rsquo;m happy and
+learning.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Learnings from Teaching Machine Learning</title>
+			<link>https://harshadss.github.io/posts/learnings_from_teching_ml/</link>
+			<pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/learnings_from_teching_ml/</guid>
+			<description>I have been teaching machine learning to programmers since some time. I started this activity in 2013 and till date I have conducted 10+ hands on workshops.
+All these workshops were typically 3-3.5 hours long and covered some theory, coding examples through Python (ocassionally R) and interactive discussions. They were attended by 10-50 programmers.
+Here are some learnings from this teaching activity, in no particular order. Many of them were in fact goof-ups that I did at one point of time, so these are indeed lessons from trenches.</description>
+			<content type="html"><![CDATA[
+
+<p>I have been teaching machine learning to programmers since some time. I started this activity in 2013 and till date I have conducted 10+ hands on workshops.</p>
+
+<p>All these workshops were typically 3-3.5 hours long and covered some theory, coding examples through Python (ocassionally R) and interactive discussions. They were attended by 10-50 programmers.</p>
+
+<p>Here are some learnings from this teaching activity, in no particular order. Many of them were in fact goof-ups that I did at one point of time, so these are indeed lessons from trenches.</p>
+
+<h3 id="on-preparation">On Preparation</h3>
+
+<ol>
+<li>Never underestimate value of solid preparation. Doing machine learning (or any other domain really) for a long time is no excuse for not preparing. My thumb-rule is typically 5x-8x preparation i.e. for a 3 hours workshop, you need 20 hours of explicit preparation.</li>
+<li>Before you begin preparation, write down profile of your likely audience. For example, ask yourself how much your audience would know about a particular concept (say linear regression).</li>
+<li>Always plan for 2-3 different levels (or categories) of audience on the basis of familiarity with the topic and motivation.</li>
+</ol>
+
+<h3 id="on-presentation">On Presentation</h3>
+
+<ol>
+<li>Work out all your content on pen and paper first. Visualize the flow of your presentation. Start putting together slides at very end.</li>
+<li>If your presentation uses code, prefer creating slides in a tool which can let you integrate between content and code easily (example: ipython notebook in presentation mode). Context switch between code and content is not required.</li>
+<li>Pay attention to minor details like font size, line width. Try out how the presentation looks on projected screens, especially for slides with code.</li>
+<li>People have different preferred ways of learning: listening, discussing, coding it up, seeing in pictures and so on. Have a balanced mix of these teaching aids in your presentation.</li>
+</ol>
+
+<h3 id="content">Content</h3>
+
+<ol>
+<li>Write down all the content that you want to cover. Take a deep breath in. Delete half of the planned content. Seriously. Due to familarity with the content, you would always underestimate the time required to cover it by a large margin. Err on the side of covering fewer concepts. In the worst case you will have more time for question-answers, rather than running through slides and apologizing profusely.</li>
+<li>Assume that your audience is allergic to jargon. So number of new words, concepts that you throw at them should be minimized.</li>
+<li>Create enough time checks around big concepts/themes of your workshop. For example, for a 3 hour workshop I have time checks in mind for every hour about which concepts I should have covered by that time.</li>
+<li>If you are going to give analogies from other domains, review your analogies from perspective of audience. If most of your audience is engineers from computer science, analogies from communications engineering will not help. Same is the case with analogies involving places, people, currencies and festivals. Localization of your analogies and examples is important in order to avoid distractions.</li>
+</ol>
+
+<h3 id="tools-and-environment-and-testing">Tools and Environment and Testing</h3>
+
+<ol>
+<li>Do not assume that your favourite editor, operating systems, programming language, notebook and any other tool is an industry standard.</li>
+<li>Focus on generic tools as much as possible to handle diversity of tools and OSses. (pip instead of apt-get, simple text editors, no IDE support). If you want to make assumptions, make lowest possible assumptions. For example, never assume that everyone in the audience knows about Docker or Conda.</li>
+<li>Create a well defined document on requirements and installation. Make sure that your audience has access to this document well in advance.</li>
+<li>A sizeable number of people might be using a non-unix operating system, plan for that.</li>
+<li>If you have code to be covered as a part of workshop, ensure that it is well tested. In fact having your audience run tests with you is also a good idea.</li>
+<li>Test your code examples from typical goof-ups (someone in the audience running a different version of a library, Python 2 Vs 3).</li>
+<li>Your presentation or workshop is not the right place to pitch your favourite programming language, editor, operating system (or <em>anything</em> really) to the audience.</li>
+<li>It is good idea to put your code on github (or similar) in advance and share a link.</li>
+<li>Never assume that Wi-Fi at the workshop or conference venue will work flawlessly :-)<br /></li>
+</ol>
+
+<p>Bottomline is that your audience invest significant time in coming for your workshop/presentations. It is your responsibility to ensure that they get maximum return on their time and money investments, without too many distractions.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Obstacles in Taking Machine Learning to Production</title>
+			<link>https://harshadss.github.io/posts/problems_in_deploying_ml/</link>
+			<pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/problems_in_deploying_ml/</guid>
+			<description>Well the title is intentionally exaggerating. May not the biggest but certainly one of the most important area of friction in taking machine learning to production.
+Scenario Imagine that you/your data scientist has written a functional machine learning pipeline in Python today. And by pipeline I mean data transformation as well as prediction code. For example, you could have a data which is mix of text and numeric features. You might do some text processing to generate n-gram features with some custom filters on the text.</description>
+			<content type="html"><![CDATA[
+
+<p>Well the title is intentionally exaggerating. May not the biggest but certainly one of the most important area of friction in taking machine learning to production.</p>
+
+<h2 id="scenario">Scenario</h2>
+
+<p>Imagine that you/your data scientist has written a functional machine learning pipeline in Python today. And by pipeline I mean data transformation as well as prediction code. For example, you could have a data which is mix of text and numeric features. You might do some text processing to generate n-gram features with some custom filters on the text. The text features are let us say concatenated with numeric features to form your independent variables/X matrix. Then let us say you are applying a non GLM machine learning model like trees or random forest. The story is good so far.</p>
+
+<h2 id="problem-statement">Problem Statement</h2>
+
+<ul>
+<li>Problem 1: How do you use this pipeline for making a predictions later?</li>
+<li>Problem 2: 1 + production forces you to use non-Python stack on application/server side.</li>
+<li>Problem 3: 1, 2 combined alongwith the fact that production (software) engineer has never heard about feature engineering, random forest evaluation, training vs. prediction and so on.</li>
+<li>Problem 4: how do you solve 1, 2, 3 and plus handle things like unit tests, regression testing, builds, logging, authentication seamlessly?</li>
+<li>Probelm 5: data and business changes. How do you continuously train your models, version control them and still solve 1-4?</li>
+</ul>
+
+<p>If you ask me, this scenario is certainly the biggest pain-point which prevents machine learning from actually delivering value to business. My experience of (trying to) solve this for over five years has taught some invaluable lessons.</p>
+
+<h2 id="solutions">Solutions</h2>
+
+<p>Before dissecting the problem further, let us look at some naive solutions that one might look at (in increasing order of horror/tech investment).</p>
+
+<ol>
+<li>Use python mostly everywhere. Save pickled files to version controlled network file system and load on server side.</li>
+<li>Use an API/microservice/RPC layer to abstract Python implementation details (catch: writing that svc layer is only a first step, maintaining?).</li>
+<li>Use apache spark, engineers might feel more at home with JVM. (catch: too many to list down!)</li>
+<li>Use platform agnostic serialization like PMML (catch: coverage, library support, PMML didn’t really catch on?)</li>
+<li>Let engineers develop home grown solution to bridge the gap (catch: engineers need to learn lot of core ML).</li>
+</ol>
+
+<h2 id="dissecting-the-problem-further">Dissecting the problem further</h2>
+
+<p>The problem looks simple to solve. But there are tons of problems that lurking beneath a naive solution here.</p>
+
+<h3 id="problem-of-terminology-common-language">Problem of Terminology / Common Language</h3>
+
+<p>In beautifully designed world of scikit-learn/Python certain basic operations are part of lingua franca. Vectorized text feature generation from a list of text or vectorized random forest prediction/evaluation is a basic operation. Having worked with Python for so long, data/ML oriented programming is ingrained in my brain so much. But other ecosystems that you use in production may not be mature on data/ML side to have these basic operations available as routine features. The result is that ‘vectorized text to n-gram features’ or ‘one-hot encoding’ is a greek for SDE building the production code.</p>
+
+<p>For anything beyond a linear model, re-creating the prediction code in other language/eco-system is also tough.</p>
+
+<h3 id="problem-of-re-inventing-the-wheel">Problem of Re-inventing the wheel</h3>
+
+<p>You might try to isolate machine learning model prediction and feature generation in Python behind a service (or RPC). But then what about tons of other stuff like auth-handling, database communication, logging infrastructure, build pipelines which may or may not have been built in keeping multiple language support in mind? I’ve faced this problem where we loose productive time in re-inventing ‘XforPy’ before taking a model to production.</p>
+
+<h3 id="problem-of-premature-big-data-stack">Problem of (premature) Big Data Stack</h3>
+
+<p>Apache spark is a seducting alterative. It has Python, Scala, and Java API. So data scientist can train in Python, save the model. API layer can continue to use Scala or Java. Problem solved!</p>
+
+<p>Not so fast. Though Apache Spark has its merits, we must understand that it was built with big data in mind. Hot data of a mid scale enterprise may still be too small for Spark/Hadoop. Secondly, Apache Spark is not a magick wand. You have to write the code to carefully exploit the parallelization primitives. Third, MLlib, although a great library, is still not as rich as Pydata/ML ecosystem.</p>
+
+<h2 id="solutions-and-bottom-line">Solutions and Bottom Line</h2>
+
+<p>In my opinion, this is not a tool problem but a culture/education problem. (Data) engineers and data scientists have to understand each others trade to a good amount of depth and then choose their poison together (python everywhere or spark or something else). Companies like Google solve this problem since their cream engineers and cream machine learning researchers are the same (check Jeff Dean leading Google Brain, for example).</p>
+
+<p>In my org, I designed a careful bootcamp for every new data science joinee where they learn about atleast basic software engineering practice like unit testing, build automation, version control and even good amount of practice on how Linux works. Sadly, teaching SDEs about ML basics has not happened.</p>
+
+<p>Alternatively, libraries like dask offer a good trade-off where you can still stay in the Python eco-system and handle awkwardly sized non-big data well.</p>
+
+<p>But as an industry, we are way off from ‘one way of doing things’ when it comes to actually deploying the prediction side of machine learning to production.</p>
+
+<p>Though I hate to say it, the solution is ‘it depends’!</p>
+
+<h2 id="related-links">Related Links</h2>
+
+<p><a href="http://tinyclouds.org/residency/">In this article</a> creator of node.js Rian Dahl puts it beautifully: “From a software maintenance perspective there is little consensus on how to organize ML projects. It feels like websites before Rails came out: a bunch of random PHP scripts with an unholy mixture of business logic and markup sprinkled throughout”, although in the context of training models and not scoring.</p>
+
+<p><a href="https://www.youtube.com/watch?v=vKU8MWORHP8">Machine learning infrastructure at Stripe</a> Stripe built lot of prediction infrastructure with ‘train in Py use in Scala’ way. It is a good talk.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Practical Common Lisp / Clojure: 5</title>
+			<link>https://harshadss.github.io/posts/practical_common_lisp_5/</link>
+			<pubDate>Tue, 13 Jun 2017 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/practical_common_lisp_5/</guid>
+			<description>In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+In part 4 of this post, we saw the code from chapter 9 of the book about creating a test framework.
+In this post, we continue the code of chapter 9 and iron out few kinks in our unit test framework.</description>
+			<content type="html"><![CDATA[
+
+<p>In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book <a href="http://www.gigamonkeys.com/book/">can be accessed online here</a>.</p>
+
+<p>In <a href="/post/practical_common_lisp_4/">part 4</a> of this post, we saw the code from chapter 9 of the book about creating a test framework.</p>
+
+<p>In this post, we continue the code of chapter 9 and iron out few kinks in our unit test framework.</p>
+
+<h2 id="chapter-9-continued">Chapter 9 Continued</h2>
+
+<h3 id="note-on-combine-result">Note on combine-result</h3>
+
+<p>The code given in the book which uses combine-result is little different from the code I have written in previous post and this one. I’m skipping replicating the same functionality since my aim is to accelerate learning.</p>
+
+<h3 id="better-result-reporting">Better Result Reporting</h3>
+
+<p>Whenever a test fails, we want to report which test failed with its name. The code is as follows (I’m modiying the report function). Note that I’m simply doing an AND over result of multiple test function rather than writing combine-results.</p>
+
+<p>Note the trick with declaring a (dynamic) var test-name while defining report-result-return and how it is re-bound while defining the test function. I don’t yet understand why this trick is needed completely. My initial guess: probably difference between compile-time and run-time for the macro plays some role here.</p>
+
+<pre><code>(def ^:dynamic *test-name* nil)
+
+(defn report-result-return
+  [result form]
+  (do 
+    (clojure.pprint/cl-format true &quot;~:[FAIL~;pass~] ... ~a: ~a~%&quot; result *test-name* form)
+    result))
+
+(defmacro multicheck-withres
+  [&amp; forms]
+  `(every? identity (list ~@(for [form forms]
+                                        `(report-result-return ~form '~form)))))
+
+(defn test-*
+  []
+  (binding [*test-name* 'test-*]
+  (multicheck-withres
+    (= (* 1 2) 2)
+    (= (* 1 2 3) 6))))
+
+(test-*)
+
+(defn test-+
+  []
+  (binding [*test-name* 'test-+]
+  (multicheck-withres
+    (= (+ 1 2) 3)
+    (= (+ 1 2 3) 6))))
+
+(test-+)
+
+(defn test-arithmatic
+  []
+  (and
+   (test-+)
+   (test-*)))
+
+(test-arithmatic)
+</code></pre>
+
+<h3 id="an-abstraction-emerges">An Abstraction Emerges</h3>
+
+<p>We are still defining the test as a function, a detail leaked to end user. For each test function definition, we have the following fairly duplicated code,</p>
+
+<ol>
+<li>Define a function with the provided name</li>
+<li>rebind the test-name dynamic var to the name of the function</li>
+<li>Make a call to the check macro with the passed in forms.</li>
+</ol>
+
+<p>We can remove all the code duplication and let the user define a test in a very concise way. The code is as follows,</p>
+
+<pre><code>(defmacro defmytest
+  [name &amp; body]
+  `(defn ~name []
+    (binding [*test-name* '~name]
+     (multicheck-withres ~@body))))
+
+(println (macroexpand-1 '(defmytest test-+ (= (+ 1 2) 3) (= (+ 1 2 3) 6))))
+
+(defmytest test-+ (= (+ 1 2) 3) (= (+ 1 2 3) 6))
+
+(test-+)
+</code></pre>
+
+<h3 id="learning-so-far">Learning So Far</h3>
+
+<p>Good going so far. Multiple usage of macro function to simplify the code so much. The overall unit test framework code (with simplified names) is as follows (skipped the combine-result part). Short and sweet! I’d love to now checkout the source code of Clojure’s test frameworks like midje or core.test work.</p>
+
+<pre><code>(def ^:dynamic *test-name* nil)
+
+(defn report-result
+  [result form]
+  (do 
+    (clojure.pprint/cl-format true &quot;~:[FAIL~;pass~] ... ~a: ~a~%&quot; result *test-name* form)
+    result))
+
+(defmacro check
+  [&amp; forms]
+  `(every? identity (list ~@(for [form forms]
+                                        `(report-result ~form '~form)))))
+
+(defmacro deftest
+  [name &amp; body]
+  `(defn ~name []
+    (binding [*test-name* '~name]
+     (check ~@body))))
+
+(deftest test-+ (= (+ 1 2) 3) (= (+ 1 2 3) 6))
+
+(test-+)
+</code></pre>
+
+<p>Onwards!</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Practical Common Lisp / Clojure: 4</title>
+			<link>https://harshadss.github.io/posts/practical_common_lisp_4/</link>
+			<pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/practical_common_lisp_4/</guid>
+			<description>In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+In part 3 of this post, we saw the code from chapter 3 of the book in which we implemented an in-memory documentish database with select, where and update.
+Now I am tackling the code from chapter 9, building a test framework.</description>
+			<content type="html"><![CDATA[
+
+<p>In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book <a href="http://www.gigamonkeys.com/book/">can be accessed online here</a>.</p>
+
+<p>In <a href="/post/practical_common_lisp_3/">part 3</a> of this post, we saw the code from chapter 3 of the book in which we implemented an in-memory documentish database with select, where and update.</p>
+
+<p>Now I am tackling the code from chapter 9, building a test framework. I’m skipping the chapters from 4-8 since they cover CL syntax and semantics from blog posts. But note that these chapters are not to be skipped while studying, especially the macro ones.</p>
+
+<h2 id="chapter-9-unit-test-framework">Chapter 9 : Unit Test Framework</h2>
+
+<p>In this chapter Peter makes us implement a simple unit test framework for lisp with lot of macro kung-foo. The unit test framework is to be used in interactive fashion.</p>
+
+<h3 id="first-try">First Try</h3>
+
+<p>Each test is defined as a good old function returning bool. It does and over multiple clauses/tests. Clojure code is simple,</p>
+
+<pre><code>(defn test-+
+  []
+  (and
+   (= (+ 1 2) 3)
+   (= (+ 1 2 4) 7)
+   (= (+ -1 -3) -3)))
+
+(test-+)
+
+(defn test-+
+  []
+  (and
+   (= (+ 1 2) 3)
+   (= (+ 1 2 4) 7)
+   (= (+ -1 -3) -4)))
+
+(test-+)
+</code></pre>
+
+<p>However, this returns an all or nothing result but doesn’t help us to narrow down on which test case failed. So instead, we modify the function to print the input data and result for each clause/test. At this point the code takes an uncomfortable turn: reading about formatting function.</p>
+
+<p>This leaves me with two choices either learn about common lisp formatting in detail or use Clojure formatting (which uses Java.util.Formatter). I’m already having hard time in life learning about different formatting in Python 2 and 3 :-P. So having to choose between cl formatting and clj/java is like between a rock and hard place, if you get my drift.</p>
+
+<p>Anticlimax: Clojure comes to rescue as it can understand common lisp formatting. So onwards, we piggyback on cl-format in clojure and implement the test as follows.</p>
+
+<pre><code>(defn test-+ []
+  (clojure.pprint/cl-format true &quot;~:[FAIL~;pass~] ... ~a~%&quot; (= (+ 1 2) 3) '(= (+ 1 2) 3))
+  (clojure.pprint/cl-format true &quot;~:[FAIL~;pass~] ... ~a~%&quot; (= (+ 1 2 3) 6) '(= (+ 1 2 3) 6))
+  (clojure.pprint/cl-format true &quot;~:[FAIL~;pass~] ... ~a~%&quot; (= (+ -1 -3) -4) '(= (+ -1 -3) -4)))
+
+(test-+)
+</code></pre>
+
+<h3 id="refactoring-better-reporting">Refactoring / Better Reporting</h3>
+
+<p>We note that the code above has some duplication as we are printing things repeatitively. We abstract out the printing part in a single function.</p>
+
+<pre><code>(defn report-result
+  [result form]
+  (clojure.pprint/cl-format true &quot;~:[FAIL~;pass~] ... ~a~%&quot; result form))
+
+(defn test-+
+  []
+  (report-result (= (+ 1 2) 3) '(= (+ 1 2) 3)))
+
+(test-+)
+</code></pre>
+
+<p>But this is still not satisfactory, as the list representation and the expression are both passed to report-result. Smarter code should be able to generate the both based on one.</p>
+
+<p>In the macro below, we generate the call to report result with the form. The ‘~ is little cryptic. The backtick ` converts all the atoms in the passed in list into namespaced symbols. But we don’t want that to happen with form (since it is not defined in the namespace, we want the actual form passed in to the macro). ~form forces the evaluation of form rather than the form itself.</p>
+
+<pre><code>(defmacro check
+  [form]
+  `(report-result ~form '~form))
+
+(macroexpand-1 '(check (= (+ 1 2) 3)))
+
+(check (= (+ 1 2) 3))
+</code></pre>
+
+<p>With this, the test can be multiple calls to check.</p>
+
+<pre><code>(defn test-+
+  []
+  (check (= (+ 1 2) 3) )
+  (check (= (+ 1 2 3) 6))
+  (check (= (+ -1 -3) -4)))
+
+(test-+)
+</code></pre>
+
+<p>That doesn’t look too bad, although there’s duplication with multiple calls to check. One more step further: let us auto-generate the multiple calls. Macros to the rescue again. Note that we use do in clojure for doing multiple form evaluation (progn is used in the book). For in Clojure is more readable too. Lastly, we change the name to say multicheck for easy comparison with check.</p>
+
+<pre><code>(defmacro multicheck
+  [&amp; forms]
+  `(do ~@(for [form forms]
+           `(report-result ~form '~form))))
+
+(macroexpand-1 '(multicheck (= (+ 1 2) 3) (= (+ 1 2 3) 6)))
+
+(multicheck (= (+ 1 2) 3) (= (+ 1 2 3) 6))
+
+(defn test-+
+  []
+  (multicheck
+    (= (+ 1 2) 3)
+    (= (+ 1 2 3) 6)))
+
+(test-+)
+</code></pre>
+
+<h3 id="fixing-return-value">Fixing Return Value</h3>
+
+<p>The last iteration is not bad. The test (function really) looks more like the way would write real tests, with just enough details passed in. But we want to bring back our original feature: printing overall result (all tests passed or atleast one failed). The last implementation prints pass fail for each test but not overall result.</p>
+
+<p>The idea is simple: while printing result of each test, we need to somehow capture the result of evaluation and then AND over all results and print the result of that AND.</p>
+
+<p>First thought that comes to mind is AND in the language. But AND in CL/CLJ short circuits (breaks on first false). Going off track, it is interesting to read up why it makes sense in case of boolean logic to short circuit AND. But let us not digress.</p>
+
+<p>Peter implements the refactoring with the help of two macros. I wanted to avoid that territory (macro calling another macro) given my shoddy knowledge of macros. So I am simplifying the implementation a little.</p>
+
+<p>We change the report-result function to do the side effect as well as result. The ‘do’ will print to stdout and then return the result. For doing non short-circuit AND over result, Clojure has every? implemented for us. We splice the result of applying report-result and then convert to list again. Otherwise, we end up in a situation with s-expression with boolean as first atom, which is illegal. There’s probably a cleaner way to implement this. Some other time! Finally, we print the result of every.</p>
+
+<pre><code>(defn report-result-return
+  [result form]
+  (do 
+    (clojure.pprint/cl-format true &quot;~:[FAIL~;pass~] ... ~a~%&quot; result form)
+    result))
+
+(report-result-return (= (+ 1 2) 3) '(= (+ 1 2) 3))
+
+(defmacro multicheck-withres
+  [&amp; forms]
+  `(println (every? identity (list ~@(for [form forms]
+                                        `(report-result-return ~form '~form))))))
+
+(println  (macroexpand-1 '(multicheck-withres (= (+ 1 2) 3) (= (+ 1 2 3) 6))))
+
+(multicheck-withres (= (+ 1 2) 3) (= (+ 1 2 3) 7))
+
+(defn test-+
+  []
+  (multicheck-withres
+    (= (+ 1 2) 3)
+    (= (+ 1 2 3) 6)))
+
+(test-+)
+</code></pre>
+
+<h3 id="learning-so-far">Learning So Far</h3>
+
+<p>This chapter has been interesting to say the least. Multiple learnings as follows,</p>
+
+<ol>
+<li>More practice on macros. Remember that you take input form and return another form (list) which is actually evaluated.</li>
+<li>For use cases like this, lisps are in general unbeatable. For example, unit test framework is about generating code to execute supplied code and then doing bookeeping on what failed and what not. Can’t beat lisp with its code as data and macros here.</li>
+<li>Iterative implementation with the help of repl is such a liberating way to develop code. Short cycle between implement and testing helps.</li>
+<li>Peter’s iterative implementation also moves from a crude design to a better design. Progressively, we are only supplying required details (the test clauses) and not caring about how the implementation/evaluation of tests is done.</li>
+</ol>
+
+<p>The last part where implementation is leaking to the user is in defining test as function and call to check. As a user you are aware that check needs to be called. Ideal design would,</p>
+
+<ol>
+<li>Hide that defn and let user define a test (deftest). It is like creating a mini DSL.</li>
+<li>User shouldn’t need to know if check is called internally.</li>
+<li>Ability for defining hierarchy of tests.</li>
+</ol>
+
+<p>Peter tackles it in next part. Hint: it is more macros to generate the defn directly :-) . I can’t wait to read the next part!</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Practical Common Lisp / Clojure: 3</title>
+			<link>https://harshadss.github.io/posts/practical_common_lisp_3/</link>
+			<pubDate>Thu, 08 Jun 2017 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/practical_common_lisp_3/</guid>
+			<description>In these posts I&amp;rsquo;m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+In part 2 of this post, we implemented select, where and update function for our documentish db. But the implementation had fair bit of code duplication. We remove code duplication and make the code more generic in this section.</description>
+			<content type="html"><![CDATA[<p>In these posts I&rsquo;m studying the book Practical Common Lisp by Peter Siebel and
+coding the examples in Clojure. Aim: studying clojure and reading this
+fantastic book <a href="http://www.gigamonkeys.com/book/" target="_blank">can be accessed online here</a>.</p>
+
+<p>In <a href="/post/practical_common_lisp_2/" target="_blank">part 2</a> of this post, we
+implemented select, where and update function for our documentish db. But the
+implementation had fair bit of code duplication. We remove code duplication
+and make the code more generic in this section.</p>
+
+<h2 id="chapter-3-continued">Chapter 3 continued</h2>
+
+<h3 id="removing-duplication">Removing duplication</h3>
+
+<p>In this section, Peter highlights that last sections where implementation was
+specific to the given use case (documents corresponding to cd) and had fair bit
+of code repeatation. He solves both problems with a re-write of where as a macro
+with two helper functions.</p>
+
+<p>My clojure code is as given below, the explanation follows.</p>
+
+<h4 id="single-comparison-expression">Single comparison expression</h4>
+
+<p>In a database query, there could be multiple where clauses/conditions.
+For each clause, we would need a comparison expression. The following code
+generates such expression for a passed in field and value. For reasons little
+difficult for me to digest right now, there&rsquo;s a reference to a dynamic var row
+in the implementation. We will discuss this point later. Note for now that the
+function gives different result a new binding of row var.</p>
+
+<pre><code>(def ^:dynamic row nil)
+
+(defn make-comparison-expr
+  [[field value]]
+  (list '= value (list 'get row field)))
+
+(make-comparison-expr '(:rating 8))
+
+(binding [row {:rating 8 :artist &quot;Someone&quot;}]
+  (make-comparison-expr '(:rating 8)))
+  
+</code></pre>
+
+<h4 id="multiple-comparison-expressions">Multiple comparison expressions</h4>
+
+<p>What if there are multiple clauses/conditions in where? We iterate over each
+pair and build a list containing each comparison expression. Since the passed
+in list is a sequence of field and value, we use partition to retrieve pairs.</p>
+
+<pre><code>;; for multiple pairs, make expression for each
+(defn make-comparison-expr-list
+  [all-field-pairs]
+  (let [pairs (partition 2 all-field-pairs)]
+    (map #(make-comparison-expr %) pairs)))
+    
+(binding [row {:rating 8 :artist 9}]
+  (make-comparison-expr-list '(:artist &quot;Dixie Chicks&quot; :rating 8)))
+
+</code></pre>
+
+<h4 id="the-where-macro">The where macro</h4>
+
+<p>Now comes the hairy part. Here we want to write where as macro, which returns
+the right predicate generator. To be honest, I struggled with this part a lot.
+There are multiple reasons,</p>
+
+<ol>
+<li>The macro is returning an anonymous function. The anonymous function takes
+ an argument (the row/document in the database). Not covered in many macro
+ tutorials/training :-P</li>
+<li>The and in Clojure itself is a macro which takes expressions and not a list
+ of expressions. Whereas our make-comparison-expr-list is returning a list.
+ We can use ~@ to splice the list, but I am staying clear of it for now.</li>
+<li>The reference to the row needed for make-comparison-expr. I thought the best
+ way would be to pass in a symbol. So make-comparison-expr function should
+ also take in row alongwith field, value pair. I couldn&rsquo;t get this to work.</li>
+</ol>
+
+<p>Although I could write the two functions in the last subsection myself, the
+macro simply too hard for me at this point. So I needed some help from
+<a href="https://github.com/stuarthalloway/practical-cl-clojure/blob/master/src/pcl/chap_03.clj" target="_blank">Stuart Halloway&rsquo;s solution here</a>.
+I solved problem by appending a pound/hash to the row
+argument to the anonymous function. My incomplete understanding tells me that
+it generates a new symbol for the anonymous function argument. Variable capture
+and what not. I need to study this later.
+For problem 2, I used every? function with eval on each return value from
+make-comparison-expr-list rather than splice unquote. For problem 3,
+I still don&rsquo;t understand why we need a global reference to the row which is
+bound again inside the macro. I do know that getting the macro to work is
+littled difficult otherwise.</p>
+
+<pre><code>(defmacro where [clauses]
+  `(fn [cd#]
+     (binding [row cd#]
+      (every? eval (make-comparison-expr-list ~clauses)))))
+
+(defn select [wherefunc]
+  (filter wherefunc (deref db)))
+
+(select (where '(:title &quot;Fly&quot;)))
+
+</code></pre>
+
+<h3 id="learning-so-far">Learning So Far</h3>
+
+<ol>
+<li>Treating code as data, wow! We generated the expression for comparison
+ depending upon the field and value passed in. I&rsquo;ve not seen this done
+ in any other language so succinctly.</li>
+<li>Treating code as data helped us to make the functions more generic.
+ <a href="https://www.cs.umd.edu/~nau/cmsc421/norvig-lisp-style.pdf" target="_blank">Peter Norvig&rsquo;s lisp guide</a>
+ highlighted this explicitly and so did SICP book: make your functions
+ generic so that they can be re-used. Saw this in action.</li>
+<li>First rule of macro club is there for a reason! Stay clear of macros as long
+ as you don&rsquo;t understand them well.</li>
+</ol>
+
+<p>This concludes chapter 3. Onwards!</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Practical Common Lisp / Clojure: 2</title>
+			<link>https://harshadss.github.io/posts/practical_common_lisp_2/</link>
+			<pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/practical_common_lisp_2/</guid>
+			<description>In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+In part 1 of this post, we went through creating a single database using list and maps.
+Chapter 3 continued Looking at database contents In this section, Peter teaches string formatting for CL. Using string formatting, a nicer way to look at db contents is tried.</description>
+			<content type="html"><![CDATA[
+
+<p>In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book <a href="http://www.gigamonkeys.com/book/">can be accessed online here</a>.</p>
+
+<p>In <a href="/post/practical_common_lisp_1/">part 1</a> of this post, we went through creating a single database using list and maps.</p>
+
+<h2 id="chapter-3-continued">Chapter 3 continued</h2>
+
+<h3 id="looking-at-database-contents">Looking at database contents</h3>
+
+<p>In this section, Peter teaches string formatting for CL. Using string formatting, a nicer way to look at db contents is tried. Not very interesting to me for now. So we simply cheat as follows using clojure’s pprint. Remember that our db is modelled using clojure’s atom holding a list.</p>
+
+<pre><code>(defn dump-db
+  []
+  (pprint (deref db)))
+</code></pre>
+
+<h3 id="improving-user-interaction">Improving user interaction</h3>
+
+<p>Giving this section a pass too since I want to move to the juicer part faster.</p>
+
+<h3 id="saving-and-loading">Saving and loading</h3>
+
+<p>Clojure’s pr function helps us here. It writes the objects in such a way that they can be read back later.</p>
+
+<pre><code>(doc pr)
+
+(defn save-db [filename]
+  (let [current-db (deref db)]
+    (with-open [w (clojure.java.io/writer filename)]
+      (binding [*out* w]
+        (pr current-db)))))
+</code></pre>
+
+<h3 id="querying-the-database">Querying the database</h3>
+
+<p>Now we come to the juicy part :-). Peter introduces multiple concepts here. One by one we learn,</p>
+
+<ol>
+<li>introduction to higher order functions through remove-if-not</li>
+<li>annonymous function through lambda</li>
+<li>keyword parameters to functions and optional arguments<br /></li>
+</ol>
+
+<p>The result of using all the above concepts is where higher order function which can be used in combination with select to show matching records from the db. I’m implementing them in clojure as follows (there could be better ways). We use filter in clj instead of remove-if-not.</p>
+
+<pre><code>;; generate the right filter condition
+;; note that for parameter not passed, we always return true so if works out.
+;; where function returns a predicate, where is used with select
+
+(defn where
+  [&amp; {:keys [artist rating title] 
+      :or [artist false rating false title false]}]
+  (fn [cd]
+    (and
+     (if artist (= artist (get cd :artist)) true)
+     (if rating (= rating (get cd :rating)) true)
+     (if title (= title (get cd :title)) true))))
+
+;; magic being in where, select function is straightforward
+
+(defn select [wherefunc]
+  (filter wherefunc (deref db)))
+
+;; test working on couple of examples
+(select (where :rating 8))
+(select (where :title &quot;Fly&quot;))
+</code></pre>
+
+<p>QED.</p>
+
+<h3 id="updating-the-database">Updating the database</h3>
+
+<p>In this section, update is implemented as</p>
+
+<ol>
+<li>map over the current value of db, updating each record if the predicate where clause matches</li>
+<li>reset the value of db by the list returned by 1.</li>
+</ol>
+
+<p>For clojure implementation, we do some simplifications. The keys to be updated are taken in as a map (update-map in the code below) rather than keyword arguments. This allows a one-step update of the document. Contrast this where pcl books implementation writes one clause each for each key. The code with apply - assoc - update-seq looks little mysterious and deserves explanation.</p>
+
+<p>I wanted to avoid writing one clause for each key to be updated passed in. One, concise is better. Two, clojure’s maps are immutable :-P, each update of the map would return another updated map. So although the setf on the row works out in the book, clojure code would have needed something ugly. On the other hand, clojure’s assoc function (used for updating maps) can accept multiple keys and values. There’s our clue to simpler implementation. In let binding of update-seq, we convert the map into a list of key-value pairs. In the apply assoc part, we update all the passed in keys at once. Bonus, we don’t have to check for which keys are passed in. Neat!</p>
+
+<pre><code>(def tmp (flatten (seq {:rating 11 :artist &quot;Guns N Roses&quot;})))
+(apply assoc {:rating 10 :artist &quot;Guns N Poses&quot;} tmp)
+
+;; for updating, you move over the list, update it and then reset the value of db
+
+(defn updatedb
+  [select-fn update-map]
+  (let [update-seq (flatten (seq update-map))]
+    (reset! db
+      (map
+       #(if (select-fn %)
+          (apply assoc % update-seq)
+          %) (deref db)))))
+
+;; update ratings for the artist we love in one go
+(updatedb (where :artist &quot;Dixie Chicks&quot;) {:rating 12})
+</code></pre>
+
+<h3 id="learnings-so-far">Learnings so far</h3>
+
+<ol>
+<li>We have a rudimentary document database with select where and update where running in about 38 lines of code.</li>
+<li>Common lisp and Clojure are fundamentally different languages. I’ll have to work around Clojure’s immutable by default symantics while studying rest of the book.</li>
+<li>I prefer clojures map and filter, functions over sequence abstraction. CL documentation has tons of things like mapc, mapcar, maplist and I’ll need some time to figure out which is which.</li>
+<li>Immutability is a strength of clojure. For example, in the CL code given in the book, the plist is mutable (setf/getf possible) whereas mapcar rightly returns another list. It is better to get rid of the mental overhead of bookeeping what is mutable and what is not.</li>
+<li>Lisps get things like keyword arguments right, probably since ancient times. I can’t imagine working without them.</li>
+</ol>
+
+<p>In next part, Peter moves on to getting rid of code duplication and making the code more generic (get rid of the use case specific code like assuming artist, rating are the only keys in our document). This part will involve macros and promises to be exciting ride.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Practical Common Lisp / Clojure: 1</title>
+			<link>https://harshadss.github.io/posts/practical_common_lisp_1/</link>
+			<pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/practical_common_lisp_1/</guid>
+			<description>In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+Chapter 3 of the book We try to implement a simple database for storing information about CDs that we own.
+CD &amp;amp; Records First decision is how do you store the details for a single CD. Peter says that we (for now) want to store 4 properties about a CD.</description>
+			<content type="html"><![CDATA[
+
+<p>In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book <a href="http://www.gigamonkeys.com/book/">can be accessed online here</a>.</p>
+
+<h2 id="chapter-3-of-the-book">Chapter 3 of the book</h2>
+
+<p>We try to implement a simple database for storing information about CDs that we own.</p>
+
+<h3 id="cd-records">CD &amp; Records</h3>
+
+<p>First decision is how do you store the details for a single CD. Peter says that we (for now) want to store 4 properties about a CD. He introduces a simple list, but highlights that a property to value mapping will be more convinient than positional. Looks like common lisp has something called a plist for storing a symbol with a mapping to another value. plist also has getf function to fetch value given a symbol. Finally, he shows a constructor function for building data about a single cd by populating a plist.</p>
+
+<p>In Clojure, there’s no plist to the best of my knowledge. But we have real hash table and I see no need for a poor man’s hash table as Peter calls it. Also, we use keywords for what’s called symbols in that section. Finally, in cl implementation using plist, probably the ordering of keys/properties is probably preserved. We use hash-map in clojure which won’t preseve key insertion ordering. We can probably use sorted-map in clojure, but I don’t think it makes any difference. So, the clojure implmentation of the examples is as follows,</p>
+
+<pre><code>(hash-map :a 1 :b 2 :c 3)
+
+;; getf in cl example is same as get in clojure
+
+(get (hash-map :a 1 :b 2 :c 3) :a)
+
+;; so make-cd constructor can just return a map
+(defn make-cd
+  [title artist rating ripped]
+  (hash-map :title title :artist artist :rating rating :ripped ripped))
+
+;; check on a single example
+(make-cd &quot;Roses&quot; &quot;Kathy Mattea&quot; 7 true)
+</code></pre>
+
+<h3 id="filling-cds">Filling CDs</h3>
+
+<p>The above section highlighted data rep for a single CD record. For storing data for multiple CDs, Peter advises using a simple list for now. The current value of the list is bound to a var and in each time we want to add a new cd, we push the new record into the list. In the book, Peter uses defvar macro to define <em>db</em> as nil and then uses push macro to push new values. I don’t have enough knowledge of common lisp to know if this is same as declaring an empty list and then doing maybe a cons on it.</p>
+
+<p>In the following code, I make two changes. Since we have a state (current state of database) which we want to repeatedly update, I am storing it in a Clojure atom. If I’m not wrong this is the usecase for which atoms are built. We don’t yet bother about transactions for our db where we may add multiple CDs at once. Secondly, in the absence of equivalent push macro, I am simply using a conj on the current value of the database/list. So the code looks like,</p>
+
+<pre><code>;; database current value is a list, state is an atom
+
+(def db (atom '()))
+
+;; adding a new record -&gt; add to the current state (list)
+(defn add-record
+  [cd]
+  (swap! db conj cd))
+
+;; test on few examples
+(add-record (make-cd &quot;Roses&quot; &quot;Kathy Mattea&quot; 7 true))
+(add-record (make-cd &quot;Fly&quot; &quot;Dixie Chicks&quot; 8 true))
+(add-record (make-cd &quot;Home&quot; &quot;Dixie Chicks&quot; 9 true))
+</code></pre>
+
+<h3 id="learnings-so-far">Learnings So Far</h3>
+
+<p>Mostly standard clojure stuff. Probably first time I’m using atom even in a toy code. Peter has (between the lines) highlighted couple of good coding principles too which I originally read in the famous SICP book.</p>
+
+<ol>
+<li>Use data constructors and data accessors for data modelling (ch 2 of SICP book). Here we saw that action in make-cd function.</li>
+<li>Hide implementation details of data from user as far as possible. So by using add-record function, we have abstracted out how the database is implemented. If we swap out (pun intented!) the implementation from an atom holding list to something fancier, user wouldn’t have to bother, the add-record function should take care of migration to new implementation.</li>
+</ol>
+
+<p>All in all, good start so far. In next sections, the real meat starts with Peter eventually implementing almost generic query parser on the database using macros. Looking forward to reading!</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>IPython is powerful!</title>
+			<link>https://harshadss.github.io/posts/ipython_is_powerful/</link>
+			<pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/ipython_is_powerful/</guid>
+			<description>When you are working with a task where you are interactively building a solution, you need a lot of focus. Most of the work that I do fits into this category. Interactively building solutions to larger problems by solving smaller problems is pioneered by data first tools like Clojure and R.
+The first step to achieving the focus required in such interactive work is to remove distractions and complexities from your environments as much as possible.</description>
+			<content type="html"><![CDATA[<p>When you are working with a task where you are interactively building a solution, you need a lot of focus. Most of the work that I do fits into this category. Interactively building solutions to larger problems by solving smaller problems is pioneered by data first tools like Clojure and R.</p>
+
+<p>The first step to achieving the focus required in such interactive work is to remove distractions and complexities from your environments as much as possible. For example, Emacs enables running shell commands while you are editing some other file, thereby reducing the cognitive load of switching to another window/terminal.</p>
+
+<p>I was not aware of full set of feature of IPython project, especially its shell command running abilities and magic commands related to timing and profiling. I think these capabilities can make your coding workflow a lot better. For example, debugging, time and memory profiling, running shell commands, using output of shell commands as variables can all be tried inside IPython shell. This can help you reduce context switching by a large amount.</p>
+
+<p>You can get a good enough introduction to IPython capabilities by reading free first chapter of book ‘Python Data Science Handbook’ by Jake VanderPlas.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Cheklist Manifesto &amp; Thinking Fast and Slow</title>
+			<link>https://harshadss.github.io/posts/cheklist_manifesto_ruminations/</link>
+			<pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/cheklist_manifesto_ruminations/</guid>
+			<description>I read ‘the checklist manifesto’ by Atul Gawande. I am a firm believer in books and advice in general from anyone in practice oriented profession: doctors, investors (not speculators), pilots and so on. The professinals in these fields have generally a large skin in the game (money, reputation, their own life), making their advice worthy as compared to academic advise. The checklist book was then just the right fit for a lazy afternoon reading at once.</description>
+			<content type="html"><![CDATA[<p>I read ‘the checklist manifesto’ by Atul Gawande. I am a firm believer in books and advice in general from anyone in practice oriented profession: doctors, investors (not speculators), pilots and so on. The professinals in these fields have generally a large skin in the game (money, reputation, their own life), making their advice worthy as compared to academic advise. The checklist book was then just the right fit for a lazy afternoon reading at once.</p>
+
+<p>The book is sure a captivating read and the author has a knack of keeping you curios about ‘what happened next’. The central point of the book is that ‘under a complex situation (due to number of people or processes involved) as well as due to stress of what’s at stake (your own or people’s life), you can’t trust your brain to make right decisions based on purely memory and cognition. You need a precise and useful guidebook to keep it on track’. There is a parallel thread about value of communication in team work too.</p>
+
+<p>Somehow I couldn’t resist drawing comparisons with the book Thinking Fast and Slow. The book explains the heuristics used by the so called system 1 in the brain and its biases. Daniel Kahneman has infact given a catalogue of such biases. Then I started to wonder: ‘do checklists in fact serve the purspose of avoiding (or atleast minimizing the impact) the biases of sytem 1?‘. For example, the checklist can make sure that your brain doesn’t make financial investment decisions due to ‘pevasive optimism bias’ explained by Kahneman.</p>
+
+<p>May be I should read both books together in one session next to draw even better connections.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Testing Literate Emacs Config</title>
+			<link>https://harshadss.github.io/posts/testing_literate_emacs_config/</link>
+			<pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/testing_literate_emacs_config/</guid>
+			<description>Some time back, I wrote my Emacs configuration in an org mode file. The whole setup is documented here. The objective was twofold: one to make it readable to my dumb brain when I open it six months later, second was to make it reproducible on another machine quickly. Say, if something unforseen was to happen to my good ol Dell Vostro machine, what with the configuration safe on Github and all that, I can have my new machine with the Emacs setup very fast and without splitting hair.</description>
+			<content type="html"><![CDATA[<p>Some time back, I wrote my Emacs configuration in an org mode file. The whole setup is documented here. The objective was twofold: one to make it readable to my dumb brain when I open it six months later, second was to make it reproducible on another machine quickly. Say, if something unforseen was to happen to my good ol Dell Vostro machine, what with the configuration safe on Github and all that, I can have my new machine with the Emacs setup very fast and without splitting hair.</p>
+
+<p>Deep inside, I was bit skeptical. Reproducing basic Emacs setup was simple (like inhibiting startup screen, line number mode and other tidbits). The fear was with libraries/packages. I got opportunity to face my fears, so to say, firsthand over weekend.</p>
+
+<p>I got a laptop upgrade (?) at work, with new Thinkpad machine replacing the good old Vostro. I installed Emacs 24.4 from source, copied my Emacs configuration from Git at right place, just added (org-babel-load-file “config-path”) to my init file and bam! The Emacs setup almost like the one on old machine ready within few minutes. Basic setup, theme, cider/clojure setup, emms for music all good. The Python autocomplete piece is not working very cleanly, probably because the original configuration is not correct. But good experience so far.</p>
+
+<p>I know it is supposed to work this way, that’s the whole point. But yeah, after having seen botched configurations and time wastage on new machine setup in the past, I am happy with the result this time around.</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Hello, world!</title>
+			<link>https://harshadss.github.io/posts/hello_world/</link>
+			<pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/hello_world/</guid>
+			<description>This is just a first post on this blog. Hello, world!</description>
+			<content type="html"><![CDATA[<p>This is just a first post on this blog. Hello, world!</p>
+]]></content>
+		</item>
+		
+		<item>
+			<title>Learning awk is useful!</title>
+			<link>https://harshadss.github.io/posts/learning_awk/</link>
+			<pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/learning_awk/</guid>
+			<description>I have been working with Unix (Linux to be precise) command line since a long time. But I had always avoided learning about Unix power tools like awk, sed. Quick exploratory analysis of data in a tabular/csv form is daily routine for me. My tool of choice for this work is either R or Python. I used to wonder about the utility of tool like awk. But recently I found myself using awk for some specific use cases.</description>
+			<content type="html"><![CDATA[
+
+<p>I have been working with Unix (Linux to be precise) command line since a long time. But I had always avoided learning about Unix power tools like awk, sed. Quick exploratory analysis of data in a tabular/csv form is daily routine for me. My tool of choice for this work is either R or Python. I used to wonder about the utility of tool like awk. But recently I found myself using awk for some specific use cases. I was pleasantly surprised by productivity boost it can offer and its not so steep learning curve.</p>
+
+<h2 id="where-is-it-useful">Where is it useful?</h2>
+
+<p>My exploratory data analysis work has some common steps:</p>
+
+<ol>
+<li>Fetch data from the source (database, URLs)</li>
+<li>Do some quick analysis to make sure you have usable data.</li>
+<li>Iterate/change your data fetch queries based on inference from step 2.</li>
+<li>Optional step of download/scp the data to right server/local machine.</li>
+<li>Proceed with the real data analysis using R or Python.</li>
+</ol>
+
+<p>I found awk to be a very useful tool for step 2 above. Many at times my source data is on a server in my organization which doesn’t have R installed. Let us say I have a huge file on the server which I plan to analyze and build a few models on. Before downloading the file locally, I need to check few things (example: if I am analyzing marketing funnel data, do I have particular funnel step present in the data?). In such use case awk is a handy tool to use.</p>
+
+<h2 id="how-to-learn">How to learn?</h2>
+
+<p>Learning awk through man pages or by looking at examples online is not useful. The best source is ‘The AWK programming language’ book by Kernighan et. al. Though the book 220 pages long, going through first 19 pages of tutorial is enough to make you productive in awk.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>For real, interactive exploratory data analysis work R and Python Scipy stack are far more powerful. But for specific use cases/jobs awk is useful. In true unix tradition, it is a tool that does these jobs well!</p>
+
+<h2 id="happy-learning">Happy learning!</h2>
+]]></content>
+		</item>
+		
+	</channel>
+</rss>

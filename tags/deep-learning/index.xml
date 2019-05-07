@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Deep Learning on Harshad Saykhedkar</title>
+    <title>deep learning on Harshad Saykhedkar</title>
     <link>https://harshadss.github.io/tags/deep-learning/</link>
-    <description>Recent content in Deep Learning on Harshad Saykhedkar</description>
+    <description>Recent content in deep learning on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Copyright @ Harshad Saykhedkar</copyright>
     <lastBuildDate>Mon, 10 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
@@ -13,20 +14,20 @@
     
     <item>
       <title>When (not) to use deep learning</title>
-      <link>https://harshadss.github.io/post/when_to_use_deep_learning/</link>
+      <link>https://harshadss.github.io/posts/when_to_use_deep_learning/</link>
       <pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://harshadss.github.io/post/when_to_use_deep_learning/</guid>
+      <guid>https://harshadss.github.io/posts/when_to_use_deep_learning/</guid>
       <description>I&amp;rsquo;ve documented my disdain for using &amp;lsquo;deep learning as a hammer looking for nails in every corner&amp;rsquo; in few other entries on this blog. Taking a less cynical and acerbic view, I want to focus on when deep learning can be a good starting point and when it is not useful as starting point.
 First to clarify bit of terminology. Deep learning is a catch-all term used in popular data science these days.</description>
     </item>
     
     <item>
       <title>Sane Choices for Small Machine Learning Teams: Part 1</title>
-      <link>https://harshadss.github.io/post/sane_ml_stack_1/</link>
+      <link>https://harshadss.github.io/posts/sane_ml_stack_1/</link>
       <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://harshadss.github.io/post/sane_ml_stack_1/</guid>
+      <guid>https://harshadss.github.io/posts/sane_ml_stack_1/</guid>
       <description>Data scientists and machine learning engineers in small and medium businesses often end up over-engineering their machine learning workflow and stack. In a series of posts below, I will share a few tricks learnt over the years related to choosing right components of the ML pipeline.
 In this first post, let us go through mistakes small teams can make. Later posts will explain possible solutions.
 Preferring Generalized Solutions Many big companies will perfect a very general solution to machine learning problems by investing obscene amount of resources.</description>
@@ -34,10 +35,10 @@ Preferring Generalized Solutions Many big companies will perfect a very general 
     
     <item>
       <title>Curse of ML and DL on Stack Exchange</title>
-      <link>https://harshadss.github.io/post/curse_of_ml_stackoverflow/</link>
+      <link>https://harshadss.github.io/posts/curse_of_ml_stackoverflow/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://harshadss.github.io/post/curse_of_ml_stackoverflow/</guid>
+      <guid>https://harshadss.github.io/posts/curse_of_ml_stackoverflow/</guid>
       <description>I have come across two distinct flavours of beginner behaviours on stack-exchange site related to data science. I believe they are symptoms representing what is the larger problem ailing field of data science. Let us go through the symptoms first. My tone in this article is extremely acerbic because I feel strongly for my field.
 Deep Learning Voodo Problem Someone will post a problem like, &amp;ldquo;I am trying to fit (some complex deep learning architecture) model on (a bad problem for starting with DL).</description>
     </item>

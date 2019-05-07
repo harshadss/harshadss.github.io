@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+
+<meta itemprop="name" content="Learnings from Teaching Machine Learning">
+<meta itemprop="description" content="I have been teaching machine learning to programmers since some time. I started this activity in 2013 and till date I have conducted 10&#43; hands on workshops.
+All these workshops were typically 3-3.5 hours long and covered some theory, coding examples through Python (ocassionally R) and interactive discussions. They were attended by 10-50 programmers.
+Here are some learnings from this teaching activity, in no particular order. Many of them were in fact goof-ups that I did at one point of time, so these are indeed lessons from trenches.">
+
+
+<meta itemprop="datePublished" content="2017-12-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-12-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="737">
+
+
+
+<meta itemprop="keywords" content="machine-learning,data-science,python," />
+<meta property="og:title" content="Learnings from Teaching Machine Learning" />
+<meta property="og:description" content="I have been teaching machine learning to programmers since some time. I started this activity in 2013 and till date I have conducted 10&#43; hands on workshops.
+All these workshops were typically 3-3.5 hours long and covered some theory, coding examples through Python (ocassionally R) and interactive discussions. They were attended by 10-50 programmers.
+Here are some learnings from this teaching activity, in no particular order. Many of them were in fact goof-ups that I did at one point of time, so these are indeed lessons from trenches." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harshadss.github.io/posts/learnings_from_teching_ml/" />
+<meta property="article:published_time" content="2017-12-19T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-12-19T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Learnings from Teaching Machine Learning"/>
+<meta name="twitter:description" content="I have been teaching machine learning to programmers since some time. I started this activity in 2013 and till date I have conducted 10&#43; hands on workshops.
+All these workshops were typically 3-3.5 hours long and covered some theory, coding examples through Python (ocassionally R) and interactive discussions. They were attended by 10-50 programmers.
+Here are some learnings from this teaching activity, in no particular order. Many of them were in fact goof-ups that I did at one point of time, so these are indeed lessons from trenches."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Learnings from Teaching Machine Learning</title>
+	<link rel="stylesheet" href="https://harshadss.github.io/css/style.min.31706917653d2b9e8410abd431f30ec4359a88a94fc87a63654779d87329edec.css" integrity="sha256-MXBpF2U9K56EEKvUMfMOxDWaiKlPyHpjZUd52HMp7ew=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://harshadss.github.io/">Harshad Saykhedkar</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://harshadss.github.io/posts/">Posts</a>
+					<a href="https://harshadss.github.io/about-harshad-saykhedkar/">About</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://twitter.com/harshad_geek" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/harshadss" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://harshadss.github.io/posts/">Posts</a></li>
+			<li><a href="https://harshadss.github.io/about-harshad-saykhedkar/">About</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Dec 19, 2017</span></div>
+				<h1>Learnings from Teaching Machine Learning</h1>
+			</header>
+			<div class="content">
+				
+
+<p>I have been teaching machine learning to programmers since some time. I started this activity in 2013 and till date I have conducted 10+ hands on workshops.</p>
+
+<p>All these workshops were typically 3-3.5 hours long and covered some theory, coding examples through Python (ocassionally R) and interactive discussions. They were attended by 10-50 programmers.</p>
+
+<p>Here are some learnings from this teaching activity, in no particular order. Many of them were in fact goof-ups that I did at one point of time, so these are indeed lessons from trenches.</p>
+
+<h3 id="on-preparation">On Preparation<a href="#on-preparation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<ol>
+<li>Never underestimate value of solid preparation. Doing machine learning (or any other domain really) for a long time is no excuse for not preparing. My thumb-rule is typically 5x-8x preparation i.e. for a 3 hours workshop, you need 20 hours of explicit preparation.</li>
+<li>Before you begin preparation, write down profile of your likely audience. For example, ask yourself how much your audience would know about a particular concept (say linear regression).</li>
+<li>Always plan for 2-3 different levels (or categories) of audience on the basis of familiarity with the topic and motivation.</li>
+</ol>
+
+<h3 id="on-presentation">On Presentation<a href="#on-presentation" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<ol>
+<li>Work out all your content on pen and paper first. Visualize the flow of your presentation. Start putting together slides at very end.</li>
+<li>If your presentation uses code, prefer creating slides in a tool which can let you integrate between content and code easily (example: ipython notebook in presentation mode). Context switch between code and content is not required.</li>
+<li>Pay attention to minor details like font size, line width. Try out how the presentation looks on projected screens, especially for slides with code.</li>
+<li>People have different preferred ways of learning: listening, discussing, coding it up, seeing in pictures and so on. Have a balanced mix of these teaching aids in your presentation.</li>
+</ol>
+
+<h3 id="content">Content<a href="#content" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<ol>
+<li>Write down all the content that you want to cover. Take a deep breath in. Delete half of the planned content. Seriously. Due to familarity with the content, you would always underestimate the time required to cover it by a large margin. Err on the side of covering fewer concepts. In the worst case you will have more time for question-answers, rather than running through slides and apologizing profusely.</li>
+<li>Assume that your audience is allergic to jargon. So number of new words, concepts that you throw at them should be minimized.</li>
+<li>Create enough time checks around big concepts/themes of your workshop. For example, for a 3 hour workshop I have time checks in mind for every hour about which concepts I should have covered by that time.</li>
+<li>If you are going to give analogies from other domains, review your analogies from perspective of audience. If most of your audience is engineers from computer science, analogies from communications engineering will not help. Same is the case with analogies involving places, people, currencies and festivals. Localization of your analogies and examples is important in order to avoid distractions.</li>
+</ol>
+
+<h3 id="tools-and-environment-and-testing">Tools and Environment and Testing<a href="#tools-and-environment-and-testing" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<ol>
+<li>Do not assume that your favourite editor, operating systems, programming language, notebook and any other tool is an industry standard.</li>
+<li>Focus on generic tools as much as possible to handle diversity of tools and OSses. (pip instead of apt-get, simple text editors, no IDE support). If you want to make assumptions, make lowest possible assumptions. For example, never assume that everyone in the audience knows about Docker or Conda.</li>
+<li>Create a well defined document on requirements and installation. Make sure that your audience has access to this document well in advance.</li>
+<li>A sizeable number of people might be using a non-unix operating system, plan for that.</li>
+<li>If you have code to be covered as a part of workshop, ensure that it is well tested. In fact having your audience run tests with you is also a good idea.</li>
+<li>Test your code examples from typical goof-ups (someone in the audience running a different version of a library, Python 2 Vs 3).</li>
+<li>Your presentation or workshop is not the right place to pitch your favourite programming language, editor, operating system (or <em>anything</em> really) to the audience.</li>
+<li>It is good idea to put your code on github (or similar) in advance and share a link.</li>
+<li>Never assume that Wi-Fi at the workshop or conference venue will work flawlessly :-)<br /></li>
+</ol>
+
+<p>Bottomline is that your audience invest significant time in coming for your workshop/presentations. It is your responsibility to ensure that they get maximum return on their time and money investments, without too many distractions.</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://harshadss.github.io/tags/machine-learning">machine-learning</a></span><span class="tag"><a href="https://harshadss.github.io/tags/data-science">data-science</a></span><span class="tag"><a href="https://harshadss.github.io/tags/python">python</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>737 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2017-12-19 05:30 &#43;0530</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://harshadss.github.io/posts/studying_body_biology/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Readings in Human Body, Evolution and Biology</span>
+			</a>
+			<a class="prev-post" href="https://harshadss.github.io/posts/problems_in_deploying_ml/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Obstacles in Taking Machine Learning to Production</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="https://harshadss.github.io/">Harshad Saykhedkar</a> Copyright Harshad Saykhedkar</p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://harshadss.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://harshadss.github.io/js/main.min.784417f5847151f848c339cf0acb13a06cbb648b1483435a28ed4556c4ead69b.js" integrity="sha256-eEQX9YRxUfhIwznPCssToGy7ZIsUg0NaKO1FVsTq1ps="></script>
+
+</body>
+
+</html>

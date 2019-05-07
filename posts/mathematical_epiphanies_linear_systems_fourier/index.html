@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+
+<meta itemprop="name" content="Mathematical Epiphanies 1: Linear Systems &amp; Fourier Transform">
+<meta itemprop="description" content="Click here for introduction to this series and motivation.
+Linear Algebra Basics  There are two ways to look at matrices. One view is about a matrix representing some data (to be covered in later part of this series) Another view is: matrix encodes the operation of a linear system on its inputs. In this (3) view, a matrix represents a linear map. Matrix-vector multiplication is taking a vector represented in one coordinate system and transforming it to vector in another co-ordinate systems.">
+
+
+<meta itemprop="datePublished" content="2018-07-25T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-07-25T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1019">
+
+
+
+<meta itemprop="keywords" content="maths,learning,engineering,teaching,fourier transform,signals and systems,maths-epiphany," />
+<meta property="og:title" content="Mathematical Epiphanies 1: Linear Systems &amp; Fourier Transform" />
+<meta property="og:description" content="Click here for introduction to this series and motivation.
+Linear Algebra Basics  There are two ways to look at matrices. One view is about a matrix representing some data (to be covered in later part of this series) Another view is: matrix encodes the operation of a linear system on its inputs. In this (3) view, a matrix represents a linear map. Matrix-vector multiplication is taking a vector represented in one coordinate system and transforming it to vector in another co-ordinate systems." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harshadss.github.io/posts/mathematical_epiphanies_linear_systems_fourier/" />
+<meta property="article:published_time" content="2018-07-25T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-07-25T00:00:00&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mathematical Epiphanies 1: Linear Systems &amp; Fourier Transform"/>
+<meta name="twitter:description" content="Click here for introduction to this series and motivation.
+Linear Algebra Basics  There are two ways to look at matrices. One view is about a matrix representing some data (to be covered in later part of this series) Another view is: matrix encodes the operation of a linear system on its inputs. In this (3) view, a matrix represents a linear map. Matrix-vector multiplication is taking a vector represented in one coordinate system and transforming it to vector in another co-ordinate systems."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Mathematical Epiphanies 1: Linear Systems &amp; Fourier Transform</title>
+	<link rel="stylesheet" href="https://harshadss.github.io/css/style.min.31706917653d2b9e8410abd431f30ec4359a88a94fc87a63654779d87329edec.css" integrity="sha256-MXBpF2U9K56EEKvUMfMOxDWaiKlPyHpjZUd52HMp7ew=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://harshadss.github.io/">Harshad Saykhedkar</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://harshadss.github.io/posts/">Posts</a>
+					<a href="https://harshadss.github.io/about-harshad-saykhedkar/">About</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://twitter.com/harshad_geek" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/harshadss" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://harshadss.github.io/posts/">Posts</a></li>
+			<li><a href="https://harshadss.github.io/about-harshad-saykhedkar/">About</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Jul 25, 2018</span></div>
+				<h1>Mathematical Epiphanies 1: Linear Systems &amp; Fourier Transform</h1>
+			</header>
+			<div class="content">
+				
+
+<p><a href="/post/mathematical_epiphanies_introduction/">Click here for introduction to this series and motivation</a>.</p>
+
+<h3 id="linear-algebra-basics">Linear Algebra Basics<a href="#linear-algebra-basics" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<ol>
+<li>There are two ways to look at matrices.</li>
+<li>One view is about a matrix representing some data (to be covered in later part of this series)</li>
+<li>Another view is: matrix encodes the operation of a linear system on its inputs.</li>
+<li>In this (3) view, a matrix represents a linear map. Matrix-vector multiplication is taking a vector
+ represented in one coordinate system and transforming it to vector in another co-ordinate systems.</li>
+<li>A diagonal matrix represents the operation of a map which only stretches (or shrinks, inverts) axis of
+ original coordinate system. So linear map which results in diagonal matrices is simple.</li>
+<li>If I know what a linear map does to an axis of the input coordinate system, I can find out what it does to
+ any vector in that input coordinate system (applying linear combinations).</li>
+</ol>
+
+<h3 id="linear-dynamical-systems-fourier-transform">Linear Dynamical Systems, Fourier Transform<a href="#linear-dynamical-systems-fourier-transform" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<ol>
+<li>Lot of (wo)man-made systems are signal processors. They take a signal, do something to it, and output a result.</li>
+<li>No system (except theoretical or simulated) will be purely linear in nature. However, for within practical
+ working range of inputs, the system can be thought of as doing a linear operation to its inputs.</li>
+<li>A musical amplifier cannot infinitely keep bumping up the volume. It is limited by its power supply and frequency
+ range of input signal. But then within reasonable limits, its action is linear.</li>
+<li>If I model such systems with an additional constraint: parameters of the system don&rsquo;t change with time, I get the
+ classic linear time-invariant systems.</li>
+<li>A system such as in 4 can be thought of a linear map. It takes signal represented in some coordinate system,
+ applies a linear map operation to it to transform it into another coordinate system.</li>
+<li>If I&rsquo;m designing/synthesizing or analyzing an LTI system, I would be great for its map to be a diagonal matrix
+ since it makes it simple to analyze.</li>
+<li>Another view: if I could do a transformation of my input space (A) to another coordinate space (B) such that operation
+ of my system is stretching or shrinking of axes of B, it is great. Because then I can predict/quantify the behaviour of my system for any arbitrary input -&gt; I know what happens to axes of space B. So for any arbitrary input signal represented in space B, I know what my system does.</li>
+<li>If only there was such co-ordinate space that exists and I could represent my signals in that space.</li>
+<li>It turns out that for sinusoidal signal inputs, any LTI system will act as a diagonal matrix. (Obscured by
+  technical jargon which says sinusoids are eigenvectors for linear maps of LTI systems).</li>
+<li>But I&rsquo;m not interested in sinusoidal inputs. I&rsquo;m interested in arbitrary signal inputs like my voice going
+  into an audio recorder with a background noise of my neighbour&rsquo;s annoying dog barking.</li>
+<li>Can I represent any arbitrary signal in coordinate space represented by sinusoids of different frequencies
+  as axis? Is that representation accurate?</li>
+<li>The answers for both the above questions is no in general but yes under some practical conditions.</li>
+<li>If I can assume that all signals of interest to me (potential inputs to my system) follow some conditions,
+  I can find a way to represent them in space of sinusoidal axis. The representation will be reasonably accurate
+  (probably as accurate as you can get in the least square sense, read next section).</li>
+<li>That &lsquo;way of representation&rsquo; mentioned in 13 means I have to find coefficients for each sinusoidal axis for
+  a given signal. The formula for finding those coefficients is given by Fourier series! Aha! That was long but worth it.</li>
+<li>To repeat the whole point: represent input signals in a coordinate space so that operation of the system
+  on the axes of space is just stretching and shrinking. Once you know what happens to the vectors representing
+  the axes, you know what happens to every signal in that space.</li>
+<li>Once you do this, designing certain type of systems becomes easy. For example: what parameters can I select
+  for this electronic circuit so that these annoying noise signal that I don&rsquo;t want get de-amplified? You
+  can analyze the circuits behaviour in so-called frequency domain to design filters. You have to tune the
+  parameters such that the axis representing those type of signal (frequencies) get shrunked.</li>
+</ol>
+
+<h3 id="things-still-hazy">Things Still Hazy<a href="#things-still-hazy" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>I am not sure about the following, but probably that is how things are.</p>
+
+<ol>
+<li>Probably: the representation/approximation of signal found by Fourier transform is close to the original signal in
+ least square sense. In other words, if you cared about minimizing the average of squared error between the approximated signal and original signal, coefficients found by Fourier transform gets the job done. Minimizing
+ the squared error makes some empirical sense: since power is proportional to the square of amplitude for many signals
+ of practical interests (voltage), least square implies the power of approximated signal will be close to original
+ signal.</li>
+<li>I can make things more complicated: rather than assuming a vector/axis of sinusoids where each data-point is
+ a real number, I can think of each vector being made up of two-dimensional numbers (confusingly called complex numbers by mathematicians) which obey certain laws. I&rsquo;m not sure why would anyone want to do this. But probably this allows us to approximate a broader class of signals using Fourier transforms. That is where complex sinusoids and Euler&rsquo;s formula shows up and mind explodes.</li>
+<li>How do we go from here to fast Fourier transform (which makes the computation in (16) of previous section efficient)?</li>
+<li>How do these things relate to other transforms like Laplace (which often shows up in control systems) and
+ z-transform (which shows up in discrete dynamical systems)?</li>
+<li>If Fourier&rsquo;s transform takes (complex) sinusoids as basis, what about wavelets? What kind of signals form
+ the basis in wavelet tranforms? Wavelets were going to change the world. What happened to that?</li>
+</ol>
+
+<h3 id="references">References<a href="#references" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>To be added. Demystifying Mr Fourier&rsquo;s business for myself has been my quest for the last 10 years. There are too
+many references to list down, some I can&rsquo;t remember. I&rsquo;ll add a few soon.</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://harshadss.github.io/tags/maths">maths</a></span><span class="tag"><a href="https://harshadss.github.io/tags/learning">learning</a></span><span class="tag"><a href="https://harshadss.github.io/tags/engineering">engineering</a></span><span class="tag"><a href="https://harshadss.github.io/tags/teaching">teaching</a></span><span class="tag"><a href="https://harshadss.github.io/tags/fourier-transform">fourier transform</a></span><span class="tag"><a href="https://harshadss.github.io/tags/signals-and-systems">signals and systems</a></span><span class="tag"><a href="https://harshadss.github.io/tags/maths-epiphany">maths-epiphany</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1019 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2018-07-25 05:30 &#43;0530</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="next-post" href="https://harshadss.github.io/posts/mathematical_epiphanies_differential_equations/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Mathematical Epiphanies 2: Differential Equations</span>
+			</a>
+			<a class="prev-post" href="https://harshadss.github.io/posts/mathematical_epiphanies_introduction/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Mathematical Epiphanies 0: Introduction</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="https://harshadss.github.io/">Harshad Saykhedkar</a> Copyright Harshad Saykhedkar</p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://harshadss.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+	<script src="https://harshadss.github.io/js/main.min.784417f5847151f848c339cf0acb13a06cbb648b1483435a28ed4556c4ead69b.js" integrity="sha256-eEQX9YRxUfhIwznPCssToGy7ZIsUg0NaKO1FVsTq1ps="></script>
+
+</body>
+
+</html>

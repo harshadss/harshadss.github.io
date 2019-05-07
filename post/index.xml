@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2019 14:39:08 +0530</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Found interesting link: Introduction</title>
+      <link>https://harshadss.github.io/post/found_interesting_link_introduction/</link>
+      <pubDate>Tue, 07 May 2019 14:39:08 +0530</pubDate>
+      
+      <guid>https://harshadss.github.io/post/found_interesting_link_introduction/</guid>
+      <description>I sometimes long for those days of internet when you&amp;rsquo;d land on someone&amp;rsquo;s personal page where they&amp;rsquo;d document hard to find links about some (technical) subject matter and some commentary on them. Discovery of such links often meant that that your understanding or interest in certain subject would completely change. I also loved the painstaking effort someone would make to find and then document information for an unknown (web) traveller. There is a kind of romantic hope in doing this, similar to human beings putting out Voyagers spacecrafts with those golden record.</description>
+    </item>
     
     <item>
       <title>When (not) to use deep learning</title>
