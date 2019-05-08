@@ -3,42 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://harshadss.github.io/posts/found_interesting_link_introduction/</loc>
-    <lastmod>2019-05-07T14:39:08+05:30</lastmod>
-  </url>
-  
-  <url>
     <loc>https://harshadss.github.io/</loc>
-    <lastmod>2019-05-07T14:39:08+05:30</lastmod>
+    <lastmod>2019-05-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://harshadss.github.io/posts/interesting_link_quantum_reconstruction/</loc>
+    <lastmod>2019-05-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://harshadss.github.io/posts/</loc>
-    <lastmod>2019-05-07T14:39:08+05:30</lastmod>
+    <lastmod>2019-05-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://harshadss.github.io/tags/</loc>
-    <lastmod>2019-05-07T14:39:08+05:30</lastmod>
+    <lastmod>2019-05-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://harshadss.github.io/tags/interesting-links/</loc>
-    <lastmod>2019-05-07T14:39:08+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://harshadss.github.io/tags/maths/</loc>
-    <lastmod>2019-05-07T14:39:08+05:30</lastmod>
+    <lastmod>2019-05-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://harshadss.github.io/tags/physics/</loc>
+    <lastmod>2019-05-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harshadss.github.io/posts/found_interesting_link_introduction/</loc>
+    <lastmod>2019-05-07T14:39:08+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harshadss.github.io/tags/maths/</loc>
     <lastmod>2019-05-07T14:39:08+05:30</lastmod>
     <priority>0</priority>
   </url>

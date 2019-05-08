@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright @ Harshad Saykhedkar</copyright>
-    <lastBuildDate>Tue, 07 May 2019 14:39:08 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 08 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Interesting link: quantum reconstruction</title>
+      <link>https://harshadss.github.io/posts/interesting_link_quantum_reconstruction/</link>
+      <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/interesting_link_quantum_reconstruction/</guid>
+      <description>Studying quantum mechanics often gives you an eerie feeling. I tend to feel that something very adhoc is happening. Reading about special relativity is different for example: you start with some reasonable axioms and then the maths kind of follows. But not so a case with quantum mechanics. I&amp;rsquo;ve tried to read many books to get sort of a big picture view of what the hell is happening to no avail.</description>
+    </item>
     
     <item>
       <title>Found interesting link: Introduction</title>
@@ -101,17 +110,6 @@ The problem was the way maths was taught. Most of the teachers taught maths as a
       <guid>https://harshadss.github.io/posts/studying_body_biology/</guid>
       <description>Throughout my school life I tried to stay away from biology studies. I specifically chose studying physics and maths instead of biology in higher secondary school. Even during secondary school, science 1 generally had physics and chemistry whereas science 2 contained protozoans and all other wiggling beasts. Guess who barely got over line in science 2.
 The logic for a high school students in India was simple. You chose biology if you wanted to be a doctor (or do a research in microbiology) which meant spending many years studying and daddy needs to have lot of money to get you into medical school.</description>
-    </item>
-    
-    <item>
-      <title>Learnings from Teaching Machine Learning</title>
-      <link>https://harshadss.github.io/posts/learnings_from_teching_ml/</link>
-      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/posts/learnings_from_teching_ml/</guid>
-      <description>I have been teaching machine learning to programmers since some time. I started this activity in 2013 and till date I have conducted 10+ hands on workshops.
-All these workshops were typically 3-3.5 hours long and covered some theory, coding examples through Python (ocassionally R) and interactive discussions. They were attended by 10-50 programmers.
-Here are some learnings from this teaching activity, in no particular order. Many of them were in fact goof-ups that I did at one point of time, so these are indeed lessons from trenches.</description>
     </item>
     
   </channel>

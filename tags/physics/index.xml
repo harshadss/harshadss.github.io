@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright @ Harshad Saykhedkar</copyright>
-    <lastBuildDate>Tue, 07 May 2019 14:39:08 +0530</lastBuildDate>
+    <lastBuildDate>Wed, 08 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/tags/physics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Interesting link: quantum reconstruction</title>
+      <link>https://harshadss.github.io/posts/interesting_link_quantum_reconstruction/</link>
+      <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/interesting_link_quantum_reconstruction/</guid>
+      <description>Studying quantum mechanics often gives you an eerie feeling. I tend to feel that something very adhoc is happening. Reading about special relativity is different for example: you start with some reasonable axioms and then the maths kind of follows. But not so a case with quantum mechanics. I&amp;rsquo;ve tried to read many books to get sort of a big picture view of what the hell is happening to no avail.</description>
+    </item>
     
     <item>
       <title>Found interesting link: Introduction</title>
