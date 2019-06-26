@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright @ Harshad Saykhedkar</copyright>
-    <lastBuildDate>Wed, 08 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jun 2019 16:29:10 +0530</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,18 @@
     <item>
       <title>interesting-links</title>
       <link>https://harshadss.github.io/tags/interesting-links/</link>
-      <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 26 Jun 2019 16:29:10 +0530</pubDate>
       
       <guid>https://harshadss.github.io/tags/interesting-links/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maths</title>
+      <link>https://harshadss.github.io/tags/maths/</link>
+      <pubDate>Wed, 26 Jun 2019 16:29:10 +0530</pubDate>
+      
+      <guid>https://harshadss.github.io/tags/maths/</guid>
       <description></description>
     </item>
     
@@ -27,15 +36,6 @@
       <pubDate>Wed, 08 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://harshadss.github.io/tags/physics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>maths</title>
-      <link>https://harshadss.github.io/tags/maths/</link>
-      <pubDate>Tue, 07 May 2019 14:39:08 +0530</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/maths/</guid>
       <description></description>
     </item>
     

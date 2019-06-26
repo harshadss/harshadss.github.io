@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright @ Harshad Saykhedkar</copyright>
-    <lastBuildDate>Wed, 08 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Jun 2019 16:29:10 +0530</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Interesting links: geometric algebra</title>
+      <link>https://harshadss.github.io/posts/geometric_algebra_fascination/</link>
+      <pubDate>Wed, 26 Jun 2019 16:29:10 +0530</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/geometric_algebra_fascination/</guid>
+      <description>The topic of geometric algebra is a new fascination for me. I first read about David Hestenes while reading Bret Victor&amp;rsquo;s kill maths project. Then got a copy of David Hestenes&amp;rsquo; new foundations of classical mechanics book. One thing led to another and then I ended up reading an old out of print book by Clifford called common sense in exact sciences.
+The basic premise of geometric algebra seems fascinating to me: a universal and simple mathematical theory for a wide variety of applications in Physics.</description>
+    </item>
     
     <item>
       <title>Interesting link: quantum reconstruction</title>
@@ -100,16 +110,6 @@ Linear Algebra Basics  There are two ways to look at matrices. One view is about
       <guid>https://harshadss.github.io/posts/mathematical_epiphanies_introduction/</guid>
       <description>I had to study a lot of maths in higher secondary and engineering. There were 2 maths subjects for 2 years after secondary school and 3 maths subjects in the first two years of engineering. Despite studying so much maths, graduate school was a rude shock for me. I just couldn&amp;rsquo;t wrap my head around of a lot of lectures.
 The problem was the way maths was taught. Most of the teachers taught maths as an end in itself, mostly devoid of the most important question: &amp;ldquo;why&amp;rdquo;?</description>
-    </item>
-    
-    <item>
-      <title>Readings in Human Body, Evolution and Biology</title>
-      <link>https://harshadss.github.io/posts/studying_body_biology/</link>
-      <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/posts/studying_body_biology/</guid>
-      <description>Throughout my school life I tried to stay away from biology studies. I specifically chose studying physics and maths instead of biology in higher secondary school. Even during secondary school, science 1 generally had physics and chemistry whereas science 2 contained protozoans and all other wiggling beasts. Guess who barely got over line in science 2.
-The logic for a high school students in India was simple. You chose biology if you wanted to be a doctor (or do a research in microbiology) which meant spending many years studying and daddy needs to have lot of money to get you into medical school.</description>
     </item>
     
   </channel>
