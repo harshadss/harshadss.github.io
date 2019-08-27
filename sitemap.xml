@@ -4,7 +4,30 @@
   
   <url>
     <loc>https://harshadss.github.io/</loc>
-    <lastmod>2019-06-26T16:29:10+05:30</lastmod>
+    <lastmod>2019-08-27T15:03:28+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harshadss.github.io/posts/musings_on_paul_lockhart_measurement/</loc>
+    <lastmod>2019-08-27T15:03:28+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harshadss.github.io/posts/</loc>
+    <lastmod>2019-08-27T15:03:28+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harshadss.github.io/tags/</loc>
+    <lastmod>2019-08-27T15:03:28+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harshadss.github.io/tags/maths/</loc>
+    <lastmod>2019-08-27T15:03:28+05:30</lastmod>
     <priority>0</priority>
   </url>
   
@@ -14,25 +37,7 @@
   </url>
   
   <url>
-    <loc>https://harshadss.github.io/posts/</loc>
-    <lastmod>2019-06-26T16:29:10+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://harshadss.github.io/tags/</loc>
-    <lastmod>2019-06-26T16:29:10+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://harshadss.github.io/tags/interesting-links/</loc>
-    <lastmod>2019-06-26T16:29:10+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://harshadss.github.io/tags/maths/</loc>
     <lastmod>2019-06-26T16:29:10+05:30</lastmod>
     <priority>0</priority>
   </url>
