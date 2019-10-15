@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright @ Harshad Saykhedkar</copyright>
-    <lastBuildDate>Mon, 10 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 15 Oct 2019 15:19:02 +0530</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Skeptics Guide To ML Hype and Excitement</title>
+      <link>https://harshadss.github.io/posts/ml_hype_cycle_and_research/</link>
+      <pubDate>Tue, 15 Oct 2019 15:19:02 +0530</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/ml_hype_cycle_and_research/</guid>
+      <description>Machine learning field at the moment seems to be in pinnacle of hype cycle. A researcher or a lab or organization creates some marginal improvement over existing status quo in some narrow area, they self-publish it as paper with some preposturous headline and then the circle jerk starts.
+I have a personal heuristics to deal with such hype cycle based on following observations.
+Observations Not All Papers are Created Equal In most of the universities it is mandatory for a master&amp;rsquo;s and PhD student to publish some work.</description>
+    </item>
     
     <item>
       <title>When (not) to use deep learning</title>
