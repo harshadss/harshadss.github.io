@@ -6,8 +6,41 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>en-us</language>
 		<copyright>Copyright @ Harshad Saykhedkar</copyright>
-		<lastBuildDate>Tue, 15 Oct 2019 15:19:02 +0530</lastBuildDate>
+		<lastBuildDate>Tue, 30 Jun 2020 21:46:18 +0530</lastBuildDate>
 		<atom:link href="https://harshadss.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>That kind of a book</title>
+			<link>https://harshadss.github.io/posts/that_kind_of_a_book/</link>
+			<pubDate>Tue, 30 Jun 2020 21:46:18 +0530</pubDate>
+			
+			<guid>https://harshadss.github.io/posts/that_kind_of_a_book/</guid>
+			<description>I&amp;rsquo;ve often had this experience: certain technical topics look extremely difficult to break into. No matter how many standard resources and popular content that you read through, every one of them seems to speak a foreign language. I&amp;rsquo;ve felt this while studying topics like complex numbers, Fourier&amp;rsquo;s transform, relativity, to name a few.
+I am of the opinion that either I&amp;rsquo;m too dumb or writers of many popular expositions on such topics have not understood it clearly.</description>
+			<content type="html"><![CDATA[<p>I&rsquo;ve often had this experience: certain technical topics look extremely
+difficult to break into. No matter how many standard resources and popular
+content that you read through, every one of them seems to speak a foreign
+language. I&rsquo;ve felt this while studying topics like complex numbers, Fourier&rsquo;s
+transform, relativity, to name a few.</p>
+
+<p>I am of the opinion that either I&rsquo;m too dumb or writers of many popular
+expositions on such topics have not understood it clearly. And I secretly like
+to think later is the case. The authors never seem to be running into some
+questions that immediately come to mind while studying: for example, asking
+why are we doing this? But then there are some resources that are godsend.
+The author runs into exact same questions that I mentioned above and, gasps,
+tries to answer them.</p>
+
+<p>Tristan Needham&rsquo;s work Visual Complex Analysis falls into such group. In about
+65 pages of chapter 1, he explains complex numbers in a beautiful and simple
+language. He also sets out to give you big picture view. For example, he gives
+a quick tour of geometry via group theory lens and even talks about quaternions.</p>
+
+<p>I simply have lot of respect for such authors. They just decide that some topic
+can be explained in a plain language and few pictures. And then they also make
+the hard work to pull it off. Simply beautiful stuff!</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>Skeptics Guide To ML Hype and Excitement</title>

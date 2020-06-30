@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright @ Harshad Saykhedkar</copyright>
-    <lastBuildDate>Tue, 15 Oct 2019 15:19:02 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2020 21:46:18 +0530</lastBuildDate>
     
 	<atom:link href="https://harshadss.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>books</title>
+      <link>https://harshadss.github.io/tags/books/</link>
+      <pubDate>Tue, 30 Jun 2020 21:46:18 +0530</pubDate>
+      
+      <guid>https://harshadss.github.io/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>learning</title>
+      <link>https://harshadss.github.io/tags/learning/</link>
+      <pubDate>Tue, 30 Jun 2020 21:46:18 +0530</pubDate>
+      
+      <guid>https://harshadss.github.io/tags/learning/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>deep learning</title>
@@ -22,7 +40,7 @@
     </item>
     
     <item>
-      <title>machine-learning</title>
+      <title>machine learning</title>
       <link>https://harshadss.github.io/tags/machine-learning/</link>
       <pubDate>Tue, 15 Oct 2019 15:19:02 +0530</pubDate>
       
@@ -81,24 +99,6 @@
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://harshadss.github.io/tags/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>engineering</title>
-      <link>https://harshadss.github.io/tags/engineering/</link>
-      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>learning</title>
-      <link>https://harshadss.github.io/tags/learning/</link>
-      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://harshadss.github.io/tags/learning/</guid>
       <description></description>
     </item>
     

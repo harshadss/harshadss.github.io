@@ -4,25 +4,42 @@
   
   <url>
     <loc>https://harshadss.github.io/</loc>
-    <lastmod>2019-10-15T15:19:02+05:30</lastmod>
+    <lastmod>2020-06-30T21:46:18+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://harshadss.github.io/posts/</loc>
-    <lastmod>2019-10-15T15:19:02+05:30</lastmod>
+    <lastmod>2020-06-30T21:46:18+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harshadss.github.io/tags/</loc>
+    <lastmod>2020-06-30T21:46:18+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harshadss.github.io/posts/that_kind_of_a_book/</loc>
+    <lastmod>2020-06-30T21:46:18+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://harshadss.github.io/tags/books/</loc>
+    <lastmod>2020-06-30T21:46:18+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://harshadss.github.io/tags/learning/</loc>
+    <lastmod>2020-06-30T21:46:18+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://harshadss.github.io/posts/ml_hype_cycle_and_research/</loc>
     <lastmod>2019-10-15T15:19:02+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://harshadss.github.io/tags/</loc>
-    <lastmod>2019-10-15T15:19:02+05:30</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -120,12 +137,6 @@
   
   <url>
     <loc>https://harshadss.github.io/tags/engineering/</loc>
-    <lastmod>2018-07-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://harshadss.github.io/tags/learning/</loc>
     <lastmod>2018-07-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -266,12 +277,6 @@
   <url>
     <loc>https://harshadss.github.io/posts/cheklist_manifesto_ruminations/</loc>
     <lastmod>2017-04-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://harshadss.github.io/tags/books/</loc>
-    <lastmod>2017-04-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
