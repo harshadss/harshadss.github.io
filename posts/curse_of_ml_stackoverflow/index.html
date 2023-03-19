@@ -1,168 +1,151 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#494f5c">
-	<meta name="msapplication-TileColor" content="#494f5c">
+    <head>
+        <title> Curse of ML and DL on Stack Exchange &middot; Harshad Saykhedkar </title>
 
-<meta itemprop="name" content="Curse of ML and DL on Stack Exchange">
-<meta itemprop="description" content="I have come across two distinct flavours of beginner behaviours on stack-exchange site related to data science. I believe they are symptoms representing what is the larger problem ailing field of data science. Let us go through the symptoms first. My tone in this article is extremely acerbic because I feel strongly for my field.
-Deep Learning Voodo Problem Someone will post a problem like, &ldquo;I am trying to fit (some complex deep learning architecture) model on (a bad problem for starting with DL).">
-
-
-<meta itemprop="datePublished" content="2018-07-30T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-07-30T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="684">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.111.3">
 
 
 
-<meta itemprop="keywords" content="machine learning,data science,deep learning," />
-<meta property="og:title" content="Curse of ML and DL on Stack Exchange" />
-<meta property="og:description" content="I have come across two distinct flavours of beginner behaviours on stack-exchange site related to data science. I believe they are symptoms representing what is the larger problem ailing field of data science. Let us go through the symptoms first. My tone in this article is extremely acerbic because I feel strongly for my field.
-Deep Learning Voodo Problem Someone will post a problem like, &ldquo;I am trying to fit (some complex deep learning architecture) model on (a bad problem for starting with DL)." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://harshadss.github.io/posts/curse_of_ml_stackoverflow/" />
-<meta property="article:published_time" content="2018-07-30T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2018-07-30T00:00:00&#43;00:00"/>
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Curse of ML and DL on Stack Exchange"/>
-<meta name="twitter:description" content="I have come across two distinct flavours of beginner behaviours on stack-exchange site related to data science. I believe they are symptoms representing what is the larger problem ailing field of data science. Let us go through the symptoms first. My tone in this article is extremely acerbic because I feel strongly for my field.
-Deep Learning Voodo Problem Someone will post a problem like, &ldquo;I am trying to fit (some complex deep learning architecture) model on (a bad problem for starting with DL)."/>
 
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-	<link rel="shortcut icon" href="/favicon.ico">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
-	<title>Curse of ML and DL on Stack Exchange</title>
-	<link rel="stylesheet" href="https://harshadss.github.io/css/style.min.31706917653d2b9e8410abd431f30ec4359a88a94fc87a63654779d87329edec.css" integrity="sha256-MXBpF2U9K56EEKvUMfMOxDWaiKlPyHpjZUd52HMp7ew=">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://harshadss.github.io/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://harshadss.github.io/'>
+				harshad@foundation ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
+			</button>
 	
-</head>
-
-<body id="page">
-	
-	<header id="site-header" class="animated slideInUp faster">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="https://harshadss.github.io/">Harshad Saykhedkar</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-					<a href="https://harshadss.github.io/posts/">Posts</a>
-					<a href="https://harshadss.github.io/about-harshad-saykhedkar/">About</a>
-				</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="https://twitter.com/harshad_geek" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/harshadss" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://harshadss.github.io/'>
+							/home/harshad</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" 
+								aria-haspopup="true" aria-expanded="false">blog <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							
+							<li>
+								<a class="dropdown-item" href="https://harshadss.github.io/posts">~/all</a>
+							</li>
+							
+							<li>
+								<a class="dropdown-item" href="https://harshadss.github.io/tags">~/tags</a>
+							</li>
+							
+						</ul>
+						
+					</li>
+					
+				</ul>
 			</div>
 		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="https://harshadss.github.io/posts/">Posts</a></li>
-			<li><a href="https://harshadss.github.io/about-harshad-saykhedkar/">About</a></li>
-		</ul>
-	</div>
+	</nav>
+</header>
 
-
-	<main class="site-main section-inner animated fadeIn faster">
-		<article class="thin">
-			<header class="post-header">
-				<div class="post-meta"><span>Jul 30, 2018</span></div>
-				<h1>Curse of ML and DL on Stack Exchange</h1>
-			</header>
-			<div class="content">
-				
-
-<p>I have come across two distinct flavours of beginner behaviours on stack-exchange site related to data science. I believe they are symptoms representing what is the larger
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://harshadss.github.io/posts/curse_of_ml_stackoverflow/">Curse of ML and DL on Stack Exchange</a></h1>
+                <span class="post-date">2018-07-30 </span>
+                <div class="post-content">
+                    <p>I have come across two distinct flavours of beginner behaviours on stack-exchange site related to data science. I believe they are symptoms representing what is the larger
 problem ailing field of data science. Let us go through the symptoms first. My tone in
 this article is extremely acerbic because I feel strongly for my field.</p>
-
-<h3 id="deep-learning-voodo-problem">Deep Learning Voodo Problem<a href="#deep-learning-voodo-problem" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+<h3 id="deep-learning-voodo-problem">Deep Learning Voodo Problem</h3>
 <p>Someone will post a problem like, &ldquo;I am trying to fit (some complex deep learning architecture) model
 on (a bad problem for starting with DL). But nothing happens&rdquo;. The model is expected to magically
 solve the problem but something utterly trivial happens. The model doesn&rsquo;t learn anything
 or horribly overfits. Most often, people are doing something too ghastly for words like trying to
 predict the price of a particular stock using DL hoping for a miracle.</p>
-
 <p>The disease here is thinking that deep learning is simple and since Google/FB have demonstrated its
 success in solving hard problems, one can replicate the results in a few minutes piggybacking on some
 library. <a href="https://www.youtube.com/watch?v=Qi1Yry33TQE">Ali Rahimi was correct when he said that the field is turning into a practice of alchemy and
 not science</a>.</p>
-
 <p>Beginners are making following mistakes/assumptions,</p>
-
 <ol>
 <li>Since DL can solve hard problems, solving hard problems with DL would be easy.</li>
 <li>DL solves hard problems, so we should through linear models or any other classic ML model
- and jump to using DL on everything. Building baselines using simpler models is for sissies.</li>
+and jump to using DL on everything. Building baselines using simpler models is for sissies.</li>
 <li>Picking an utterly complex real-world problem with heterogeneous data with multiple co-variates (stock prices)
- and throwing a DL model which works on a simpler problem with homogeneous data (images) at it. In fact, in
- my opinion throwing any model at stock price prediction is a lunacy but I digress.</li>
+and throwing a DL model which works on a simpler problem with homogeneous data (images) at it. In fact, in
+my opinion throwing any model at stock price prediction is a lunacy but I digress.</li>
 </ol>
-
 <p>This is a sad state of things and it might cause the downfall of deep learning (which is a great fine field by the
 way).</p>
-
-<h3 id="build-my-product-for-free-problem">Build My Product for Free Problem<a href="#build-my-product-for-free-problem" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+<h3 id="build-my-product-for-free-problem">Build My Product for Free Problem</h3>
 <p>Someone will post a problem like &ldquo;I have a bunch of documents here and I want to achieve X. How to do it?&rdquo;. It
 will be clear from the question that the person posting the question has no idea about even most fundamental
 ideas in machine learning like vector space model. They are thinking that it is just a matter of plumbing things
 correctly.</p>
-
 <p>It is not lack of machine learning skills (perfectly legit) but lack of appreciation about hard work
 required to solve a business problem. It is perfectly alright to be a beginner in a field. We all were at some point in time. The problem here is company executives and founders who recruit a kid who has done a two-week deep learning Bootcamp and throw some complex business problem which will need careful modelling, engineering and inference at him/her. They think that
 machine (deep) learning will magically make their team or startup successful. No a**holes, you can&rsquo;t expect to build a good cancer hospital with only first-year medical students (or plumbers) to make it successful. Like <a href="http://www.kitco.com/ind/Turk/turk_sep092008.html">fat tony would say</a> building a CRUD app using JAVA and solving a business problem using machine learning is
 not the same ting! Technical managers or startup founders are looking to make quick bucks using ML on some hard
 problem. The result is many beginner data scientists on ds.stackexchange looking for the entire solution to the problem as
 a free answer.</p>
-
-<h3 id="the-abyss">The Abyss<a href="#the-abyss" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+<h3 id="the-abyss">The Abyss</h3>
 <p>The bar for any technical field is supposed to be higher. I am not suggesting that newcomers are not welcome, they
 are. I go out of my way to teach and mentor dozens of newcomers in machine learning field. The more people that acquire modelling and statistical skills, less stupid the world becomes. But big corporations who are lying about machine learning application
 being a commodity and media/journalists who half understand it before joining the bandwagon are ruining the field.
 You become a data scientist or scientist of any kind by learning basic principles, carefully applying them to increasingly complex problems over years. There are no shortcuts to the hard work, no matter how many GPU boxes with tensorflow you throw at it.</p>
 
-			</div>
-			<hr class="post-end">
-			<footer class="post-info">
-				<p>
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://harshadss.github.io/tags/machine-learning">machine learning</a></span><span class="tag"><a href="https://harshadss.github.io/tags/data-science">data science</a></span><span class="tag"><a href="https://harshadss.github.io/tags/deep-learning">deep learning</a></span>
-				</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>684 Words</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2018-07-30 05:30 &#43;0530</p>
-			</footer>
-		</article>
-		<div class="post-nav thin">
-			<a class="next-post" href="https://harshadss.github.io/posts/sane_ml_stack_1/">
-				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Sane Choices for Small Machine Learning Teams: Part 1</span>
-			</a>
-			<a class="prev-post" href="https://harshadss.github.io/posts/mathematical_epiphanies_differential_equations/">
-				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Mathematical Epiphanies 2: Differential Equations</span>
-			</a>
-		</div>
-		<div id="comments" class="thin">
-</div>
-	</main>
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
+                
+            </div>
+            <footer class="footer text-center">
+<p>Copyright &copy; 2023 Harshad Saykhedkar -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
 
-	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2020 <a href="https://harshadss.github.io/">Harshad Saykhedkar</a> Copyright Harshad Saykhedkar</p>
-		<p>
-			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://harshadss.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
-		</p>
-	</footer>
-
-
-	<script src="https://harshadss.github.io/js/main.min.784417f5847151f848c339cf0acb13a06cbb648b1483435a28ed4556c4ead69b.js" integrity="sha256-eEQX9YRxUfhIwznPCssToGy7ZIsUg0NaKO1FVsTq1ps="></script>
-
-</body>
-
-</html>
+        </div>
+    </body>

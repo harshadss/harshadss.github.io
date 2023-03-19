@@ -1,232 +1,134 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#494f5c">
-	<meta name="msapplication-TileColor" content="#494f5c">
+    <head>
+        <title> Practical Common Lisp / Clojure: 3 &middot; Harshad Saykhedkar </title>
 
-<meta itemprop="name" content="Practical Common Lisp / Clojure: 3">
-<meta itemprop="description" content="In these posts I&rsquo;m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
-In part 2 of this post, we implemented select, where and update function for our documentish db. But the implementation had fair bit of code duplication. We remove code duplication and make the code more generic in this section.">
-
-
-<meta itemprop="datePublished" content="2017-06-08T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-06-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="698">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.111.3">
 
 
 
-<meta itemprop="keywords" content="clojure,lisp,pcl," />
-<meta property="og:title" content="Practical Common Lisp / Clojure: 3" />
-<meta property="og:description" content="In these posts I&rsquo;m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
-In part 2 of this post, we implemented select, where and update function for our documentish db. But the implementation had fair bit of code duplication. We remove code duplication and make the code more generic in this section." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://harshadss.github.io/posts/practical_common_lisp_3/" />
-<meta property="article:published_time" content="2017-06-08T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-06-08T00:00:00&#43;00:00"/>
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Practical Common Lisp / Clojure: 3"/>
-<meta name="twitter:description" content="In these posts I&rsquo;m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
-In part 2 of this post, we implemented select, where and update function for our documentish db. But the implementation had fair bit of code duplication. We remove code duplication and make the code more generic in this section."/>
 
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-	<link rel="shortcut icon" href="/favicon.ico">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
-	<title>Practical Common Lisp / Clojure: 3</title>
-	<link rel="stylesheet" href="https://harshadss.github.io/css/style.min.31706917653d2b9e8410abd431f30ec4359a88a94fc87a63654779d87329edec.css" integrity="sha256-MXBpF2U9K56EEKvUMfMOxDWaiKlPyHpjZUd52HMp7ew=">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://harshadss.github.io/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://harshadss.github.io/'>
+				harshad@foundation ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
+			</button>
 	
-</head>
-
-<body id="page">
-	
-	<header id="site-header" class="animated slideInUp faster">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="https://harshadss.github.io/">Harshad Saykhedkar</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-					<a href="https://harshadss.github.io/posts/">Posts</a>
-					<a href="https://harshadss.github.io/about-harshad-saykhedkar/">About</a>
-				</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="https://twitter.com/harshad_geek" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/harshadss" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://harshadss.github.io/'>
+							/home/harshad</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" 
+								aria-haspopup="true" aria-expanded="false">blog <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							
+							<li>
+								<a class="dropdown-item" href="https://harshadss.github.io/posts">~/all</a>
+							</li>
+							
+							<li>
+								<a class="dropdown-item" href="https://harshadss.github.io/tags">~/tags</a>
+							</li>
+							
+						</ul>
+						
+					</li>
+					
+				</ul>
 			</div>
 		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="https://harshadss.github.io/posts/">Posts</a></li>
-			<li><a href="https://harshadss.github.io/about-harshad-saykhedkar/">About</a></li>
-		</ul>
-	</div>
+	</nav>
+</header>
 
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://harshadss.github.io/posts/practical_common_lisp_3/">Practical Common Lisp / Clojure: 3</a></h1>
+                <span class="post-date">2017-06-08 </span>
+                <div class="post-content">
+                    <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
-	<main class="site-main section-inner animated fadeIn faster">
-		<article class="thin">
-			<header class="post-header">
-				<div class="post-meta"><span>Jun 8, 2017</span></div>
-				<h1>Practical Common Lisp / Clojure: 3</h1>
-			</header>
-			<div class="content">
-				<p>In these posts I&rsquo;m studying the book Practical Common Lisp by Peter Siebel and
-coding the examples in Clojure. Aim: studying clojure and reading this
-fantastic book <a href="http://www.gigamonkeys.com/book/" target="_blank">can be accessed online here</a>.</p>
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
+                
+            </div>
+            <footer class="footer text-center">
+<p>Copyright &copy; 2023 Harshad Saykhedkar -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
 
-<p>In <a href="/post/practical_common_lisp_2/" target="_blank">part 2</a> of this post, we
-implemented select, where and update function for our documentish db. But the
-implementation had fair bit of code duplication. We remove code duplication
-and make the code more generic in this section.</p>
-
-<h2 id="chapter-3-continued">Chapter 3 continued<a href="#chapter-3-continued" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-
-<h3 id="removing-duplication">Removing duplication<a href="#removing-duplication" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
-<p>In this section, Peter highlights that last sections where implementation was
-specific to the given use case (documents corresponding to cd) and had fair bit
-of code repeatation. He solves both problems with a re-write of where as a macro
-with two helper functions.</p>
-
-<p>My clojure code is as given below, the explanation follows.</p>
-
-<h4 id="single-comparison-expression">Single comparison expression<a href="#single-comparison-expression" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
-<p>In a database query, there could be multiple where clauses/conditions.
-For each clause, we would need a comparison expression. The following code
-generates such expression for a passed in field and value. For reasons little
-difficult for me to digest right now, there&rsquo;s a reference to a dynamic var row
-in the implementation. We will discuss this point later. Note for now that the
-function gives different result a new binding of row var.</p>
-
-<pre><code>(def ^:dynamic row nil)
-
-(defn make-comparison-expr
-  [[field value]]
-  (list '= value (list 'get row field)))
-
-(make-comparison-expr '(:rating 8))
-
-(binding [row {:rating 8 :artist &quot;Someone&quot;}]
-  (make-comparison-expr '(:rating 8)))
-  
-</code></pre>
-
-<h4 id="multiple-comparison-expressions">Multiple comparison expressions<a href="#multiple-comparison-expressions" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
-<p>What if there are multiple clauses/conditions in where? We iterate over each
-pair and build a list containing each comparison expression. Since the passed
-in list is a sequence of field and value, we use partition to retrieve pairs.</p>
-
-<pre><code>;; for multiple pairs, make expression for each
-(defn make-comparison-expr-list
-  [all-field-pairs]
-  (let [pairs (partition 2 all-field-pairs)]
-    (map #(make-comparison-expr %) pairs)))
-    
-(binding [row {:rating 8 :artist 9}]
-  (make-comparison-expr-list '(:artist &quot;Dixie Chicks&quot; :rating 8)))
-
-</code></pre>
-
-<h4 id="the-where-macro">The where macro<a href="#the-where-macro" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
-<p>Now comes the hairy part. Here we want to write where as macro, which returns
-the right predicate generator. To be honest, I struggled with this part a lot.
-There are multiple reasons,</p>
-
-<ol>
-<li>The macro is returning an anonymous function. The anonymous function takes
- an argument (the row/document in the database). Not covered in many macro
- tutorials/training :-P</li>
-<li>The and in Clojure itself is a macro which takes expressions and not a list
- of expressions. Whereas our make-comparison-expr-list is returning a list.
- We can use ~@ to splice the list, but I am staying clear of it for now.</li>
-<li>The reference to the row needed for make-comparison-expr. I thought the best
- way would be to pass in a symbol. So make-comparison-expr function should
- also take in row alongwith field, value pair. I couldn&rsquo;t get this to work.</li>
-</ol>
-
-<p>Although I could write the two functions in the last subsection myself, the
-macro simply too hard for me at this point. So I needed some help from
-<a href="https://github.com/stuarthalloway/practical-cl-clojure/blob/master/src/pcl/chap_03.clj" target="_blank">Stuart Halloway&rsquo;s solution here</a>.
-I solved problem by appending a pound/hash to the row
-argument to the anonymous function. My incomplete understanding tells me that
-it generates a new symbol for the anonymous function argument. Variable capture
-and what not. I need to study this later.
-For problem 2, I used every? function with eval on each return value from
-make-comparison-expr-list rather than splice unquote. For problem 3,
-I still don&rsquo;t understand why we need a global reference to the row which is
-bound again inside the macro. I do know that getting the macro to work is
-littled difficult otherwise.</p>
-
-<pre><code>(defmacro where [clauses]
-  `(fn [cd#]
-     (binding [row cd#]
-      (every? eval (make-comparison-expr-list ~clauses)))))
-
-(defn select [wherefunc]
-  (filter wherefunc (deref db)))
-
-(select (where '(:title &quot;Fly&quot;)))
-
-</code></pre>
-
-<h3 id="learning-so-far">Learning So Far<a href="#learning-so-far" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
-<ol>
-<li>Treating code as data, wow! We generated the expression for comparison
- depending upon the field and value passed in. I&rsquo;ve not seen this done
- in any other language so succinctly.</li>
-<li>Treating code as data helped us to make the functions more generic.
- <a href="https://www.cs.umd.edu/~nau/cmsc421/norvig-lisp-style.pdf" target="_blank">Peter Norvig&rsquo;s lisp guide</a>
- highlighted this explicitly and so did SICP book: make your functions
- generic so that they can be re-used. Saw this in action.</li>
-<li>First rule of macro club is there for a reason! Stay clear of macros as long
- as you don&rsquo;t understand them well.</li>
-</ol>
-
-<p>This concludes chapter 3. Onwards!</p>
-
-			</div>
-			<hr class="post-end">
-			<footer class="post-info">
-				<p>
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://harshadss.github.io/tags/clojure">clojure</a></span><span class="tag"><a href="https://harshadss.github.io/tags/lisp">lisp</a></span><span class="tag"><a href="https://harshadss.github.io/tags/pcl">pcl</a></span>
-				</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>698 Words</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2017-06-08 05:30 &#43;0530</p>
-			</footer>
-		</article>
-		<div class="post-nav thin">
-			<a class="next-post" href="https://harshadss.github.io/posts/practical_common_lisp_4/">
-				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Practical Common Lisp / Clojure: 4</span>
-			</a>
-			<a class="prev-post" href="https://harshadss.github.io/posts/practical_common_lisp_2/">
-				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Practical Common Lisp / Clojure: 2</span>
-			</a>
-		</div>
-		<div id="comments" class="thin">
-</div>
-	</main>
-
-	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2020 <a href="https://harshadss.github.io/">Harshad Saykhedkar</a> Copyright Harshad Saykhedkar</p>
-		<p>
-			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://harshadss.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
-		</p>
-	</footer>
-
-
-	<script src="https://harshadss.github.io/js/main.min.784417f5847151f848c339cf0acb13a06cbb648b1483435a28ed4556c4ead69b.js" integrity="sha256-eEQX9YRxUfhIwznPCssToGy7ZIsUg0NaKO1FVsTq1ps="></script>
-
-</body>
-
-</html>
+        </div>
+    </body>

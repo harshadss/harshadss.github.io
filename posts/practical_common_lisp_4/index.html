@@ -1,101 +1,100 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="theme-color" content="#494f5c">
-	<meta name="msapplication-TileColor" content="#494f5c">
+    <head>
+        <title> Practical Common Lisp / Clojure: 4 &middot; Harshad Saykhedkar </title>
 
-<meta itemprop="name" content="Practical Common Lisp / Clojure: 4">
-<meta itemprop="description" content="In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
-In part 3 of this post, we saw the code from chapter 3 of the book in which we implemented an in-memory documentish database with select, where and update.
-Now I am tackling the code from chapter 9, building a test framework.">
-
-
-<meta itemprop="datePublished" content="2017-06-09T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-06-09T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1290">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.111.3">
 
 
 
-<meta itemprop="keywords" content="clojure,lisp,pcl," />
-<meta property="og:title" content="Practical Common Lisp / Clojure: 4" />
-<meta property="og:description" content="In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
-In part 3 of this post, we saw the code from chapter 3 of the book in which we implemented an in-memory documentish database with select, where and update.
-Now I am tackling the code from chapter 9, building a test framework." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://harshadss.github.io/posts/practical_common_lisp_4/" />
-<meta property="article:published_time" content="2017-06-09T00:00:00&#43;00:00"/>
-<meta property="article:modified_time" content="2017-06-09T00:00:00&#43;00:00"/>
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Practical Common Lisp / Clojure: 4"/>
-<meta name="twitter:description" content="In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
-In part 3 of this post, we saw the code from chapter 3 of the book in which we implemented an in-memory documentish database with select, where and update.
-Now I am tackling the code from chapter 9, building a test framework."/>
 
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-	<link rel="shortcut icon" href="/favicon.ico">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 
-	<title>Practical Common Lisp / Clojure: 4</title>
-	<link rel="stylesheet" href="https://harshadss.github.io/css/style.min.31706917653d2b9e8410abd431f30ec4359a88a94fc87a63654779d87329edec.css" integrity="sha256-MXBpF2U9K56EEKvUMfMOxDWaiKlPyHpjZUd52HMp7ew=">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://harshadss.github.io/css/nix.css">
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata%7COpen+Sans%7CConcert+One" rel="stylesheet">
+
+
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+	<nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg font-header">
+		<div class="container-fluid">
+			<a class="navbar-brand" id="green-terminal" href='https://harshadss.github.io/'>
+				harshad@foundation ~ $
+			</a>
+			<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse-1" 
+					aria-controls="navbar-collapse-1" aria-expanded="false">
+				<span class="visually-hidden">Toggle navigation</span>
+				<span class="navbar-toggler-icon"></span>
+			</button>
 	
-</head>
-
-<body id="page">
-	
-	<header id="site-header" class="animated slideInUp faster">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="https://harshadss.github.io/">Harshad Saykhedkar</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-					<a href="https://harshadss.github.io/posts/">Posts</a>
-					<a href="https://harshadss.github.io/about-harshad-saykhedkar/">About</a>
-				</nav>
-			</div>
-			<div class="hdr-right hdr-icons">
-				<span class="hdr-social hide-in-mobile"><a href="https://twitter.com/harshad_geek" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/harshadss" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			
+			<div class="collapse navbar-collapse" id="navbar-collapse-1">
+				<ul class="nav navbar-nav ms-auto">
+					<li class="nav-item">
+						<a class="nav-link" href='https://harshadss.github.io/'>
+							/home/harshad</a>
+					</li>
+					
+					
+					
+					<li class="nav-item dropdown">
+						
+						<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" 
+								aria-haspopup="true" aria-expanded="false">blog <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							
+							<li>
+								<a class="dropdown-item" href="https://harshadss.github.io/posts">~/all</a>
+							</li>
+							
+							<li>
+								<a class="dropdown-item" href="https://harshadss.github.io/tags">~/tags</a>
+							</li>
+							
+						</ul>
+						
+					</li>
+					
+				</ul>
 			</div>
 		</div>
-	</header>
-	<div id="mobile-menu" class="animated fast">
-		<ul>
-			<li><a href="https://harshadss.github.io/posts/">Posts</a></li>
-			<li><a href="https://harshadss.github.io/about-harshad-saykhedkar/">About</a></li>
-		</ul>
-	</div>
+	</nav>
+</header>
 
-
-	<main class="site-main section-inner animated fadeIn faster">
-		<article class="thin">
-			<header class="post-header">
-				<div class="post-meta"><span>Jun 9, 2017</span></div>
-				<h1>Practical Common Lisp / Clojure: 4</h1>
-			</header>
-			<div class="content">
-				
-
-<p>In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book <a href="http://www.gigamonkeys.com/book/">can be accessed online here</a>.</p>
-
+        <div class="flex-wrapper">
+            <div class="container wrapper">
+                <h1><a href="https://harshadss.github.io/posts/practical_common_lisp_4/">Practical Common Lisp / Clojure: 4</a></h1>
+                <span class="post-date">2017-06-09 </span>
+                <div class="post-content">
+                    <p>In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book <a href="http://www.gigamonkeys.com/book/">can be accessed online here</a>.</p>
 <p>In <a href="/post/practical_common_lisp_3/">part 3</a> of this post, we saw the code from chapter 3 of the book in which we implemented an in-memory documentish database with select, where and update.</p>
-
 <p>Now I am tackling the code from chapter 9, building a test framework. I’m skipping the chapters from 4-8 since they cover CL syntax and semantics from blog posts. But note that these chapters are not to be skipped while studying, especially the macro ones.</p>
-
-<h2 id="chapter-9-unit-test-framework">Chapter 9 : Unit Test Framework<a href="#chapter-9-unit-test-framework" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-
+<h2 id="chapter-9--unit-test-framework">Chapter 9 : Unit Test Framework</h2>
 <p>In this chapter Peter makes us implement a simple unit test framework for lisp with lot of macro kung-foo. The unit test framework is to be used in interactive fashion.</p>
-
-<h3 id="first-try">First Try<a href="#first-try" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+<h3 id="first-try">First Try</h3>
 <p>Each test is defined as a good old function returning bool. It does and over multiple clauses/tests. Clojure code is simple,</p>
-
 <pre><code>(defn test-+
   []
   (and
@@ -114,13 +113,9 @@ Now I am tackling the code from chapter 9, building a test framework."/>
 
 (test-+)
 </code></pre>
-
 <p>However, this returns an all or nothing result but doesn’t help us to narrow down on which test case failed. So instead, we modify the function to print the input data and result for each clause/test. At this point the code takes an uncomfortable turn: reading about formatting function.</p>
-
 <p>This leaves me with two choices either learn about common lisp formatting in detail or use Clojure formatting (which uses Java.util.Formatter). I’m already having hard time in life learning about different formatting in Python 2 and 3 :-P. So having to choose between cl formatting and clj/java is like between a rock and hard place, if you get my drift.</p>
-
 <p>Anticlimax: Clojure comes to rescue as it can understand common lisp formatting. So onwards, we piggyback on cl-format in clojure and implement the test as follows.</p>
-
 <pre><code>(defn test-+ []
   (clojure.pprint/cl-format true &quot;~:[FAIL~;pass~] ... ~a~%&quot; (= (+ 1 2) 3) '(= (+ 1 2) 3))
   (clojure.pprint/cl-format true &quot;~:[FAIL~;pass~] ... ~a~%&quot; (= (+ 1 2 3) 6) '(= (+ 1 2 3) 6))
@@ -128,11 +123,8 @@ Now I am tackling the code from chapter 9, building a test framework."/>
 
 (test-+)
 </code></pre>
-
-<h3 id="refactoring-better-reporting">Refactoring / Better Reporting<a href="#refactoring-better-reporting" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+<h3 id="refactoring--better-reporting">Refactoring / Better Reporting</h3>
 <p>We note that the code above has some duplication as we are printing things repeatitively. We abstract out the printing part in a single function.</p>
-
 <pre><code>(defn report-result
   [result form]
   (clojure.pprint/cl-format true &quot;~:[FAIL~;pass~] ... ~a~%&quot; result form))
@@ -143,11 +135,8 @@ Now I am tackling the code from chapter 9, building a test framework."/>
 
 (test-+)
 </code></pre>
-
 <p>But this is still not satisfactory, as the list representation and the expression are both passed to report-result. Smarter code should be able to generate the both based on one.</p>
-
 <p>In the macro below, we generate the call to report result with the form. The ‘~ is little cryptic. The backtick ` converts all the atoms in the passed in list into namespaced symbols. But we don’t want that to happen with form (since it is not defined in the namespace, we want the actual form passed in to the macro). ~form forces the evaluation of form rather than the form itself.</p>
-
 <pre><code>(defmacro check
   [form]
   `(report-result ~form '~form))
@@ -156,9 +145,7 @@ Now I am tackling the code from chapter 9, building a test framework."/>
 
 (check (= (+ 1 2) 3))
 </code></pre>
-
 <p>With this, the test can be multiple calls to check.</p>
-
 <pre><code>(defn test-+
   []
   (check (= (+ 1 2) 3) )
@@ -167,9 +154,7 @@ Now I am tackling the code from chapter 9, building a test framework."/>
 
 (test-+)
 </code></pre>
-
 <p>That doesn’t look too bad, although there’s duplication with multiple calls to check. One more step further: let us auto-generate the multiple calls. Macros to the rescue again. Note that we use do in clojure for doing multiple form evaluation (progn is used in the book). For in Clojure is more readable too. Lastly, we change the name to say multicheck for easy comparison with check.</p>
-
 <pre><code>(defmacro multicheck
   [&amp; forms]
   `(do ~@(for [form forms]
@@ -187,19 +172,12 @@ Now I am tackling the code from chapter 9, building a test framework."/>
 
 (test-+)
 </code></pre>
-
-<h3 id="fixing-return-value">Fixing Return Value<a href="#fixing-return-value" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+<h3 id="fixing-return-value">Fixing Return Value</h3>
 <p>The last iteration is not bad. The test (function really) looks more like the way would write real tests, with just enough details passed in. But we want to bring back our original feature: printing overall result (all tests passed or atleast one failed). The last implementation prints pass fail for each test but not overall result.</p>
-
 <p>The idea is simple: while printing result of each test, we need to somehow capture the result of evaluation and then AND over all results and print the result of that AND.</p>
-
 <p>First thought that comes to mind is AND in the language. But AND in CL/CLJ short circuits (breaks on first false). Going off track, it is interesting to read up why it makes sense in case of boolean logic to short circuit AND. But let us not digress.</p>
-
 <p>Peter implements the refactoring with the help of two macros. I wanted to avoid that territory (macro calling another macro) given my shoddy knowledge of macros. So I am simplifying the implementation a little.</p>
-
 <p>We change the report-result function to do the side effect as well as result. The ‘do’ will print to stdout and then return the result. For doing non short-circuit AND over result, Clojure has every? implemented for us. We splice the result of applying report-result and then convert to list again. Otherwise, we end up in a situation with s-expression with boolean as first atom, which is illegal. There’s probably a cleaner way to implement this. Some other time! Finally, we print the result of every.</p>
-
 <pre><code>(defn report-result-return
   [result form]
   (do 
@@ -225,60 +203,39 @@ Now I am tackling the code from chapter 9, building a test framework."/>
 
 (test-+)
 </code></pre>
-
-<h3 id="learning-so-far">Learning So Far<a href="#learning-so-far" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+<h3 id="learning-so-far">Learning So Far</h3>
 <p>This chapter has been interesting to say the least. Multiple learnings as follows,</p>
-
 <ol>
 <li>More practice on macros. Remember that you take input form and return another form (list) which is actually evaluated.</li>
 <li>For use cases like this, lisps are in general unbeatable. For example, unit test framework is about generating code to execute supplied code and then doing bookeeping on what failed and what not. Can’t beat lisp with its code as data and macros here.</li>
 <li>Iterative implementation with the help of repl is such a liberating way to develop code. Short cycle between implement and testing helps.</li>
 <li>Peter’s iterative implementation also moves from a crude design to a better design. Progressively, we are only supplying required details (the test clauses) and not caring about how the implementation/evaluation of tests is done.</li>
 </ol>
-
 <p>The last part where implementation is leaking to the user is in defining test as function and call to check. As a user you are aware that check needs to be called. Ideal design would,</p>
-
 <ol>
 <li>Hide that defn and let user define a test (deftest). It is like creating a mini DSL.</li>
 <li>User shouldn’t need to know if check is called internally.</li>
 <li>Ability for defining hierarchy of tests.</li>
 </ol>
-
 <p>Peter tackles it in next part. Hint: it is more macros to generate the defn directly :-) . I can’t wait to read the next part!</p>
 
-			</div>
-			<hr class="post-end">
-			<footer class="post-info">
-				<p>
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://harshadss.github.io/tags/clojure">clojure</a></span><span class="tag"><a href="https://harshadss.github.io/tags/lisp">lisp</a></span><span class="tag"><a href="https://harshadss.github.io/tags/pcl">pcl</a></span>
-				</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1290 Words</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2017-06-09 05:30 &#43;0530</p>
-			</footer>
-		</article>
-		<div class="post-nav thin">
-			<a class="next-post" href="https://harshadss.github.io/posts/practical_common_lisp_5/">
-				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>Practical Common Lisp / Clojure: 5</span>
-			</a>
-			<a class="prev-post" href="https://harshadss.github.io/posts/practical_common_lisp_3/">
-				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Practical Common Lisp / Clojure: 3</span>
-			</a>
-		</div>
-		<div id="comments" class="thin">
-</div>
-	</main>
+                </div>
+                
+                <div class="post-comments">
+                    
+                </div>
+                
+            </div>
+            <footer class="footer text-center">
+<p>Copyright &copy; 2023 Harshad Saykhedkar -
+<span class="credit">
+	Powered by
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
 
-	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2020 <a href="https://harshadss.github.io/">Harshad Saykhedkar</a> Copyright Harshad Saykhedkar</p>
-		<p>
-			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://harshadss.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
-		</p>
-	</footer>
-
-
-	<script src="https://harshadss.github.io/js/main.min.784417f5847151f848c339cf0acb13a06cbb648b1483435a28ed4556c4ead69b.js" integrity="sha256-eEQX9YRxUfhIwznPCssToGy7ZIsUg0NaKO1FVsTq1ps="></script>
-
-</body>
-
-</html>
+        </div>
+    </body>

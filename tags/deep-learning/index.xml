@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>deep learning on Harshad Saykhedkar</title>
@@ -6,12 +6,7 @@
     <description>Recent content in deep learning on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright @ Harshad Saykhedkar</copyright>
-    <lastBuildDate>Tue, 15 Oct 2019 15:19:02 +0530</lastBuildDate>
-    
-	<atom:link href="https://harshadss.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 15 Oct 2019 15:19:02 +0530</lastBuildDate><atom:link href="https://harshadss.github.io/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Skeptics Guide To ML Hype and Excitement</title>
       <link>https://harshadss.github.io/posts/ml_hype_cycle_and_research/</link>

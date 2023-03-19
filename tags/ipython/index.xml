@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ipython on Harshad Saykhedkar</title>
@@ -6,12 +6,7 @@
     <description>Recent content in ipython on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright @ Harshad Saykhedkar</copyright>
-    <lastBuildDate>Thu, 11 May 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://harshadss.github.io/tags/ipython/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 11 May 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://harshadss.github.io/tags/ipython/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IPython is powerful!</title>
       <link>https://harshadss.github.io/posts/ipython_is_powerful/</link>

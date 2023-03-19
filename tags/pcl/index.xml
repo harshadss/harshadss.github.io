@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>pcl on Harshad Saykhedkar</title>
@@ -6,12 +6,7 @@
     <description>Recent content in pcl on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright @ Harshad Saykhedkar</copyright>
-    <lastBuildDate>Tue, 13 Jun 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://harshadss.github.io/tags/pcl/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 13 Jun 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://harshadss.github.io/tags/pcl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Practical Common Lisp / Clojure: 5</title>
       <link>https://harshadss.github.io/posts/practical_common_lisp_5/</link>
@@ -40,8 +35,7 @@ Now I am tackling the code from chapter 9, building a test framework.</descripti
       <pubDate>Thu, 08 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>https://harshadss.github.io/posts/practical_common_lisp_3/</guid>
-      <description>In these posts I&amp;rsquo;m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
-In part 2 of this post, we implemented select, where and update function for our documentish db. But the implementation had fair bit of code duplication. We remove code duplication and make the code more generic in this section.</description>
+      <description> </description>
     </item>
     
     <item>

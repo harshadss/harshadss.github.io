@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Harshad Saykhedkar</title>
@@ -6,12 +6,7 @@
     <description>Recent content on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright @ Harshad Saykhedkar</copyright>
-    <lastBuildDate>Tue, 30 Jun 2020 21:46:18 +0530</lastBuildDate>
-    
-	<atom:link href="https://harshadss.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 30 Jun 2020 21:46:18 +0530</lastBuildDate><atom:link href="https://harshadss.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>That kind of a book</title>
       <link>https://harshadss.github.io/posts/that_kind_of_a_book/</link>
@@ -89,7 +84,7 @@ First to clarify bit of terminology. Deep learning is a catch-all term used in p
       <guid>https://harshadss.github.io/posts/where_ai_will_change_world/</guid>
       <description>Andrew Ng wrote insightful article in HBR a while ago about what an AI can and cannot do. He highlights that if there&amp;rsquo;s a mental task that a human being can do in few seconds, you can probably automate it.
 In my opinion, these types of problems have a following structure,
- Single person decisions: these decisions are often replacing decision making of single human being. Scale factor: You need AI to help you in tons of such decisions in order to make meanigful impact.</description>
+Single person decisions: these decisions are often replacing decision making of single human being. Scale factor: You need AI to help you in tons of such decisions in order to make meanigful impact.</description>
     </item>
     
     <item>
@@ -111,6 +106,176 @@ Preferring Generalized Solutions Many big companies will perfect a very general 
       <guid>https://harshadss.github.io/posts/curse_of_ml_stackoverflow/</guid>
       <description>I have come across two distinct flavours of beginner behaviours on stack-exchange site related to data science. I believe they are symptoms representing what is the larger problem ailing field of data science. Let us go through the symptoms first. My tone in this article is extremely acerbic because I feel strongly for my field.
 Deep Learning Voodo Problem Someone will post a problem like, &amp;ldquo;I am trying to fit (some complex deep learning architecture) model on (a bad problem for starting with DL).</description>
+    </item>
+    
+    <item>
+      <title>Mathematical Epiphanies 2: Differential Equations</title>
+      <link>https://harshadss.github.io/posts/mathematical_epiphanies_differential_equations/</link>
+      <pubDate>Thu, 26 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/mathematical_epiphanies_differential_equations/</guid>
+      <description>Click here for introduction to this series and motivation.
+Differential Equations An equation is about balancing two sides of a (weight) balance scale. The equations that we study in school (x + 4 = 9) are about finding the number which will balance the scale. But there could be equations for which solution which balances things is a function and not a number! Specifically, you could have equations which relate a change in certain quantity with respect to that quantity.</description>
+    </item>
+    
+    <item>
+      <title>Mathematical Epiphanies 1: Linear Systems &amp; Fourier Transform</title>
+      <link>https://harshadss.github.io/posts/mathematical_epiphanies_linear_systems_fourier/</link>
+      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/mathematical_epiphanies_linear_systems_fourier/</guid>
+      <description>Click here for introduction to this series and motivation.
+Linear Algebra Basics There are two ways to look at matrices. One view is about a matrix representing some data (to be covered in later part of this series) Another view is: matrix encodes the operation of a linear system on its inputs. In this (3) view, a matrix represents a linear map. Matrix-vector multiplication is taking a vector represented in one coordinate system and transforming it to vector in another co-ordinate systems.</description>
+    </item>
+    
+    <item>
+      <title>Mathematical Epiphanies 0: Introduction</title>
+      <link>https://harshadss.github.io/posts/mathematical_epiphanies_introduction/</link>
+      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/mathematical_epiphanies_introduction/</guid>
+      <description>I had to study a lot of maths in higher secondary and engineering. There were 2 maths subjects for 2 years after secondary school and 3 maths subjects in the first two years of engineering. Despite studying so much maths, graduate school was a rude shock for me. I just couldn&amp;rsquo;t wrap my head around of a lot of lectures.
+The problem was the way maths was taught. Most of the teachers taught maths as an end in itself, mostly devoid of the most important question: &amp;ldquo;why&amp;rdquo;?</description>
+    </item>
+    
+    <item>
+      <title>Readings in Human Body, Evolution and Biology</title>
+      <link>https://harshadss.github.io/posts/studying_body_biology/</link>
+      <pubDate>Fri, 20 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/studying_body_biology/</guid>
+      <description>Throughout my school life I tried to stay away from biology studies. I specifically chose studying physics and maths instead of biology in higher secondary school. Even during secondary school, science 1 generally had physics and chemistry whereas science 2 contained protozoans and all other wiggling beasts. Guess who barely got over line in science 2.
+The logic for a high school students in India was simple. You chose biology if you wanted to be a doctor (or do a research in microbiology) which meant spending many years studying and daddy needs to have lot of money to get you into medical school.</description>
+    </item>
+    
+    <item>
+      <title>Learnings from Teaching Machine Learning</title>
+      <link>https://harshadss.github.io/posts/learnings_from_teching_ml/</link>
+      <pubDate>Tue, 19 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/learnings_from_teching_ml/</guid>
+      <description>I have been teaching machine learning to programmers since some time. I started this activity in 2013 and till date I have conducted 10+ hands on workshops.
+All these workshops were typically 3-3.5 hours long and covered some theory, coding examples through Python (ocassionally R) and interactive discussions. They were attended by 10-50 programmers.
+Here are some learnings from this teaching activity, in no particular order. Many of them were in fact goof-ups that I did at one point of time, so these are indeed lessons from trenches.</description>
+    </item>
+    
+    <item>
+      <title>Obstacles in Taking Machine Learning to Production</title>
+      <link>https://harshadss.github.io/posts/problems_in_deploying_ml/</link>
+      <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/problems_in_deploying_ml/</guid>
+      <description>Well the title is intentionally exaggerating. May not the biggest but certainly one of the most important area of friction in taking machine learning to production.
+Scenario Imagine that you/your data scientist has written a functional machine learning pipeline in Python today. And by pipeline I mean data transformation as well as prediction code. For example, you could have a data which is mix of text and numeric features. You might do some text processing to generate n-gram features with some custom filters on the text.</description>
+    </item>
+    
+    <item>
+      <title>Practical Common Lisp / Clojure: 5</title>
+      <link>https://harshadss.github.io/posts/practical_common_lisp_5/</link>
+      <pubDate>Tue, 13 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/practical_common_lisp_5/</guid>
+      <description>In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+In part 4 of this post, we saw the code from chapter 9 of the book about creating a test framework.
+In this post, we continue the code of chapter 9 and iron out few kinks in our unit test framework.</description>
+    </item>
+    
+    <item>
+      <title>Practical Common Lisp / Clojure: 4</title>
+      <link>https://harshadss.github.io/posts/practical_common_lisp_4/</link>
+      <pubDate>Fri, 09 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/practical_common_lisp_4/</guid>
+      <description>In these posts I’m studying the book Practical Common Lisp by Peter Seibel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+In part 3 of this post, we saw the code from chapter 3 of the book in which we implemented an in-memory documentish database with select, where and update.
+Now I am tackling the code from chapter 9, building a test framework.</description>
+    </item>
+    
+    <item>
+      <title>Practical Common Lisp / Clojure: 3</title>
+      <link>https://harshadss.github.io/posts/practical_common_lisp_3/</link>
+      <pubDate>Thu, 08 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/practical_common_lisp_3/</guid>
+      <description> </description>
+    </item>
+    
+    <item>
+      <title>Practical Common Lisp / Clojure: 2</title>
+      <link>https://harshadss.github.io/posts/practical_common_lisp_2/</link>
+      <pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/practical_common_lisp_2/</guid>
+      <description>In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+In part 1 of this post, we went through creating a single database using list and maps.
+Chapter 3 continued Looking at database contents In this section, Peter teaches string formatting for CL. Using string formatting, a nicer way to look at db contents is tried.</description>
+    </item>
+    
+    <item>
+      <title>Practical Common Lisp / Clojure: 1</title>
+      <link>https://harshadss.github.io/posts/practical_common_lisp_1/</link>
+      <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/practical_common_lisp_1/</guid>
+      <description>In these posts I’m studying the book Practical Common Lisp by Peter Siebel and coding the examples in Clojure. Aim: studying clojure and reading this fantastic book can be accessed online here.
+Chapter 3 of the book We try to implement a simple database for storing information about CDs that we own.
+CD &amp;amp; Records First decision is how do you store the details for a single CD. Peter says that we (for now) want to store 4 properties about a CD.</description>
+    </item>
+    
+    <item>
+      <title>IPython is powerful!</title>
+      <link>https://harshadss.github.io/posts/ipython_is_powerful/</link>
+      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/ipython_is_powerful/</guid>
+      <description>When you are working with a task where you are interactively building a solution, you need a lot of focus. Most of the work that I do fits into this category. Interactively building solutions to larger problems by solving smaller problems is pioneered by data first tools like Clojure and R.
+The first step to achieving the focus required in such interactive work is to remove distractions and complexities from your environments as much as possible.</description>
+    </item>
+    
+    <item>
+      <title>Cheklist Manifesto &amp; Thinking Fast and Slow</title>
+      <link>https://harshadss.github.io/posts/cheklist_manifesto_ruminations/</link>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/cheklist_manifesto_ruminations/</guid>
+      <description>I read ‘the checklist manifesto’ by Atul Gawande. I am a firm believer in books and advice in general from anyone in practice oriented profession: doctors, investors (not speculators), pilots and so on. The professinals in these fields have generally a large skin in the game (money, reputation, their own life), making their advice worthy as compared to academic advise. The checklist book was then just the right fit for a lazy afternoon reading at once.</description>
+    </item>
+    
+    <item>
+      <title>Testing Literate Emacs Config</title>
+      <link>https://harshadss.github.io/posts/testing_literate_emacs_config/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/testing_literate_emacs_config/</guid>
+      <description>Some time back, I wrote my Emacs configuration in an org mode file. The whole setup is documented here. The objective was twofold: one to make it readable to my dumb brain when I open it six months later, second was to make it reproducible on another machine quickly. Say, if something unforseen was to happen to my good ol Dell Vostro machine, what with the configuration safe on Github and all that, I can have my new machine with the Emacs setup very fast and without splitting hair.</description>
+    </item>
+    
+    <item>
+      <title>Hello, world!</title>
+      <link>https://harshadss.github.io/posts/hello_world/</link>
+      <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/hello_world/</guid>
+      <description>This is just a first post on this blog. Hello, world!</description>
+    </item>
+    
+    <item>
+      <title>Learning awk is useful!</title>
+      <link>https://harshadss.github.io/posts/learning_awk/</link>
+      <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/learning_awk/</guid>
+      <description>I have been working with Unix (Linux to be precise) command line since a long time. But I had always avoided learning about Unix power tools like awk, sed. Quick exploratory analysis of data in a tabular/csv form is daily routine for me. My tool of choice for this work is either R or Python. I used to wonder about the utility of tool like awk. But recently I found myself using awk for some specific use cases.</description>
+    </item>
+    
+    <item>
+      <title>About Harshad Saykhedkar</title>
+      <link>https://harshadss.github.io/about-harshad-saykhedkar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harshadss.github.io/about-harshad-saykhedkar/</guid>
+      <description>This is my personal website and blog. Contains my writings on topics of interests like maths, machine learning and physics.
+As of last writing, I was a staff engineer at Slack.</description>
     </item>
     
   </channel>

@@ -1,17 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>data-science on Harshad Saykhedkar</title>
+    <title>data science on Harshad Saykhedkar</title>
     <link>https://harshadss.github.io/tags/data-science/</link>
-    <description>Recent content in data-science on Harshad Saykhedkar</description>
+    <description>Recent content in data science on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright @ Harshad Saykhedkar</copyright>
-    <lastBuildDate>Mon, 30 Jul 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://harshadss.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 30 Jul 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://harshadss.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Curse of ML and DL on Stack Exchange</title>
       <link>https://harshadss.github.io/posts/curse_of_ml_stackoverflow/</link>

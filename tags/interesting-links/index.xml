@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>interesting-links on Harshad Saykhedkar</title>
@@ -6,12 +6,7 @@
     <description>Recent content in interesting-links on Harshad Saykhedkar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>Copyright @ Harshad Saykhedkar</copyright>
-    <lastBuildDate>Wed, 26 Jun 2019 16:29:10 +0530</lastBuildDate>
-    
-	<atom:link href="https://harshadss.github.io/tags/interesting-links/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 26 Jun 2019 16:29:10 +0530</lastBuildDate><atom:link href="https://harshadss.github.io/tags/interesting-links/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Interesting links: geometric algebra</title>
       <link>https://harshadss.github.io/posts/geometric_algebra_fascination/</link>
