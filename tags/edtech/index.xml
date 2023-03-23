@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>edtech on Harshad Saykhedkar</title>
+    <link>https://harshadss.github.io/tags/edtech/</link>
+    <description>Recent content in edtech on Harshad Saykhedkar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Mar 2023 21:26:21 +0530</lastBuildDate><atom:link href="https://harshadss.github.io/tags/edtech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning from First Principles</title>
+      <link>https://harshadss.github.io/posts/first_principles_knowledge/</link>
+      <pubDate>Thu, 23 Mar 2023 21:26:21 +0530</pubDate>
+      
+      <guid>https://harshadss.github.io/posts/first_principles_knowledge/</guid>
+      <description>We know that a lack of understanding feels like chaos, muddled thinking and an uncomfortable lack of confidence about some concept. In short, it is the inability to debug our brain and take it from a question to an answer. Let us call this not having understanding driven by &amp;ldquo;first principles&amp;rdquo;. It often leads to a subtle but critical problem: being wrong and not being able to spot it.
+The anecdote to this state of chaos is learning from first principles.</description>
+    </item>
+    
+  </channel>
+</rss>
